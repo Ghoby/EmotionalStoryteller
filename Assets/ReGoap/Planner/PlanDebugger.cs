@@ -92,7 +92,7 @@ public void Clear()
 {
 	nodeDeclarations.Clear();
 	nodeConnections.Clear();
-    GenerationEnvironment.Clear();
+    GenerationEnvironment.Length = 0; // "hammered" solution
 }
 
 
