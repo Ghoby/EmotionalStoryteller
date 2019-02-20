@@ -123,6 +123,8 @@ GameObject:
   - component: {fileID: 1325623252}
   - component: {fileID: 1325623251}
   - component: {fileID: 1325623250}
+  - component: {fileID: 1325623253}
+  - component: {fileID: 1325623254}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -194,3 +196,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1325623253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325623249}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 659aefa6f0cc8634ab0a02aee742527f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MultiThread: 0
+  ThreadsCount: 1
+  PlannerSettings:
+    PlanningEarlyExit: 0
+    MaxIterations: 1000
+    MaxNodesToExpand: 10000
+    UsingDynamicActions: 0
+    DebugPlan: 0
+  LogLevel: 3
+  NodeWarmupCount: 1000
+  StatesWarmupCount: 10000
+--- !u!114 &1325623254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325623249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6576d80bacaa24f96209ebcaa41589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
