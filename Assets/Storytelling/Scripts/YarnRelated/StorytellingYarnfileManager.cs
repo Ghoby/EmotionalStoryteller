@@ -6,13 +6,18 @@ using System.IO;
 
 public class StorytellingYarnfileManager : MonoBehaviour
 {
-    string Path = "Yarnfiles/preview.yarn"; // TO DO
+    string OriginalPath = "Yarnfiles/test.yarn"; // TO DO - get it from interface input
+    string SolutionPath = "Assets/Storytelling/Resources/Yarnfiles/NewYarnfile.yarn.txt";
     TextAsset YarnfileAsset;
-    Dictionary<string, StorytellingYarnfileNodeScript> Nodes;
+    Dictionary<int, StorytellingYarnfileNodeScript> Nodes;
+
+    bool CanCreateOutput;
 
     void Start()
     {
-        Nodes = new Dictionary<string, StorytellingYarnfileNodeScript>();
+        CanCreateOutput = false;
+
+        Nodes = new Dictionary<int, StorytellingYarnfileNodeScript>();
 
         ReadYarnfile();
         List<string> lines = new List<string>(YarnfileAsset.text.Split('\n'));
@@ -21,33 +26,47 @@ public class StorytellingYarnfileManager : MonoBehaviour
 
     void ReadYarnfile()
     {
-        print(Path);
-        YarnfileAsset = (TextAsset) Resources.Load(Path);
+        print(OriginalPath);
+        YarnfileAsset = (TextAsset) Resources.Load(OriginalPath);
+    }
+
+    void CreateOutputYarnfile()
+    {
+        StreamWriter writer = new StreamWriter(SolutionPath, true);
+
+        //TO DO - get it from new dictionary OR in the proper order of reading
+        foreach (KeyValuePair<int, StorytellingYarnfileNodeScript> node in Nodes)
+        {
+            writer.Write(node.Value.GetBody());
+        }
+        writer.Flush();
+        writer.Close();
+        print("Done");
     }
 
     void CreateNodesFromYarnfile(List<string> lines)
     {
-        string nodeNameTemp = "";
+        int index = 0;
         string nodeTemp = "";
         
         foreach(string line in lines)
         {
             if (line.Contains("title: "))
             {
-                nodeNameTemp = GetNameForNode(line);
+                index++;
             }
             nodeTemp += line + "\n"; // stack node
             if (line == "===\r") // flush node
             {
-                StorytellingYarnfileNodeScript yarnNode = new StorytellingYarnfileNodeScript(nodeNameTemp, nodeTemp);
-                AddNode(yarnNode);
+                StorytellingYarnfileNodeScript yarnNode = new StorytellingYarnfileNodeScript(index, nodeTemp);
+                AddNode(index, yarnNode);
 
                 nodeTemp = "";
             }
         }
 
-        print(Nodes["Start.Start"].GetBody());
-        print(Nodes["Grades.good"].GetBody());
+        //print(Nodes["Start.Start"].GetBody());
+        //print(Nodes["Grades.good"].GetBody());        
     }
 
     string GetNameForNode(string firstLine)
@@ -57,8 +76,13 @@ public class StorytellingYarnfileManager : MonoBehaviour
         return name;
     }
 
-    void AddNode(StorytellingYarnfileNodeScript node)
+    void AddNode(int index, StorytellingYarnfileNodeScript node)
     {
-        Nodes.Add(node.GetName(), node);
+        Nodes.Add(index, node);
+    }
+
+    public void GOAPFinished()
+    {
+        CreateOutputYarnfile();
     }
 }

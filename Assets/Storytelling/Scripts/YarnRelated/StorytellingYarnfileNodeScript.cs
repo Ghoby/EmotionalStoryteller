@@ -1,23 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ReGoap.Unity.FSM;
+using ReGoap.Utilities;
 
-public class StorytellingYarnfileNodeScript : MonoBehaviour
+// Using the state machine interface
+public class StorytellingYarnfileNodeScript : SmState
 {
-    string Name;
+    int Index;
     string Body;
 
-
-
-    public StorytellingYarnfileNodeScript(string name, string body)
+    public StorytellingYarnfileNodeScript(int index, string body)
     {
-        Name = name;
+        Index = index;
         Body = body;
     }
 
-    public string GetName()
+    public int GetIndex()
     {
-        return Name;
+        return Index;
     }
 
     public string GetBody()

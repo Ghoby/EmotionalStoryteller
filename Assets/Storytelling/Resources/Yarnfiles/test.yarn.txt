@@ -1,0 +1,250 @@
+title: AlleyDusk.Part1
+tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+colorID: 0
+position: -565,-1104
+---
+Joao: In the middle of the purpleish gloom of the alley,
+Joao: <b>Joe</b> stood examining the graffiti scribbled on the dirty walls.
+Joao: The day was rapidly giving away into night.
+Maria: He was waiting for <b>Bruce</b> to arrive,
+Maria: but he had no idea WHY he was even waiting in the first place. 
+Maria: The reasons for this meeting were completely unknown to him.
+Maria: <b>Joe</b> only knew that, for the past few weeks,
+Maria: <b>Bruce</b> had been acting in a rather odd manner.
+
+[[>|AlleyDusk.Details1]]
+[[Describe the alley.|AlleyDusk.Details1]]
+[[Repeat|AlleyDusk.Part1]]
+===
+title: AlleyDusk.Details1
+tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+colorID: 0
+position: -572,-843
+---
+Maria: The floor was littered with pieces of plastic and broken glass;
+Maria: The walls covered with cheaply made posters, advertising everything and nothing.
+Joao: Against one, there was a semi-pile of construction bricks,
+Joao: most of them broken in various pieces.
+
+[[>|AlleyDusk.Part2]]
+[[Repeat|AlleyDusk.Details1]]
+===
+title: AlleyDusk.Part2
+tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+colorID: 0
+position: -318,-1104
+---
+Joao: <b>Joe</b> was facing the dead-end of the alley when, all of a sudden,
+Joao: he heard the sound of heavy footsteps rushing towards him. 
+Joao: As soon as he turned around,
+Joao: a punch sent him spinning awkwardly into the ground,
+Joao: such was the force thrown into it. 
+Maria: For just a second, he completely lost all logical awareness of space and time.
+Maria: Then, through the corner of his eye, he saw <b>Bruce</b> hovering above him,
+Maria: his fists clenched into an almost perceivable redness,
+Maria: and a face as if chizzled out of irate stone.
+Joao: <b>Joe</b> understood immediately the scenario he was in.
+Joao: <b>Bruce</b>, his friend, wanted to kill him.
+
+[[>|AlleyDusk.Part3]]
+[[Repeat|AlleyDusk.Part2]]
+===
+title: AlleyDusk.Part3
+tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+colorID: 0
+position: -64,-1108
+---
+Joao: <b>Bruce</b> bent over and, with his large grip,
+Joao: raised <b>Joe</b> up by his hair,
+Joao: the bitter smell of recent cigarettes burning the inside of his nostrils.
+Maria: Then, as if by some animalistic instinct of basic survival,
+Maria: <b>Joe</b> found himself picking up a brick off the floor, and...
+Joao: *THUD*
+Maria: <b>Bruce</b> fell heavily on his back and, 
+Maria: with blood seeping out of the newly made crevice on the side of his head,
+Maria: a burst of spasmic convultions taking hold of his entire body.
+Maria: Down on his knees, with the brick still in his hands,
+Maria: <b>Joe</b> remained immobile,
+Maria: his eyes completely fixed on <b>Bruce</b>'s.
+Joao: A few moments later, the twitching suddenly stopped. 
+Joao: Everything went static...
+Joao: except the red stream of blood.
+
+[[>|StreetsNight.Part1]]
+[[Repeat|AlleyDusk.Part3]]
+===
+title: StreetsNight.Part1
+tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+colorID: 1
+position: -569,-602
+---
+Joao: There's a heavy and cold darkness permeating through the starless night's air,
+Joao: only occasionally broken by the too dimly lit street lamps overhead.
+Maria: With gloved hands tucked in his winter coat's pockets and his hood up, 
+Maria: <b>Joe</b> walked on through the deserted streets of the city, bloodied and alone.
+Maria: The blood however, wasn't his. 
+Joao: A couple of hours before, and for the first time in his life, <b>Joe</b> murdered someone. 
+Joao: If at that moment you happened to ask him whom he killed and how, 
+Joao: he couldn't even begin to tell you. Most likely, he wouldn't even hear your voice.
+Maria: From the moment it happened, his mind became a blank mass of numb dullness,
+Maria: irregularly broken up by rushes of almost kaleidoscopic images,
+Maria: both in terms of color (mostly crimson) and logical sense. 
+Joao: He only knew that he wanted to go home and bury himself in his bed,
+Joao: blindly trusting his feet and legs to take him there, eventually. 
+
+[[>|StreetsNight.Part2]]
+[[Repeat|StreetsNight.Part1]]
+===
+title: StreetsNight.Part2
+tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+colorID: 1
+position: -325,-604
+---
+Maria: Suddenly, <b>Joe</b> froze beneath a streetlamp, 
+Maria: whose light was peridocally on-and-offing.
+Joao: A black cat was sitting, frozen still, right in front of him, 
+Joao: right at the edge of the ray of light,
+Joao: its slim and elegant figure appearing and disappearing in tandem with the flickering above.
+Maria: <b>Joe</b> stood there, 
+Maria: gazing at its greenish yellow eyes for what seemed like an eternity.
+
+[[>|StreetsNight.Part3]]
+[[Repeat|StreetsNight.Part2]]
+===
+title: StreetsNight.Part3
+tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+colorID: 1
+position: -63,-602
+---
+Maria: Finally, the cat broke the stillness of the moment and ran away into the darkness.
+Joao: For some reason unknown to himself, 
+Joao: <b>Joe</b> felt his head clear up a bit.
+Joao: It was still throbbing intensely, 
+Joao: but he could at least focus on his current situation.
+Maria: He began walking with a bit more of conscious purpose.
+Maria: Fifteen minutes later, he reached and entered his appartment.
+
+[[>|Appartment.Part1]]
+[[Repeat|StreetsNight.Part3]]
+===
+title: Appartment.Part1
+tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+colorID: 2
+position: -568,-369
+---
+Joao: As he entered, he felt the small appartment was even more claustrophobic than usual. 
+Joao: Keeping the lights off and the window's blinds semi-opened, 
+Joao: <b>Joe</b> threw himself into the unmade bed, 
+Joao: and layed there facing the partial gloom of the low ceiling, eyes almost shut.
+Maria: In spite of how much he wanted to sleep, he couldn't do it.
+Maria: His hyperactive mind refused let him drift off into blackness.
+Joao: Suddenly, he felt an uncontrolable urge to eat something.
+[[>|Appartment.Part2]]
+[[How was the inside of the appartment?|Appartment.Details1]]
+[[Repeat|Appartment.Part1]]
+===
+title: Appartment.Details1
+tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+colorID: 2
+position: -567,-134
+---
+Maria: It was made up of a single room with an adjoining bathroom,
+Joao: the single bed's head was at the right of the surprisingly wide window.
+Joao: On the opposite wall, there was a small stove <b>Joe</b> used to make his daily meals,
+Joao: along with a mini-fridge, not much unlike one you would find at a motel,
+Joao: left of which was a small cabinet with a few pots and pans. 
+Maria: Beneath the window, the top of the small desk was completely disorganized,
+Maria: a mess of books and scribbled papers in a twisted mingle.
+
+[[>|Appartment.Part2]]
+[[Repeat|Appartment.Details1]]
+===
+title: Appartment.Part2
+tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+colorID: 2
+position: -313,-371
+---
+Joao: Grabbing a couple of eggs from the fridge and a pan from the cabinet opposite,
+Joao: he began scrambling them. His movements were robotic and instictive, 
+Joao: almost as if he was on some sort of auto-pilot. 
+Maria: After clearing a space between the mess of papers on his desk,
+Maria: he settled the dish with the eggs on it,
+Maria: and, because he forgot it, <b>Joe</b> went back to the cupboard to fetch a fork.
+Maria: But then...
+Joao: *<b>KNOCK KNOCK KNOCK</b>*
+
+[[>|Appartment.Part3]]
+[[Repeat|Appartment.Part2]]
+===
+title: Appartment.Part3
+tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+colorID: 2
+position: -70,-375
+---
+Maria: From from head to toe, <b>Joe</b>'s entire being became petrified.
+Maria: His mind, however, was working like a turbine.
+Maria: thinking of everything and nothing at a mile a minute.
+Joao: He felt his hand reaching for the a slightly dull meal knife in the cupboard and,
+Joao: in a surprisingly silent manner, tippy-toeing to the door.
+Maria: Swallowing with his dry mouth, he peered through the peephole.
+
+[[>|Appartment.Part4]]
+[[Repeat|Appartment.Part3]]
+===
+title: Appartment.Part4
+tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+colorID: 2
+position: 177,-374
+---
+Maria: Nothing.
+Maria: The light in the outside corridor was turned on, but no movement could be seen.
+Joao: As he was about to open the door, 
+Joao: <b>Joe</b> felt something underneath his left foot.
+Joao: He was stepping on a sealed envelope, which he, 
+Maria: after dropping his sweaty hand from the door handle, picked up.
+Maria: <i>Someone slid this underneath the door... and I didn't even notice it...<i>,
+Maria: Joe half-thought, half-murmured to himself.
+
+[[>|Appartment.Part5]]
+[[How did the envelope look?|Appartment.Details2]]
+[[Repeat|Appartment.Part4]]
+===
+title: Appartment.Details2
+tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+colorID: 2
+position: 178,-131
+---
+Joao: It was a good quality, brown envelope, with nothing written on it, 
+Joao: the sleeve tightly glued, with no wrinkles, whatsoever.
+Joao: The paper inside felt somewhat... heavy?
+
+[[>|Appartment.Part5]]
+[[Repeat|Appartment.Details2]]
+===
+title: Appartment.Part5
+tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+colorID: 2
+position: 426,-373
+---
+Joao: After seating himself at his desk, 
+Joao: <b>Joe</b> used the knife in his hand to rip open the paper wrapping.
+Maria: Inside it, was no more than 6 polaroids, along with a small written note.
+Maria: One by one, he examined each photo,
+Maria: and one by one, he found his heart sinking further and further into his stomach.
+Joao: It all came rushing in at him, all at once.
+Maria: <b>The accusation...</b>
+Joao: <b>The fight...</b>
+Maria: <b>The blood...</b>
+<<wait 2>>
+Joao: <b>Joe</b> then grabs the note and, 
+Joao: even though his hand was trembling beyond his control,
+Joao: he manages to understand the phrase written on it.
+Maria: As soon as he finished reading it, he bolted to the toilet and threw up,
+Maria: but, nothing really substantial coming out since he hadn't eaten anything.
+Maria: He then moved to sink and washed his face with freezing water, and then paused.
+Joao: Looking in the mirror, and for the first time in several hours,
+Joao: he felt himself thinking with crystal clarity.
+Joao: He had to leave as quickly as possible,
+Joao: because someone knew he murdered <b>Bruce</b>.
+<<exit>>
+===

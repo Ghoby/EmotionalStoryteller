@@ -1,3 +1,78 @@
+title: AlleyDusk.Part1
+tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+colorID: 0
+position: -565,-1104
+---
+Joao: In the middle of the purpleish gloom of the alley,
+Joao: <b>Joe</b> stood examining the graffiti scribbled on the dirty walls.
+Joao: The day was rapidly giving away into night.
+Maria: He was waiting for <b>Bruce</b> to arrive,
+Maria: but he had no idea WHY he was even waiting in the first place. 
+Maria: The reasons for this meeting were completely unknown to him.
+Maria: <b>Joe</b> only knew that, for the past few weeks,
+Maria: <b>Bruce</b> had been acting in a rather odd manner.
+
+[[>|AlleyDusk.Details1]]
+[[Describe the alley.|AlleyDusk.Details1]]
+[[Repeat|AlleyDusk.Part1]]
+===
+title: AlleyDusk.Details1
+tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+colorID: 0
+position: -572,-843
+---
+Maria: The floor was littered with pieces of plastic and broken glass;
+Maria: The walls covered with cheaply made posters, advertising everything and nothing.
+Joao: Against one, there was a semi-pile of construction bricks,
+Joao: most of them broken in various pieces.
+
+[[>|AlleyDusk.Part2]]
+[[Repeat|AlleyDusk.Details1]]
+===
+title: AlleyDusk.Part2
+tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+colorID: 0
+position: -318,-1104
+---
+Joao: <b>Joe</b> was facing the dead-end of the alley when, all of a sudden,
+Joao: he heard the sound of heavy footsteps rushing towards him. 
+Joao: As soon as he turned around,
+Joao: a punch sent him spinning awkwardly into the ground,
+Joao: such was the force thrown into it. 
+Maria: For just a second, he completely lost all logical awareness of space and time.
+Maria: Then, through the corner of his eye, he saw <b>Bruce</b> hovering above him,
+Maria: his fists clenched into an almost perceivable redness,
+Maria: and a face as if chizzled out of irate stone.
+Joao: <b>Joe</b> understood immediately the scenario he was in.
+Joao: <b>Bruce</b>, his friend, wanted to kill him.
+
+[[>|AlleyDusk.Part3]]
+[[Repeat|AlleyDusk.Part2]]
+===
+title: AlleyDusk.Part3
+tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+colorID: 0
+position: -64,-1108
+---
+Joao: <b>Bruce</b> bent over and, with his large grip,
+Joao: raised <b>Joe</b> up by his hair,
+Joao: the bitter smell of recent cigarettes burning the inside of his nostrils.
+Maria: Then, as if by some animalistic instinct of basic survival,
+Maria: <b>Joe</b> found himself picking up a brick off the floor, and...
+Joao: *THUD*
+Maria: <b>Bruce</b> fell heavily on his back and, 
+Maria: with blood seeping out of the newly made crevice on the side of his head,
+Maria: a burst of spasmic convultions taking hold of his entire body.
+Maria: Down on his knees, with the brick still in his hands,
+Maria: <b>Joe</b> remained immobile,
+Maria: his eyes completely fixed on <b>Bruce</b>'s.
+Joao: A few moments later, the twitching suddenly stopped. 
+Joao: Everything went static...
+Joao: except the red stream of blood.
+
+[[>|StreetsNight.Part1]]
+[[Repeat|AlleyDusk.Part3]]
+===
 title: StreetsNight.Part1
 tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
 colorID: 1
@@ -172,81 +247,4 @@ Joao: he felt himself thinking with crystal clarity.
 Joao: He had to leave as quickly as possible,
 Joao: because someone knew he murdered <b>Bruce</b>.
 <<exit>>
-
-
-===
-title: AlleyDusk.Part1
-tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
-colorID: 0
-position: -565,-1104
----
-Joao: In the middle of the purpleish gloom of the alley,
-Joao: <b>Joe</b> stood examining the graffiti scribbled on the dirty walls.
-Joao: The day was rapidly giving away into night.
-Maria: He was waiting for <b>Bruce</b> to arrive,
-Maria: but he had no idea WHY he was even waiting in the first place. 
-Maria: The reasons for this meeting were completely unknown to him.
-Maria: <b>Joe</b> only knew that, for the past few weeks,
-Maria: <b>Bruce</b> had been acting in a rather odd manner.
-
-[[>|AlleyDusk.Part2]]
-[[Describe the alley.|AlleyDusk.Details1]]
-[[Repeat|AlleyDusk.Part1]]
-===
-title: AlleyDusk.Details1
-tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
-colorID: 0
-position: -572,-843
----
-Maria: The floor was littered with pieces of plastic and broken glass;
-Maria: The walls covered with cheaply made posters for everything and nothing.
-Joao: Against one, there was a semi-pile of construction bricks,
-Joao: most of them broken in various pieces.
-
-[[>|AlleyDusk.Part2]]
-[[Repeat|AlleyDusk.Details1]]
-===
-title: AlleyDusk.Part2
-tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
-colorID: 0
-position: -318,-1104
----
-Joao: <b>Joe</b> was facing the dead-end of the alley when, all of a sudden,
-Joao: he heard the sound of heavy footsteps rushing towards him. 
-Joao: As soon as he turned to see who it was,
-Joao: a punch sent him spinning awkwardly into the ground,
-Joao: such was the force thrown into it. 
-Maria: For just a second, he completely lost all logical awareness of space and time.
-Maria: Then, through the corner of his eye, he saw <b>Bruce</b> hovering above him,
-Maria: his fists clenched into an almost perceivable redness,
-Maria: and a face as if chizzled out of irate stone.
-Joao: <b>Joe</b> understood immediately the scenario he was in.
-Joao: <b>Bruce</b> wanted to kill him.
-
-[[>|AlleyDusk.Part3]]
-[[Repeat|AlleyDusk.Part2]]
-===
-title: AlleyDusk.Part3
-tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
-colorID: 0
-position: -64,-1108
----
-Joao: <b>Bruce</b> bent over and, with his large grip,
-Joao: raised him up by his hair,
-Joao: the bitter smell of recent cigarettes burning the inside of his nostrils.
-Maria: Then, as if by some animalistic instinct of basic survival,
-Maria: <b>Joe</b> found himself picking up a brick off the floor, and...
-Joao: *THUD*
-Maria: <b>Bruce</b> fell heavily on his back and, 
-Maria: with blood seeping out of the newly made crevice on the side of his head,
-Maria: a burst of convultions toke hold of his entire body.
-Maria: Down on his knees, with the brick still in his hands,
-Maria: <b>Joe</b> remained immobile,
-Maria: his eyes completely fixed on <b>Bruce</b>'s.
-Joao: A few moments later, the twitching suddenly stops. 
-Joao: Everything goes static...
-Joao: except the red stream of blood.
-
-[[>|StreetsNight.Part1]]
-[[Repeat|AlleyDusk.Part3]]
 ===

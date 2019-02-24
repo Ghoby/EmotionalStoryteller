@@ -342,7 +342,7 @@ namespace YarnDialog
 
             if (_currentNode.Equals(dialogue.currentNode)) yield break;
             _currentNode = dialogue.currentNode;
-
+            
             var tags = dialogue.GetTagsForNode(_currentNode);
             foreach (var tag in tags)
             {
