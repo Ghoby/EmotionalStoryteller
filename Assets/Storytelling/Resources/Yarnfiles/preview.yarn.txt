@@ -1,5 +1,5 @@
 title: Start.Start
-tags: xixizao | User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
+tags: 1 | TestePreCond1 TestePreCond2 | User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
 colorID: 1
 position: 539,256
 ---
@@ -14,7 +14,7 @@ Maria: Ou talvez fazer um plano de estudo?
 [[Plano de Estudo|StudyPlan.propose]]
 ===
 title: StudyPlan.propose
-tags: 
+tags: 2 | |
 colorID: 2
 position: 626,539
 ---
@@ -25,7 +25,7 @@ Maria: Queres adicionar ao teu calendário?
 [[Podes explicar melhor?|StudyPlan.Explain]]
 ===
 title: Grades.good
-tags: 
+tags: 3 | | 
 colorID: 2
 position: 375,538
 ---
@@ -42,7 +42,7 @@ Joao: Continua o bom trabalho.
 <<exit>>
 ===
 title: StudyPlan.Explain
-tags: 
+tags: 4 | |
 colorID: 2
 position: 880,541
 ---

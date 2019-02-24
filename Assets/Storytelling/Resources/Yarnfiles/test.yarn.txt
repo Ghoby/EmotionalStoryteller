@@ -1,5 +1,5 @@
 title: AlleyDusk.Part1
-tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+tags: 1 | Y Z | User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
 colorID: 0
 position: -565,-1104
 ---
@@ -17,7 +17,7 @@ Maria: <b>Bruce</b> had been acting in a rather odd manner.
 [[Repeat|AlleyDusk.Part1]]
 ===
 title: AlleyDusk.Details1
-tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+tags: 1.1 | X | User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
 colorID: 0
 position: -572,-843
 ---
@@ -30,7 +30,7 @@ Joao: most of them broken in various pieces.
 [[Repeat|AlleyDusk.Details1]]
 ===
 title: AlleyDusk.Part2
-tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+tags: 2 | X | User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
 colorID: 0
 position: -318,-1104
 ---
@@ -50,7 +50,7 @@ Joao: <b>Bruce</b>, his friend, wanted to kill him.
 [[Repeat|AlleyDusk.Part2]]
 ===
 title: AlleyDusk.Part3
-tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+tags: 3 | X | User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
 colorID: 0
 position: -64,-1108
 ---
@@ -74,7 +74,7 @@ Joao: except the red stream of blood.
 [[Repeat|AlleyDusk.Part3]]
 ===
 title: StreetsNight.Part1
-tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+tags: 4 | X | User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
 colorID: 1
 position: -569,-602
 ---
@@ -96,11 +96,11 @@ Joao: blindly trusting his feet and legs to take him there, eventually.
 [[Repeat|StreetsNight.Part1]]
 ===
 title: StreetsNight.Part2
-tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+tags: 5 | X | User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
 colorID: 1
 position: -325,-604
 ---
-Maria: Suddenly, <b>Joe</b> froze beneath a streetlamp, 
+Maria: <b>Joe</b> froze beneath a streetlamp, 
 Maria: whose light was peridocally on-and-offing.
 Joao: A black cat was sitting, frozen still, right in front of him, 
 Joao: right at the edge of the ray of light,
@@ -112,7 +112,7 @@ Maria: gazing at its greenish yellow eyes for what seemed like an eternity.
 [[Repeat|StreetsNight.Part2]]
 ===
 title: StreetsNight.Part3
-tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+tags: 6 | X | User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
 colorID: 1
 position: -63,-602
 ---
@@ -128,23 +128,21 @@ Maria: Fifteen minutes later, he reached and entered his appartment.
 [[Repeat|StreetsNight.Part3]]
 ===
 title: Appartment.Part1
-tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+tags: 7 | X | User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
 colorID: 2
 position: -568,-369
 ---
 Joao: As he entered, he felt the small appartment was even more claustrophobic than usual. 
 Joao: Keeping the lights off and the window's blinds semi-opened, 
-Joao: <b>Joe</b> threw himself into the unmade bed, 
-Joao: and layed there facing the partial gloom of the low ceiling, eyes almost shut.
-Maria: In spite of how much he wanted to sleep, he couldn't do it.
-Maria: His hyperactive mind refused let him drift off into blackness.
-Joao: Suddenly, he felt an uncontrolable urge to eat something.
+Joao: <b>Joe</b> threw himself into the unmade bed and,
+Joao: laying there facing the partial gloom of the low ceiling, he shut his eyes.
+Maria: Sleep took over his body.
 [[>|Appartment.Part2]]
 [[How was the inside of the appartment?|Appartment.Details1]]
 [[Repeat|Appartment.Part1]]
 ===
 title: Appartment.Details1
-tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+tags: 7.1 | X | User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
 colorID: 2
 position: -567,-134
 ---
@@ -160,10 +158,12 @@ Maria: a mess of books and scribbled papers in a twisted mingle.
 [[Repeat|Appartment.Details1]]
 ===
 title: Appartment.Part2
-tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+tags: 8 | X | User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
 colorID: 2
 position: -313,-371
 ---
+Joao: A couple of hours later, <b>Joe</b> woke up.
+Maria: He felt an uncontrolable urge to eat something.
 Joao: Grabbing a couple of eggs from the fridge and a pan from the cabinet opposite,
 Joao: he began scrambling them. His movements were robotic and instictive, 
 Joao: almost as if he was on some sort of auto-pilot. 
@@ -177,7 +177,7 @@ Joao: *<b>KNOCK KNOCK KNOCK</b>*
 [[Repeat|Appartment.Part2]]
 ===
 title: Appartment.Part3
-tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+tags: 9 | X | User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
 colorID: 2
 position: -70,-375
 ---
@@ -192,7 +192,7 @@ Maria: Swallowing with his dry mouth, he peered through the peephole.
 [[Repeat|Appartment.Part3]]
 ===
 title: Appartment.Part4
-tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+tags: 10 | X | User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
 colorID: 2
 position: 177,-374
 ---
@@ -210,7 +210,7 @@ Maria: Joe half-thought, half-murmured to himself.
 [[Repeat|Appartment.Part4]]
 ===
 title: Appartment.Details2
-tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+tags: 10.1 | X |  User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
 colorID: 2
 position: 178,-131
 ---
@@ -222,7 +222,7 @@ Joao: The paper inside felt somewhat... heavy?
 [[Repeat|Appartment.Details2]]
 ===
 title: Appartment.Part5
-tags: User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
+tags: 11 | X | User.Emotion.Happiness.1,0 Joao.Emotion.Neutral.0,9 Maria.Emotion.Neutral.0,9
 colorID: 2
 position: 426,-373
 ---
@@ -232,7 +232,7 @@ Maria: Inside it, was no more than 6 polaroids, along with a small written note.
 Maria: One by one, he examined each photo,
 Maria: and one by one, he found his heart sinking further and further into his stomach.
 Joao: It all came rushing in at him, all at once.
-Maria: <b>The accusation...</b>
+Maria: <b>The alley...</b>
 Joao: <b>The fight...</b>
 Maria: <b>The blood...</b>
 <<wait 2>>

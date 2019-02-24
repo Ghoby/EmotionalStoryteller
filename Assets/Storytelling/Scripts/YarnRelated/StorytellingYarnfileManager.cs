@@ -3,18 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using ReGoap.Core;
 using System.IO;
+using Yarn;
+using Utilities;
 
 public class StorytellingYarnfileManager : MonoBehaviour
 {
     string OriginalPath = "Yarnfiles/test.yarn"; // TO DO - get it from interface input
     string SolutionPath = "Assets/Storytelling/Resources/Yarnfiles/NewYarnfile.yarn.txt";
     TextAsset YarnfileAsset;
+    Yarn.Dialogue plot;
     Dictionary<int, StorytellingYarnfileNodeScript> Nodes;
 
     bool CanCreateOutput;
 
     void Start()
     {
+        /*
+        plot = new Yarn.Dialogue(new Yarn.MemoryVariableStore())
+        {
+            LogDebugMessage = delegate (string message)
+            {
+                DebugLog.Log(message);
+            },
+            LogErrorMessage = delegate (string message)
+            {
+                DebugLog.Err(message);
+            }
+        };
+
+        plot.LoadFile("C:/Users/Duarte Ferreira/Documents/_tese/EmotionalStoryteller/Assets/Storytelling/Resources/Yarnfiles/preview.yarn.txt");
+        */
+
+        // TO DO -> VER SE PARTE ACIMA É NECESSÁRIA; EU PREFIRO USAR UMA IMPLEMENTAÇÃO SÓ MINHA, TBH
+
         CanCreateOutput = false;
 
         Nodes = new Dictionary<int, StorytellingYarnfileNodeScript>();
@@ -22,6 +43,11 @@ public class StorytellingYarnfileManager : MonoBehaviour
         ReadYarnfile();
         List<string> lines = new List<string>(YarnfileAsset.text.Split('\n'));
         CreateNodesFromYarnfile(lines);
+    }
+
+    void Update()
+    {
+        
     }
 
     void ReadYarnfile()
@@ -56,7 +82,7 @@ public class StorytellingYarnfileManager : MonoBehaviour
                 index++;
             }
             nodeTemp += line + "\n"; // stack node
-            if (line == "===\r") // flush node
+            if (line == "===\r" || line == "===") // flush node
             {
                 StorytellingYarnfileNodeScript yarnNode = new StorytellingYarnfileNodeScript(index, nodeTemp);
                 AddNode(index, yarnNode);
