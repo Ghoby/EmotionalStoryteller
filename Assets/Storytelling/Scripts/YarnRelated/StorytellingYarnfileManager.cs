@@ -11,7 +11,6 @@ public class StorytellingYarnfileManager : MonoBehaviour
     string OriginalPath = "Yarnfiles/test.yarn"; // TO DO - get it from interface input
     string SolutionPath = "Assets/Storytelling/Resources/Yarnfiles/NewYarnfile.yarn.txt";
     TextAsset YarnfileAsset;
-    Yarn.Dialogue plot;
     Dictionary<int, StorytellingYarnfileNodeScript> Nodes;
 
     bool CanCreateOutput;
@@ -90,9 +89,6 @@ public class StorytellingYarnfileManager : MonoBehaviour
                 nodeTemp = "";
             }
         }
-
-        //print(Nodes["Start.Start"].GetBody());
-        //print(Nodes["Grades.good"].GetBody());        
     }
 
     string GetNameForNode(string firstLine)

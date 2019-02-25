@@ -13,6 +13,7 @@ public class StorytellingYarnfileNodeScript : SmState
 
     public StorytellingYarnfileNodeScript(int index, string body)
     {
+        base.Awake();
         Index = index;
         Body = body;
        
@@ -21,12 +22,6 @@ public class StorytellingYarnfileNodeScript : SmState
         {
             print(p);
         }
-    }
-
-    protected override void Awake()
-    {
-        base.Awake();
-        FetchPreConditions();
     }
 
     List<string> FetchPreConditions()
