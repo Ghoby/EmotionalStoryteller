@@ -1,66 +1,7 @@
-title: StreetsNight.Part1
-tags: 
-colorID: 1
-position: -1409,-1915
----
-Joao: There was a heavy and cold darkness seeping out of the starless night's air,
-Joao: only occasionally broken up by the dimly lit street lamps overhead.
-Maria: With gloved hands tucked deep in his winter coat's pockets and his hood up, 
-Maria: <b>Joe</b> slowly paced through the deserted streets of the city's suburbs, 
-Maria: clothes bloodied and alone.
-Maria: The blood however, wasn't his. 
-Joao: A couple of hours before, and for the first time in his life, <b>Joe</b> murdered someone. 
-Joao: If, at the present moment, you happened to ask him whom he killed, or how, 
-Joao: he couldn't even begin to tell you. 
-Joao: Most likely, he wouldn't even hear your voice.
-Maria: From the moment it happened, his mind became a blank mass of numb dullness,
-Maria: irregularly broken up by crimson rushes of flashing images,
-Joao: He only knew he wanted to go home and bury himself in his bed,
-Joao: and was blindly trusting his feet and legs to take him there by themselves. 
-
-[[>|StreetsNight.Part2]]
-[[Repeat|StreetsNight.Part1]]
-===
-title: StreetsNight.Part2
-tags: 
-colorID: 1
-position: -1163,-1916
----
-Maria: <b>Joe</b> found himself stopping beneath a streetlamp, 
-Maria: whose light was peridocally on-and-offing.
-Joao: A black cat was sitting right in front of him, poised almost like a living statue
-Joao: right at the edge of the ray of light coming from above,
-Joao: its slim and elegant figure appearing and disappearing in tandem with the flickering above.
-Maria: He stood there,
-Maria: the hairs in his arms and back all prickled up
-Maria: gazing at the animal's greenish yellow eyes for what seemed like an eternity.
-Maria: An almost relaxing warm and gentle breeze flowed right between them.
-
-[[>|StreetsNight.Part3]]
-[[Repeat|StreetsNight.Part2]]
-===
-title: StreetsNight.Part3
-tags: 
-colorID: 1
-position: -911,-1917
----
-Maria: Finally, the cat broke the stillness of the moment and ran away into the darkness.
-Joao: To his surprise, the dark clouds in his mind weren't there anymore, 
-Joao: as if the breeze had blown them away into mental oblivion.
-Joao: His head was indeed still pounding (and quite vividely),
-Joao: but he could, at the very least, think with some sense of clarity.
-Maria: He began walking with a bit more of conscious purpose.
-Maria: A few twists and turns and, fifteen minutes after the episode with the cat,
-Maria: he reached his appartment.
-
-[[>|ThirstyDog.Part1]]
-[[Repeat|StreetsNight.Part3]]
-===
-
 title: ThirstyDog.Part1
 tags: 
 colorID: 6
-position: -1412,-1570
+position: -1894,-1862
 ---
 Joao: It was friday afternoon,
 Joao: and the Thirsty Dog Bar was bursting with an excited buzz of cursing and laughter.
@@ -80,7 +21,7 @@ Joao: so the present situation was just another example of it.
 title: ThirstyDog.Part2
 tags: 
 colorID: 6
-position: -1168,-1569
+position: -1542,-1856
 ---
 Joao: "And th-and then, and then, the guy and his girl, just like..." 
 Joao: "Got run over by an invisible car!",
@@ -103,13 +44,87 @@ Joao: He could finally get some decent shuteye, even if only for a couple of day
 Joao: Plus, he could be with Josie. 
 Joao: That what he was looking forward to the most.
 
-[[>|ThirstyDog.Part3]]
+[[>|StreetsNight.Part1]]
 [[Repeat|ThirstyDog.Part2]]
+===
+title: StreetsNight.Part1
+tags: 
+colorID: 1
+position: -1221,-1860
+---
+Joao: There was a heavy and cold darkness seeping out of the starless night's air,
+Joao: only occasionally broken up by the dimly lit street lamps overhead.
+Maria: With gloved hands tucked deep in his winter coat's pockets and his hood up, 
+Maria: <b>Joe</b> slowly paced through the deserted streets of the city's suburbs, 
+Maria: clothes bloodied and alone.
+Maria: The blood however, wasn't his. 
+Joao: A couple of hours before, and for the first time in his life, <b>Joe</b> murdered someone. 
+Joao: If, at the present moment, you happened to ask him whom he killed, or how, 
+Joao: he couldn't even begin to tell you. 
+Joao: Most likely, he wouldn't even hear your voice.
+Maria: From the moment it happened, his mind became a blank mass of numb dullness,
+Maria: irregularly broken up by crimson rushes of flashing images,
+Joao: He only knew he wanted to go home and bury himself in his bed,
+Joao: and was blindly trusting his feet and legs to take him there by themselves. 
+
+[[>|StreetsNight.Part2]]
+[[Repeat|StreetsNight.Part1]]
+===
+title: StreetsNight.Part2
+tags: 
+colorID: 1
+position: -850,-1850
+---
+Maria: <b>Joe</b> found himself stopping beneath a streetlamp, 
+Maria: whose light was peridocally on-and-offing.
+Joao: A black cat was sitting right in front of him, poised almost like a living statue
+Joao: right at the edge of the ray of light coming from above,
+Joao: its slim and elegant figure appearing and disappearing in tandem with the flickering above.
+Maria: He stood there,
+Maria: the hairs in his arms and back all prickled up
+Maria: gazing at the animal's greenish yellow eyes for what seemed like an eternity.
+Maria: An almost relaxing warm and gentle breeze flowed right between them.
+
+[[>|StreetsNight.Part3]]
+[[Repeat|StreetsNight.Part2]]
+===
+title: StreetsNight.Part3
+tags: 
+colorID: 1
+position: -1908,-1567
+---
+Maria: Finally, the cat broke the stillness of the moment and ran away into the darkness.
+Joao: To his surprise, the dark clouds in his mind weren't there anymore, 
+Joao: as if the breeze had blown them away into mental oblivion.
+Joao: His head was indeed still pounding (and quite vividely),
+Joao: but he could, at the very least, think with some sense of clarity.
+Maria: He began walking with a bit more of conscious purpose.
+Maria: A few twists and turns and, fifteen minutes after the episode with the cat,
+Maria: he reached his appartment.
+
+[[>|Appartment.Part1]]
+[[Repeat|StreetsNight.Part3]]
+===
+title: Appartment.Part1
+tags: 
+colorID: 2
+position: -1550,-1575
+---
+Joao: As he entered the small appartment, he felt it was even more claustrophobic than usual.
+Joao: Keeping the lights off and the window's blinds semi-opened,
+Joao: <b>Joe</b> mindlessly hung the bloodied coat from the hanger on the back of the door.
+Joao: He threw himself into the unmade bed, shoes on and everything.
+Maria: As he was laying there, facing the partial gloom of the low, smudged ceiling,
+Maria: he shut his eyes.
+Maria: Sleep took over him.
+
+[[>|ThirstyDog.Part3]]
+[[Repeat|Appartment.Part1]]
 ===
 title: ThirstyDog.Part3
 tags: 
 colorID: 6
-position: -900,-1573
+position: -1232,-1575
 ---
 Maria: "Hey, do you guys want anything else from the bar?", asked <b>Darius</b>.
 Joao: "Nah, I'll pass," <b>Joe</b> said, 
@@ -126,50 +141,13 @@ Joao: From across the table <b>Joe</b> found himself in a slightly nervous antec
 Joao: After a few seconds of thought, <b>Bruce</b> finally said what he wanted.
 Joao: "You need to do something for me".
 
-[[>|ThirstyDog.Part4]]
-[[Repeat|ThirstyDog.Part3]]
-===
-title: ThirstyDog.Part4
-tags: 
-colorID: 6
-position: -637,-1572
----
-Maria: "Hmm... sure, sure. What is it?" <b>Joe</b> asked, on the edge of reluctance.
-Joao: <b>Bruce</b> went again into silent thought.
-Joao: His posture was now almost as if cold and distant.
-Joao: "I need you to meet me in the alley behind the drug store in Cleveland Street, today."
-Joao: "8:00 PM, sharp",
-Joao: this last word accompanied with an audible tap on the table by his right index finger.
-Maria: Despite being mildly confusion, <b>Joe</b> nodded affirmatively.
-Maria: "O-Okay... I'll be sure to be there."
-Joao: "Good."
-Joao: "Be there."
-Joao: "Oh, and there comes Darius," and a radiant smile returned to <b>Bruce</b>'s face.
-
-[[>|Appartment.Part1]]
-[[Repeat|ThirstyDog.Part4]]
-===
-
-title: Appartment.Part1
-tags: 
-colorID: 2
-position: -1424,-1276
----
-Joao: As he entered, he felt the small appartment was even more claustrophobic than usual.
-Joao: Keeping the lights off and the window's blinds semi-opened,
-Joao: <b>Joe</b> mindlessly hung the bloodied coat from the hanger on the back of the door.
-Joao: He threw himself into the unmade bed, shoes on and everything.
-Maria: As he was laying there, facing the partial gloom of the low, smudged ceiling,
-Maria: he shut his eyes.
-Maria: Sleep took over him.
-
 [[>|Appartment.Part2]]
-[[Repeat|Appartment.Part1]]
+[[Repeat|ThirstyDog.Part3]]
 ===
 title: Appartment.Part2
 tags: 
 colorID: 2
-position: -1159,-1282
+position: -1899,-1295
 ---
 Joao: A couple of hours later, <b>Joe</b> woke up.
 Maria: He felt an uncontrolable urge to eat something.
@@ -189,7 +167,7 @@ Joao: He got up to see what else he could eat, when his phone started to ring.
 title: Appartment.Part3
 tags: 
 colorID: 2
-position: -896,-1288
+position: -1546,-1304
 ---
 Maria: <b>Josie</b> was the caller.
 Maria: From head to toe, <b>Joe</b> suddenly grew heavily numb.
@@ -208,13 +186,13 @@ Maria: And, as if by some will of its own, his thumb accepted the call.
 title: Appartment.Part4
 tags: 
 colorID: 2
-position: -632,-1292
+position: -1209,-1308
 ---
 Maria: "Hey baby! I'm so sorry I'm calling you at 1 AM. Hope I didn't wake you..."
 Joao: <b>Joe</b>'s mouth was completely dry, as if his throat was filled with sand.
 Joao: "*cough* H-hey! *cough* Uhh-uh n-no, no, I-I was a-awake, don't w-worry 'bout it."
 Maria: "Well... you do sound a bit drousy," she said with a warm giggle.
-Maria: "I know the day was probably tough."
+Maria: "I know the day was probably tough on you."
 Joao: "..."
 Maria: "Well, I'll be quick then," she said in a reassuring tone.
 Maria: "I was just wondering if you wanted to grab breakfast with me tomorrow morning."
@@ -227,15 +205,37 @@ Maria: "Cool. Now, get yourself a good night's rest. Can't wait to be with you t
 Maria: "Love you, Joey!"
 Joao: "L-love you too... I r-really do..."
 Maria: She hung up, but not without audibly smiling first.
-Maria: And <b>Joe</b>, phone still in his tightned grip, layed himself down on the bed.
+Maria: <b>Joe</b>, phone still in his tightned grip, layed himself down on the bed.
+Maria: And he closed his eyes.
+
+[[>|ThirstyDog.Part4]]
+[[Repeat|Appartment.Part4]]
+===
+title: ThirstyDog.Part4
+tags: 
+colorID: 6
+position: -898,-1310
+---
+Maria: "Hmm... sure, sure. What is it?" <b>Joe</b> asked, on the edge of reluctance.
+Joao: <b>Bruce</b> went again into silent thought.
+Joao: His posture was now almost as if cold and distant.
+Joao: "I need you to meet me in the alley behind the drug store in Cleveland Street, today."
+Joao: "8:00 PM, sharp",
+Joao: this last word accompanied with an audible tap on the table by his right index finger.
+Maria: Despite being mildly confusion, <b>Joe</b> nodded affirmatively.
+Maria: "O-Okay... I'll be sure to be there."
+Joao: "Good."
+Joao: "Be there."
+Joao: "Oh, and there comes Darius," 
+Joao: and a radiant smile returned to <b>Bruce</b>'s face.
 
 [[>|Mandys.Part1]]
-[[Repeat|Appartment.Part4]]
+[[Repeat|ThirstyDog.Part4]]
 ===
 title: Mandys.Part1
 tags: 
 colorID: 5
-position: -1433,-1032
+position: -1905,-1046
 ---
 Joao: It was a cloudy Saturday morning. <b>Joe's</b> phone clock marked 10:12 AM.
 Joao: Since he woke up before 8:00 (a nightmare of the <i>event</i> startled him awake),
@@ -257,28 +257,29 @@ Maria: a cheerful "Joey!" came to his ears.
 title: Mandys.Part2
 tags: 
 colorID: 5
-position: -1160,-1028
+position: -1567,-1037
 ---
-Maria: <b>Josie</b> had already ordered, received her food and was begun eating. 
-Maria: "I washh pretty shhtarving, shho I hope you don'th mind," 
-Maria: she said in a sorry, yet cheerful, tone, her mouth filled with buttered toast.
-Joao: "No, no, It's fine." He only ordered a coffee with cream.
-Joao: He was terribly hungry but, at the same time,
-Joao: felt like he could throw up at any moment.
-Joao: But seeing her like that, in her usual "Good Morning, Sunshine!" mood
-Joao: (even in face of the day's grey and morose weather),
-Joao: made him forget, for just a second, the events of the previous day.
-Maria: After having a good sip of her soy latte, she asked
-Maria: "So, tell me, how did it go yesterday?", an inviting smile opened up to him.
-Joao: "Uhh... 'it'? 'It' what?"
-Maria: "The Creative Writing exam...? 
-Maria: "The one you were flipping over not even two days ago?"
-Joao: "O-oh... That! That o-one... Yeah... it-it went okay, I guess."
-Joao: He lifted the cup to his lips, but didn't rememeber to sip his coffee.
-Maria: "Stop being modest. With the ridiculous amount of study and work you poured into it,"
-Maria: "I'm absolutely convinced you killed it."
-Joao: The half-empty cup slipped from his fingers and fell with a dry THUD on the table,
-Joao: spilling the creamed coffee over his empty plate and his jeans.
+Maria: "Hello, sleepyhead," she said in her usual <i>Good Morning, Sunshine!</i> mood.
+Joao: "H-hey, Josie," he half-said, half-mumbled <b>Joe</b>, and then gave her a quick kiss. 
+Joao: His lips were practically sandpaper, but she didn't seem to mind.
+Maria: <b>Josie</b> still hadn't ordered anything. 
+Maria: He couldn't help but feel guilty for making her wait for him, her stomach probably empty.
+Maria: "Yesterday you sounded pretty tired..." she said,
+Maria: not managing to hide a slightly worried tone.
+Maria: "I'm sorry, I probably shouldn't have called at that hour..."
+Joao: "N-n-no, d-don't worry about it." <b>Joe</b> tried his best to sound reassuring.
+Joao: "I was... and still am, p-pretty tired..."
+Joao: "You managed to cheer me up, though," this he managed to say without stuttering.
+Maria: "Well," she said at the same time she patted his hand,
+Maria: "I think a good 'Pick-me up' breakfast could really do you wonders," and smiled.
+Maria: "How about we order something?"
+Joao: <b>Josie</b> asked for a full-on english breakfast, along with a cappuccino.
+Joao: <b>Joe</b> went with some buttered toast and plain black coffee. 
+Joao: He did it more to fill the corresponding space in the table, than to fill his own gut.
+Joao: He felt it rumbling like an unhinged earthquake, 
+Joao: but also knew that, if any food came in, 
+Joao: it could just very easily come out in the following minute.
+Joao: The coffee, however, managed to sooth him, and his stomach, down a bit.
 
 [[>|Mandys.Part3]]
 [[Repeat|Mandys.Part2]]
@@ -286,21 +287,50 @@ Joao: spilling the creamed coffee over his empty plate and his jeans.
 title: Mandys.Part3
 tags: 
 colorID: 5
-position: -896,-1037
+position: -1231,-1033
+---
+Maria: "So, tell me, how did it go yesterday?", her smile inviting him to cheer up a little.
+Joao: "Uhh... 'it'? 'It', what? What d-do you mean?"
+Maria: "The Creative Writing exam, silly. Was it as hard as you thought it would be?"
+Joao: "O-oh... That! That o-one... Yeah... it-it went okay, I guess.", he managed to say,
+Joao: and raised his half-empty cup to his lips, but didn't remember to take a sip.
+Joao: "Mrs. King was probably in a forgiving mood when she wrote it."
+Maria: "That's so great, baby! I mean, with the ridiculous amount of study hours you poured into it,"
+Maria: "I'm absolutely sure you killed it!"
+Joao: The cup slipped from his fingers and fell with a dry *THUD* on the table,
+Joao: spilling coffee all over its surface and his jeans.
+
+[[>|Mandys.Part4]]
+[[Repeat|Mandys.Part3]]
+===
+title: Mandys.Part4
+tags: 
+colorID: 5
+position: -899,-1053
 ---
 Joao: "I-I-I-I-I-I'm s-sorry!", 
-Joao: was all <b>Joe</b>, now a stuttering nervous wreck, could find in himself to say.
+Joao: was all <b>Joe</b>, now a completely nervous wreck, could find in himself to say.
 Maria: "No no no no. Baby, don't apologize. It's okay! It happens," she reassured him,
-Maria: while using both of their napkins to <b>Joe's</b> clothes and then the table.
-Maria: "Baby, it's okay, really. It happens," and she put her hand over his.
-Maria: "Now, I think it's pretty obvious that there's something wrong with you."
-Maria: "So, we're going to my place and you're going to tell me what is happening."
+Maria: while using both of their napkins to dry <b>Joe's</b> clothes and then the table.
+Maria: "Baby, it's okay, really. It happens."
+Joao: "No no no no no no no, I-I-I-I'm j-just-t, I'm just..."
+Maria: "Joe, baby, look at me. Please, please look at me," she said with a surprising calmness,
+Maria: and again, she put her hand over his, squeezing it tenderly.
+Maria: "In these past couple of years, I've seen you tired. I've seen you exhausted."
+Maria: "But this... This doesn't feel like any of that."
 Joao: "B-b-but..."
-Maria: "Don't even think about refusing. We're going, okay?!" and she got up,
-Maria: payed both their tabs and took him by the hand to her car.
-Maria: Like an hypnothized trained dog, he simply followed her.
-Maria: Before starting it up, she softly stroke the back of her hand on his cheek.
-Maria: "It's all okay, Joey dear. Believe me."
+Maria: "Please, baby, let's go to my place. Right now. I need you to tell me what is going on."
+Joao: "B-b-b-bu-..."
+Maria: "Joe, honey, please. Trust me. You can trust me, okay?"
+Joao: "..."
+Maria: "Then please, let's go to my place. I'll drive us there."
+Joao: He managed to give a couple of slight nods.
+Joao: <b>Josie</b> got up and payed both their tabs,
+Joao: while also apologizing for leaving without getting the food first.
+Joao: She then took him by the hand and walked him to her car.
+Maria: Like a trained dog, he simply followed her, in dead silence.
+Maria: Before starting the motor, she softly stroke the back of her hand on his cheek.
+Maria: "It's all gonna be okay, Joey dear. Believe me."
 Maria: And they drove off.
 <<exit>>
 ===
