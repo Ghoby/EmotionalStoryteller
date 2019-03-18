@@ -1,6 +1,6 @@
 ﻿using ReGoap.Unity;
 
-public class StorytellingHappyMoodScript : ReGoapGoal<string, object>
+public class StorytellingDourMoodGoal : ReGoapGoal<string, object>
 {
     protected override void Awake()
     {
