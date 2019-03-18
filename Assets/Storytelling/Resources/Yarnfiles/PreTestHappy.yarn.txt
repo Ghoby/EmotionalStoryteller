@@ -1,5 +1,5 @@
 title: ThirstyDog.Part1
-tags: 
+tags: 1 | [canFlashback:True] | [RELAX:0.85] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
 colorID: 6
 position: -1894,-1862
 ---
@@ -19,7 +19,7 @@ Joao: so the present situation was just another example of it.
 [[Repeat|ThirstyDog.Part1]]
 ===
 title: ThirstyDog.Part2
-tags: 
+tags: 2 | [canFlashback:True] | [RELAX:0.85] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
 colorID: 6
 position: -1542,-1856
 ---
@@ -48,7 +48,7 @@ Joao: That what he was looking forward to the most.
 [[Repeat|ThirstyDog.Part2]]
 ===
 title: StreetsNight.Part1
-tags: 
+tags: 9 | [notEssential:True] | [GO_HOME:0.5; REST:0.2; BE_CALM:0.3] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
 colorID: 1
 position: -1221,-1860
 ---
@@ -71,7 +71,7 @@ Joao: and was blindly trusting his feet and legs to take him there by themselves
 [[Repeat|StreetsNight.Part1]]
 ===
 title: StreetsNight.Part2
-tags: 
+tags: 10 | [canFlashback:True; notEssential:True] | [GO_HOME:0.5; REST:0.2; BE_CALM:0.7] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
 colorID: 1
 position: -850,-1850
 ---
@@ -89,7 +89,7 @@ Maria: An almost relaxing warm and gentle breeze flowed right between them.
 [[Repeat|StreetsNight.Part2]]
 ===
 title: StreetsNight.Part3
-tags: 
+tags: 11 | [notEssential:True] | [GO_HOME:1.0; REST:0.2; BE_CALM:0.7] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
 colorID: 1
 position: -1908,-1567
 ---
@@ -106,7 +106,7 @@ Maria: he reached his appartment.
 [[Repeat|StreetsNight.Part3]]
 ===
 title: Appartment.Part1
-tags: 
+tags: 12 | [] | [REST:0.4; BE_CALM:0.7] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
 colorID: 2
 position: -1550,-1575
 ---
@@ -122,7 +122,7 @@ Maria: Sleep took over him.
 [[Repeat|Appartment.Part1]]
 ===
 title: ThirstyDog.Part3
-tags: 
+tags: 3 | [canForeshadow:True] | [RELAX:0.8] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
 colorID: 6
 position: -1232,-1575
 ---
@@ -133,9 +133,9 @@ Joao: Bruce, however, asked for another beer. It would be his seventh.
 Joao: "I'm thirsty today", he said, and his mouth twisted into a grin that,
 Joao: even according with his "brand new" persona, stroke <b>Joe</b> as uncharacteristically odd.
 Maria: For the first time since they came into the Thirsty Dog, their table,
-Maria: and the whole bar for that matter, fell into a sort of unusuaç quiet.
+Maria: and the whole bar for that matter, fell into a sort of unusual quiet.
 <<wait 5>>
-Joao: "Joe, uhm..." said <b>Bruce</b>, after shattering the silence, and paused,
+Joao: "Joe, uhm..." said <b>Bruce</b>, shattering the silence, and paused,
 Joao: as if trying to fit the correct words into a speach puzzle in his tongue.
 Joao: From across the table <b>Joe</b> found himself in a slightly nervous antecipation.
 Joao: After a few seconds of thought, <b>Bruce</b> finally said what he wanted.
@@ -145,7 +145,7 @@ Joao: "You need to do something for me".
 [[Repeat|ThirstyDog.Part3]]
 ===
 title: Appartment.Part2
-tags: 
+tags: 14 | [] | [REST:0.5; BE_CALM:0.3] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5 
 colorID: 2
 position: -1899,-1295
 ---
@@ -165,7 +165,7 @@ Joao: He got up to see what else he could eat, when his phone started to ring.
 [[Repeat|Appartment.Part2]]
 ===
 title: Appartment.Part3
-tags: 
+tags: 15 | [] | [REST:0.5; BE_CALM:0.4] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
 colorID: 2
 position: -1546,-1304
 ---
@@ -184,7 +184,7 @@ Maria: And, as if by some will of its own, his thumb accepted the call.
 [[Repeat|Appartment.Part3]]
 ===
 title: Appartment.Part4
-tags: 
+tags: 16 | [] | [REST:0.7; BE_CALM:0.5] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
 colorID: 2
 position: -1209,-1308
 ---
@@ -212,7 +212,7 @@ Maria: And he closed his eyes.
 [[Repeat|Appartment.Part4]]
 ===
 title: ThirstyDog.Part4
-tags: 
+tags: 4 | [canForeshadow:True] | [RELAX:0.5] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
 colorID: 6
 position: -898,-1310
 ---
@@ -233,7 +233,7 @@ Joao: and a radiant smile returned to <b>Bruce</b>'s face.
 [[Repeat|ThirstyDog.Part4]]
 ===
 title: Mandys.Part1
-tags: 
+tags: 17 | [notEssential:True] | [BE_CALM:0.4] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
 colorID: 5
 position: -1905,-1046
 ---
@@ -255,7 +255,7 @@ Maria: a cheerful "Joey!" came to his ears.
 [[Repeat|Mandys.Part1]]
 ===
 title: Mandys.Part2
-tags: 
+tags: 18 | [notEssential:True] | [BE_CALM:0.5] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
 colorID: 5
 position: -1567,-1037
 ---
@@ -285,7 +285,7 @@ Joao: The coffee, however, managed to sooth him, and his stomach, down a bit.
 [[Repeat|Mandys.Part2]]
 ===
 title: Mandys.Part3
-tags: 
+tags: 19 | [notEssential:True] | [BE_CALM:0.3] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
 colorID: 5
 position: -1231,-1033
 ---
@@ -304,7 +304,7 @@ Joao: spilling coffee all over its surface and his jeans.
 [[Repeat|Mandys.Part3]]
 ===
 title: Mandys.Part4
-tags: 
+tags: 20 | [notEssential:True] | [BE_CALM:0.7] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
 colorID: 5
 position: -899,-1053
 ---
