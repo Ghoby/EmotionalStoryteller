@@ -119,6 +119,15 @@ namespace ReGoap.Unity
             currentReGoapPlanWorker = ReGoapPlannerManager<T, W>.Instance.Plan(this, BlackListGoalOnFailure ? currentGoal : null,
                 currentGoal != null ? currentGoal.GetPlan() : null, OnDonePlanning);
 
+            if (currentGoal != null)
+            {
+                Debug.Log(currentGoal.GetName());
+            }
+            else
+            {
+                Debug.Log("Null");
+            }
+
             return true;
         }
 

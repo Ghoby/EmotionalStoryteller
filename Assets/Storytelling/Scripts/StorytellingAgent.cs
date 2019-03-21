@@ -6,5 +6,6 @@ public class StorytellingAgent : ReGoapAgent<string, object>
     protected override void Start()
     {
         base.Start();
+        Name = "StorytellingAgent";
     }
 }

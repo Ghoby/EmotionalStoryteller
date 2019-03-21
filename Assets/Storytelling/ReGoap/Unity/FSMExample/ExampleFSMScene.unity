@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9303,7 +9303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 884770e97ce814c43b1f204490bf74c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildersCount: 50
+  BuildersCount: 1
   BuilderPrefab: {fileID: 1125005807267310, guid: 3b8d017b7fea5bb45bd85faf2f15bd5a,
     type: 3}
   DelayBetweenSpawns: 0.133

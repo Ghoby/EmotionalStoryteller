@@ -181,9 +181,11 @@ GameObject:
   - component: {fileID: 130069789}
   - component: {fileID: 130069796}
   - component: {fileID: 130069795}
+  - component: {fileID: 130069797}
   - component: {fileID: 130069794}
   - component: {fileID: 130069793}
   - component: {fileID: 130069792}
+  - component: {fileID: 130069798}
   - component: {fileID: 130069791}
   - component: {fileID: 130069790}
   m_Layer: 0
@@ -254,12 +256,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130069787}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8ca1189281e1b546a65b3259c2f7d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: GenericGoal
+  Name: StorytellingHappyMoodGoal
   Priority: 1
   ErrorDelay: 0.5
   WarnPossibleGoal: 1
@@ -270,12 +272,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130069787}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2093ebb2ad9009c4e9f8afa57f1d92db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: GenericGoal
+  Name: StorytellingDourMoodGoal
   Priority: 1
   ErrorDelay: 0.5
   WarnPossibleGoal: 1
@@ -286,12 +288,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130069787}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a635d7471d9efed47b2e9a0a5dd61912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: GoapAction
+  Name: StorytellingOmitAction
   Cost: 1
 --- !u!114 &130069795
 MonoBehaviour:
@@ -300,12 +302,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130069787}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83e5c6a165c9db046b77efdf60905035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: GoapAction
+  Name: StorytellingForeshadowingAction
   Cost: 1
 --- !u!114 &130069796
 MonoBehaviour:
@@ -314,13 +316,43 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130069787}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6533d1e68e13c19458d8d660c9cf21e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: GoapAction
+  Name: StorytellingFlashbackAction
   Cost: 1
+--- !u!114 &130069797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130069787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a1e8bb9eefeaa418283a1028e899ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: StorytellingNextNodeAction
+  Cost: 1
+--- !u!114 &130069798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130069787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 281bcb7dff6d86e4c8506193e8863763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: StorytellingNeutralGoal
+  Priority: 1
+  ErrorDelay: 0.5
+  WarnPossibleGoal: 1
 --- !u!1 &1325623249
 GameObject:
   m_ObjectHideFlags: 0
