@@ -121,7 +121,7 @@ namespace ReGoap.Unity
 
             if (currentGoal != null)
             {
-                Debug.Log(currentGoal.GetName());
+                Debug.Log("NotNull: " + currentGoal.GetName());
             }
             else
             {
