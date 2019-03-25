@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 101d363dbfd787d42b03a9c887bb9602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: GoapAction
+  Name: StorytellingFinalizeAction
   Cost: 1
 --- !u!114 &130069797
 MonoBehaviour:

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ReGoap.Core;
 using ReGoap.Unity;
 
@@ -32,5 +33,11 @@ public class StorytellingFinalizeAction : ReGoapAction<string, object>
         // TO DO
         print("yYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYy");
         doneCallback(this);
+    }
+
+    public override List<ReGoapState<string, object>> GetSettings(GoapActionStackData<string, object> stackData)
+    {
+        print("AAAAAAAAAAAAAAAAAAAAAAAAA");
+        return base.GetSettings(stackData);
     }
 }
