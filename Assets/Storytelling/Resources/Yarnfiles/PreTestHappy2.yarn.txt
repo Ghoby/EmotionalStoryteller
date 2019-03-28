@@ -1,0 +1,324 @@
+title: ThirstyDog.Part1
+tags: 1 | isEssential:True | [RELATIONSHIP:0.8; relax:0.8] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
+colorID: 6
+position: -1413,-1546
+---
+Joao: It was friday afternoon,
+Joao: and the Thirsty Dog bar was bursting with an excited buzz of cursing and laughter.
+Joao: After an intense week of assignments, exams and classes,
+Joao: many students felt the need for a bit of drunken comradery.
+Joao: The one who was screaming and shouting the loudest of all was <b>Bruce</b>.
+Maria: <b>Joe</b> and <b>Darius</b> were almost baffled by him.
+Maria: Despite being the tallest of the three, and having an impressive athletic physique,
+Maria: he was surprisingly prone to turn awkwardly shy and silent in public.
+Joao: The "almost" in "almost baffled" comes from the fact that, for the past few days,
+Joao: <b>Bruce</b> was acting in a completely different manner to his usual self,
+Joao: so the present situation was just another example of it.
+Joao: "And th-and then, and then, the guy and his girl, just like..." 
+Joao: "Got run over by an invisible car!",
+Joao: "AN! INVISIBLE! CAAAAAAAAAR!!!", 
+Joao: <b>Bruce</b> shouted with an inebriated fascination, almost choking with laughing.
+Joao: "They j-just spun through the air like Half-Life 2 ragdolls!"
+Maria: "That Instagram video's fake, bruh,", inteviened <b>Darius</b>, 
+Maria: albeit with genuine bemuzement clearly present in his face and voice.
+Joao: "But, I mean, let's be honest here! It's a pretty decent fake out," 
+Joao: <b>Joe</b> couldn't help pointing out.
+Maria: "Yeah, those two that got hit must be hired mimes, or something,"
+Maria: "to fly through the air because of an invisible car pfffft..."
+Maria: And the three of them burst out laughing simultaneously.
+
+[[>|ThirstyDog.Part2]]
+[[Repeat|ThirstyDog.Part1]]
+===
+title: ThirstyDog.Part2
+tags: 2 | isEssential:True | [RELATIONSHIP:0.8; relax:0.8] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
+colorID: 6
+position: -1156,-1546
+---
+Joao: As the clamour died down,
+Joao: <b>Joe</b> felt truly relieved that the week was finally over.
+Joao: The two exams he had in past five days were,
+Joao: for a lack of a better term, an absolute pain to study for.
+Joao: specially the one he did that very same day.
+Joao: But now, he could finally get some decent shuteye, even if only for a couple of days.
+Joao: Plus, he could finally be with Josie. 
+Joao: That's what he was looking forward to the most.
+Maria: Over the last two or so years, their relationship was probably the only thing 
+Maria: that stopped him from drowning in the rocky waters of early adulthood life.
+Maria: Too late into his college course did he realize that he wasn't an IT kind of guy,
+Maria: that the perpetual flow of writing and rewriting code, when past its initial novelty,
+Maria: was something that just dragged him into fits of physical and mental exhaustion.
+Maria: And the relationship between him with his parents was, slowly but surely,
+Maria: reaching a freezing point, the calls between him and them becoming noticeably shorter, 
+Maria: and more and more infrequent.
+Maria: But being with Josie...
+Maria: Being with Josie really, truly, helped him feel at ease.
+Maria: And the two of them would be spending the entirety of the following day together,
+Maria: from breakfast until dusk. 
+
+[[>|ThirstyDog.Part3]]
+[[Repeat|ThirstyDog.Part2]]
+===
+title: ThirstyDog.Part3
+tags: 3 | isEssential:True | [RELATIONSHIP:0.8; relax:0.8] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
+colorID: 6
+position: -902,-1541
+---
+Maria: "Hey, do you guys want anything else from the bar?", asked <b>Darius</b>.
+Joao: "Nah, I'll pass," <b>Joe</b> said, breaking off his thoughts.
+Joao: He was already three beers under and he didn't want to get anywhere beyond tipsy, that day.
+Joao: Bruce, however, asked for another beer. It would be his seventh.
+Joao: "I'm thirsty today", he said, and his mouth twisted into a grin that,
+Joao: even according with his "brand new" persona, stroke <b>Joe</b> as uncharacteristically odd.
+Maria: For the first time since they came into the Thirsty Dog, their table,
+Maria: and the whole bar for that matter, fell into a sort of unusual quiet.
+<<wait 5>>
+Joao: "Joe, uhm..." said <b>Bruce</b>, shattering the silence, and paused,
+Joao: as if trying to fit the correct words into a speach puzzle in his tongue.
+Joao: From across the table <b>Joe</b> found himself in a slightly nervous antecipation.
+Joao: After a few seconds of thought, <b>Bruce</b> finally said it.
+Joao: "You need to do something for me".
+
+[[>|StreetsNight.Part1]]
+[[Repeat|ThirstyDog.Part3]]
+===
+title: StreetsNight.Part1
+tags: 9 | isEssential:False | [RELATIONSHIP:0.4; go_home:0.5; rest:0.2] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
+colorID: 1
+position: -1421,-1098
+---
+Joao: There was a heavy and cold darkness seeping out of the starless night's air,
+Joao: only occasionally broken up by the dimly lit street lamps overhead.
+Maria: With gloved hands tucked deep in his coat's pockets and his hood up, 
+Maria: <b>Joe</b> slowly paced through the deserted streets of the city's suburbs, 
+Maria: clothes bloodied and alone.
+Maria: The blood however, wasn't his. 
+Joao: A couple of hours before, and for the first time in his life, <b>Joe</b> murdered someone. 
+Joao: If, at the present moment, you happened to ask him whom he killed, or how, 
+Joao: he couldn't even begin to tell you. 
+Joao: Most likely, he wouldn't even hear your voice.
+Maria: From the moment it happened, his mind became a blank mass of numb dullness,
+Maria: irregularly broken up by crimson rushes of flashing images,
+Joao: He only knew he wanted to go home and bury himself in his bed,
+Joao: and was blindly trusting his feet and legs to take him there by themselves. 
+
+[[>|StreetsNight.Part2]]
+[[Repeat|StreetsNight.Part1]]
+===
+title: StreetsNight.Part2
+tags: 10 | isEssential:False | [RELATIONSHIP:0.7; go_home:0.5; rest:0.2] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
+colorID: 1
+position: -1173,-1100
+---
+Maria: <b>Joe</b> found himself stopping beneath a streetlamp, 
+Maria: whose light was peridocally on-and-offing.
+Joao: A black cat was sitting right in front of him, poised almost like a living statue
+Joao: right at the edge of the ray of light coming from above,
+Joao: its slim and elegant figure appearing and disappearing in tandem with the flickering above.
+Maria: An almost relaxing warm and gentle breeze flowed right between them.
+Maria: He stood there,
+Maria: the hairs in his arms and back all prickled up
+Maria: gazing at the animal's greenish yellow eyes for what seemed like an eternity.
+Joao: "Josie..."
+Maria: It somehow reminded him of her, exhibiting before him the same calm, ethereal presence.
+
+
+[[>|StreetsNight.Part3]]
+[[Repeat|StreetsNight.Part2]]
+===
+title: StreetsNight.Part3
+tags: 11 | isEssential:False | [RELATIONSHIP:0.7; go_home:1.0; rest:0.2] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
+colorID: 1
+position: -926,-1100
+---
+Maria: Finally, the cat broke the stillness of the moment and ran away into the darkness.
+Joao: To his surprise, the dark clouds in his mind weren't there anymore, 
+Joao: as if the now gone breeze had blown them away into mental oblivion.
+Joao: His head was indeed still pounding (and quite vividely),
+Joao: but he could, at the very least, think with some sense of clarity.
+Maria: He began walking with a bit more of conscious purpose.
+Maria: A few twists and turns and, fifteen minutes after the episode with the cat,
+Maria: he reached his appartment.
+
+[[>|Appartment.Part1]]
+[[Repeat|StreetsNight.Part3]]
+===
+title: Appartment.Part1
+tags: 12 | isEssential:True | [RELATIONSHIP:0.7; rest:0.4] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
+colorID: 2
+position: -658,-1108
+---
+Joao: As he entered the small appartment, he felt it was even more claustrophobic than usual.
+Joao: Keeping the lights off and the window's blinds semi-opened,
+Joao: <b>Joe</b> mindlessly hung the scarleted coat from the hanger on the back of the door,
+Joao: the blood already dry.
+Joao: He let himself fall backwards into the unmade bed, shoes still on.
+Maria: As he was laying there, facing the partial gloom of the low, smudged ceiling,
+Maria: he let his eyes go shut.
+Maria: Sleep took over him.
+
+[[>|Appartment.Part2]]
+[[Repeat|Appartment.Part1]]
+===
+title: Appartment.Part2
+tags: 15 | isEssential:True | [RELATIONSHIP:0.4; rest:0.5] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
+colorID: 2
+position: -102,-1116
+---
+Maria: All around him was a moving darkness, just out of reach.
+Maria: Almost as if teasing him to come for it.
+Maria: And, meanwhile, a distant ringing sound his ears.
+Maria: He thought it was familiar, somehow.
+Maria: It was becoming louder and louder and louder and louder...
+Maria: He woke up. His phone was ringing.
+Maria: <b>Josie</b> was the caller.
+Maria: From head to toe, <b>Joe</b> suddenly grew heavily dull with the same numbness as before.
+Maria: She was simultaneously the only and the last person he wanted to talk to right then.
+Joao: He felt as if he was standing in the middle of a wire,
+Joao: both ends of which were quickly burning away. 
+Joao His head working a mile a minute when the ringing suddenly stopped.
+Joao: <b>Joe</b> drew the heaviest of breaths. He felt like he was about to throw up.
+Joao: All tension started seeping out from him. 
+Maria: Then, like a razorwire through the air, through his mind, the phone suddenly rang again...
+Maria: And, as if by some will of its own, his thumb accepted the call.
+
+[[>|Appartment.Part3]]
+[[Repeat|Appartment.Part2]]
+===
+title: Appartment.Part3
+tags: 16 | isEssential:False | [RELATIONSHIP:0.5; rest:0.7] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
+colorID: 2
+position: 166,-1124
+---
+Maria: "Hey baby! I'm so sorry I'm calling you at 1 AM. Hope I didn't wake you..."
+Joao: <b>Joe</b>'s mouth was completely dry, as if his throat was filled with sand.
+Joao: "*cough* H-hey! *cough* Uhh-uh n-no, no, I-I was a-awake, don't w-worry 'bout it."
+Maria: "Well... you do sound a bit drousy," she said with a warm giggle.
+Maria: "I know the day was probably tough on you."
+Joao: "..."
+Maria: "Well, I'll be quick then," she said in a reassuring tone.
+Maria: "I was just wondering where you wanted to grab breakfast, tomorrow morning."
+Maria: "You said you were going name the place tonight,"
+Maria: "but I guess sleep took over first eh eh."
+Joao: "U-uh... oh y-yeah... Uh... Mm..." he managed to mumble out,
+Maria: "Mandy's? You wanna go to Mandy's?"
+Joao: "Y-y-yeah, s-sure, sure."
+Maria: "...Great, great! Uhh... then, we meet there at... 10:30. Sounds good?"
+Joao: "...Yeah, okay. Sound-sounds good..."
+Maria: "Cool. Now, get yourself a good night's rest. Can't wait to be with you tomorrow!"
+Maria: "Love you, Joey!"
+Joao: "L-love you too... I r-really do..."
+Maria: She hung up, but not without audibly gasping a smile, first.
+Maria: <b>Joe</b>, phone still in his tightned grip, layed himself down on the bed.
+Maria: And he closed his eyes.
+
+[[>|Mandys.Part1]]
+[[Repeat|Appartment.Part3]]
+===
+title: Mandys.Part1
+tags: 17 | isEssential:False | [RELATIONSHIP:0.6; be_calm:0.4] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
+colorID: 5
+position: -1420,-854
+---
+Joao: It was a cloudy Saturday morning. <b>Joe's</b> phone clock marked 10:12 AM.
+Joao: Since he woke up before 8 (a nightmare of the <i>event</i> startled him awake),
+Joao: he actually managed to arrive at Mandy's before 10,
+Joao: but couldn't find it in him to enter. 
+Maria: He was hidden in the adjacent alley to the coffee shop,
+Maria: his mind working like spinning turbine.
+Maria: <b>Josie</b>, more than likely, would already be inside, eagerly waiting for him.
+Joao: <i>You got to enter... N-no-Yeah. You y-you just do... You got to.</i>
+Joao: <i>If there's anyone in the whole world you can trust on, it's her.</i>
+Joao: <b>Joe</b> took 5 deep breaths, slapped himself once, twice, three times in the face,
+Joao: and, finally, after another deep breath, walked into the coffee shop.
+Maria: From the back rightside of the place, neer a wide window,
+Maria: a cheerful "Joey!" came to his ears.
+
+[[>|Mandys.Part2]]
+[[Repeat|Mandys.Part1]]
+===
+title: Mandys.Part2
+tags: 18 | isEssential:False | [RELATIONSHIP:0.6; be_calm:0.5] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
+colorID: 5
+position: -1171,-856
+---
+Maria: "Hello, sleepyhead," she said in her usual <i>Good Morning, Sunshine!</i> mood.
+Joao: "H-hey, Josie," he half-said, half-mumbled <b>Joe</b>, and then gave her a quick kiss. 
+Joao: His lips were practically sandpaper, but she didn't seem to mind.
+Maria: <b>Josie</b> still hadn't ordered anything. 
+Maria: He couldn't help but feel guilty for making her wait for him, her stomach probably empty.
+Maria: "Yesterday you sounded pretty tired..." she said,
+Maria: not managing to hide a slightly worried tone.
+Maria: "I'm sorry, I probably shouldn't have called at that hour..."
+Joao: "N-n-no, d-don't worry about it." <b>Joe</b> tried his best to sound reassuring.
+Joao: "I was... and still am, p-pretty tired..."
+Joao: "You managed to cheer me up, though," this he managed to say without stuttering.
+Maria: "Well," she said at the same time she patted his hand,
+Maria: "I think a good 'Pick-me up' breakfast could really do you wonders," and smiled.
+Maria: "How about we order something?"
+Joao: <b>Josie</b> asked for a full-on english breakfast, along with a cappuccino.
+Joao: <b>Joe</b> went with some buttered toast and plain black coffee. 
+Joao: He did it more to fill the corresponding space in the table, than to fill his own gut.
+Joao: He felt it rumbling like an unhinged earthquake, 
+Joao: but also knew that, if any food came in, 
+Joao: it could just as easily come out in the following minute.
+Joao: The coffee, however, managed to sooth him - and his stomach - down a bit.
+
+[[>|Mandys.Part3]]
+[[Repeat|Mandys.Part2]]
+===
+title: Mandys.Part3
+tags: 19 | isEssential:False | [RELATIONSHIP:0.5; be_calm:0.5] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
+colorID: 5
+position: -899,-855
+---
+Maria: "I was thinking that after this, we could go to park a bit,"
+Maria: <b>Josie</b> said with an inviting tone.
+Maria: "Go see the lake. I hear there was a recent waddle of ducklings, there."
+Joe: "Uh... sure. Sure," Joe mumbled, along with a too robotic nod of the head.
+Maria: "And we could go to the movies this afternoon. Watch that new Tarantino flick."
+Joe: "Hmm hmm," again mechanically nodding.
+Maria: <b>Josie</b> could practically feel <b>Joe</b>'s tension from across the table.
+Maria: His mumbling speach, the slight tremor on the table caused by the shaking of his right leg,
+Maria: his fixation on the empty plate in front of him, as if it was blackhole for the eyesight.
+Maria: Something was off. And she knew it.
+
+[[>|Mandys.Part5]]
+[[Repeat|Mandys.Part3]]
+===
+title: Mandys.Part5
+tags: 20 | isEssential:False | [RELATIONSHIP:0.5; be_calm:0.7] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
+colorID: 5
+position: -635,-859
+---
+Joao: "I-I-I-I-I-I'm s-sorry!", 
+Joao: was all <b>Joe</b> with tears appearing in his eyes, could find in himself to say.
+Maria: "No no no no. Baby, don't apologize. It's okay! It happens," she reassured him,
+Maria: while using both of their napkins to dry <b>Joe's</b> clothes and then the table.
+Maria: "Baby, it's okay, really. It happens."
+Joao: "No no no no no no no, I-I-I-I'm j-just-t, I'm just..."
+Maria: "Joe, baby, look at me. Please, please look at me," she said with a surprising calmness,
+Maria: and again, she put her hand over his, squeezing it tenderly.
+Maria: "In these past couple of years, I've seen you tired. I've seen you exhausted."
+Maria: "But this... This doesn't feel like any of that."
+Joao: "..."
+Maria: "Maybe we should leave, don't you think?"
+Maria: "And talk about this at my place? What do you say?"
+Joao: "I-I-I-I do-"
+Maria: "Please, baby, I really think we should go. Right now."
+Maria: "You need to tell me what is going on."
+Maria: "I need you to tell me..."
+Joao: "B-b-b-bu-..."
+Maria: "Joe, honey, please. Trust me. You can trust me, okay?"
+Joao: "..."
+Maria: "Then please, let's go. I'll drive us there."
+Joao: He managed to give a couple of slight nods.
+Joao: <b>Josie</b> got up and payed both their tabs,
+Joao: while also apologizing for leaving without getting the food first.
+Joao: She then took him by the hand and walked him to her car.
+Maria: He simply followed her, unresisting, dead silent.
+Maria: Before starting the motor, she softly stroke the back of her hand on his cheek.
+Maria: "It's all gonna be okay, Joey dear. Believe me."
+Maria: And they drove off.
+<<exit>>
+===
