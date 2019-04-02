@@ -13,7 +13,7 @@ Maria: right beneath a clearing in the low treetops of Salazar's Woods.
 Maria: She found herself happily grinning upwards,
 Maria: remembering her last days on the village, before coming here.
 Maria: Then, with a stronger arm than before,
-Maria: she proceded with the sharpening of her blade.
+Maria: she proceded with the sharpening of the blade.
 
 [[>|CampfireNight.Part2]]
 [[Repeat|CampfireNight.Part1]]
@@ -78,9 +78,9 @@ Joao: This Thing simply killed him for sport.
 Joao: Or maybe...
 Joao: A feeling had began growing on the back of Kali's consciousness during the past days.
 Joao: A feeling that, during the quietest moments of her quest,
-Joao: froze the inside of her chest with dread. 
+Joao: froze the insides with dread. 
 Joao: And after seeing Its gruesome work at close hand... 
-Joao: She knew. She KNEW this had to be bait. Bait for her.
+Joao: She thought... No! She KNEW this had to be bait. Bait for her.
 Maria: It was waiting for her.
 Joao: It was the hunter.
 Maria: She was the prey.
@@ -98,8 +98,8 @@ Maria: It's entrance, a wide-open mouth of dark gloom ripping out of the body of
 Maria: broken and sharp stalactite and stalagmite fangs in wait of any entering prey. 
 Joao: Grabbing a broken oak branch from the surrounding treeline, she took a bundle of dead leaves,
 Joao: wrapped them around one of the branch's ends with some linen cloth soaked in old licor and,
-Joao: after unbuckling Sear from its sheath, she waved it for a few seconds in the air,
-Joao: and pressed the scalding blade on the wet cloth. It fire caught on instantly.
+Joao: after unbuckling Sear from its sheath, she waved it for a few seconds in the air
+Joao: and pressed the scalding blade on the wet cloth. It caught fire instantly.
 Maria: Now, the moment she feared, the moment she eagerly waited for, was at hand.
 Maria: Up-and-down shivers needled the skin of her back and neck.
 Maria: Sweat filled the inside of her trembling leather gloves.
@@ -117,7 +117,7 @@ Maria: The torch's light was enough for her to get her imediate bearings,
 Maria: but it also blinded Kali's eyes to the void outside the ring of light, 
 Maria: which, at times, seemed almost alive with thought and tentacle motion.
 Joao: Some years before, with Genji still carefully watching over her,
-Joao: they hunted an highly vicious nightcrawler that hid himself in a cave not unlike this one.
+Joao: they hunted a highly vicious nightcrawler that hid himself in a cave not unlike this one.
 Joao: They knew what it was capable of, having seen some of the gore it left on its bloody wake.
 Joao: But they caught it. And they killed it. The dark couldn't protect him from Sear.
 Joao: In the village, they were received with tremendous celebration and rejoice.
@@ -146,9 +146,10 @@ Maria: The trail ended abruptly.
 Maria: As if in one moment, the blood was steadily falling to the ground,
 Maria: and in another, it had suddenly stopped.
 Maria: A deep, guttural snarl, almost mocking in tone, came from behind her.
-Maria: She wasn't surprised. Actually, she felt relieved it had finally happened.
+Maria: She wasn't surprised.
 Maria: And when she turned around, she saw Its two slitted yellow eyes,
 Maria: both screaming silently for her blood and flesh.
+Maria: This Thing wasn't a nightcrawler.
 
 [[>|CaveNoon.Part4]]
 [[Repeat|CaveNoon.Part3]]
@@ -158,8 +159,8 @@ tags:
 colorID: 5
 position: 1031,512
 ---
-Joao: She ran towards him, swinging Sear ahead of her into an orange blaze.
-Joao: She thrusted the blade into It, but the Thing swiftly dodged her attack,
+Joao: She ran towards It, swinging Sear ahead of her into an orange blaze,
+Joao: and thrusted the blade into It, but the Thing swiftly dodged her attack,
 Joao: and, with Its huge, bloated left arm, pounded her to the ground.
 Joao: Kali, all air suddenly rushing out of her chest, felt like she was hit by a battering ram.
 Maria: As she regained her breath, she couldn't help but smell It. 
@@ -168,10 +169,11 @@ Maria: Sear still in hand, she picked up the dropped torch, its light weaker tha
 Maria: But it was enough for Kali to catch a glimpse of Its crimson filled, hairy snout, 
 Maria: rows of brownish, sharp teeth adorning a hungry, devilish grin.
 Joao: It jumped on her, swinging its arms and legs - dagger like claws in each - left and right, 
-Joao: with Kali managing to dodge most of the incoming charge, but each time she her blood was shed,
-Joao: it was if the Thing felt revitelized, coming at her then with twice the ferocity.
+Joao: with Kali managing to dodge most of the incoming charge, but each time her blood was shed,
+Joao: the horror, the fear inside her mind, spread further through her limbs.
+Joao: And it was if the Thing felt revitelized, coming at her twice as much ferocity.
 Maria: Kali couldn't say if this rush of attacks had lasted 2 minutes or 2 hours.
-Maria: When It stopped, Kali had the the entirety of her ripped coat and sleaves bloodied.
+Maria: When It stopped, Kali had the the entirety of her coat and trousers ripped and bloodied.
 Maria: Her left shoulder was dislocated, so she couldn't move the arm dangling underneath it.
 Maria: Sear was still in her right hand, though. The torch she held in her teeth.
 Maria: But she knew her body couldn't take much more of this.
@@ -210,7 +212,7 @@ Maria: Kali watched them all from her little improvised camp,
 Maria: right beneath a clearing in the low treetops of Salazar's Woods.
 Maria: Her mind was a flury of images, most of them red with blood.
 Maria: Sear was lost to It.
-Maria: In her chest, her heart, it felt like there was something missing there.
+Maria: And in her chest, her heart, she felt like there was something missing there.
 Maria: There was a... hollowness somewhere inside,
 Maria: where before was something deeply important to her.
 Maria: But she couldn't remember what it was.
@@ -231,10 +233,7 @@ Joao: Every scrape and tear It made on her body,
 Joao: her dangling arm and dislodged shoulder,
 Joao: Its warm, stinking breath on her neck, right before ripping it open...
 Joao: These phantom memories filled her eyes, ears and mind.
-Joao: She did her best to forget about them, but she couldn't.
-Maria: But there was one thing that stuck with her.
-Maria: The soft flesh underneath Its chest. Its stomach and entrails, all unprotected.
-Maria: "I just have to wait for the right moment. Don't rush it."
+Joao: She did her best to push them away, but she couldn't.
 Maria: Her sleep that night was filled with visions.
 Maria: That goulish, mocking smile was forever engraved on the inside of her eyelids.
 
@@ -258,21 +257,22 @@ Maria: Holding it upwards, she went to meet her doom.
 title: CaveRerun.Part2
 tags: 
 colorID: 5
-position: 1045,756
+position: 1026,769
 ---
 Joao: The same place of before, the spot where the blood ends.
-Joao: Kali knows It is standing behind her, already eating her with those yellow eyes.
+Joao: Kali knew It is standing behind her, already eating her with those yellow eyes.
 Joao: But it was as if her legs were frozen. Her arms too.
 Joao: She screamed but no words come out of her mouth. 
-Joao: Fear has taken over her body, holding it still for the slaughter.
-Joao: She tries, and tries and tries to move her body, but it doesn't obey.
-Joao: The heavy breathing behind her grows louder by the minute,
-Joao: anytime now, its source will have reached her.
-Joao: She tries, this time harder, and again, and again, and again, and...
-Maria: She turns. 
-Maria: It looms over her, the same mocking bloody grin carved in its muzzle,
-Maria: the same eyes, all devouring, piercing her entire being.
-Maria: And in a split second, her is head is ripped from her body by Its jaws.
+Joao: Fear had taken over her body, holding it still for the slaughter.
+Joao: She tried, and tried and tried to move her body, but it refused to obey.
+Joao: The heavy breathing behind her grew louder by the minute.
+Joao: She tried, this time harder, and again, and again, and again, and...
+Maria: She turned. 
+Maria: It loomed its entire body over her, the same mocking bloody grin carved in its muzzle,
+Maria: the same eyes, all devouring, piercing her entire being,
+Maria: its nostrills feasting on her terror.
+Maria: Its and her eyes were glued to each other.
+Maria: And in a split second, her head was ripped from her body by Its jaws.
 
 [[>|CampfireRerun2.Part1]]
 [[Repeat|CaveRerun.Part2]]
@@ -297,8 +297,8 @@ Maria: That night, she didn't sleep.
 ===
 title: CaveRerun2.Part1
 tags: 
-colorID: 1
-position: 487,998
+colorID: 5
+position: 518,1004
 ---
 Joao: Again, she reached the cave and her nerves were in disarray.
 Joao: Every cell of her body was trembling uncontrollably, screaming for her to run.
@@ -310,50 +310,91 @@ Maria: Otherwise, what was the point of this whole endeavour?
 Maria: Was there even a point to begin with?
 Maria: "..."
 Maria: "There is. There has to be."
-Maria: She then set her legs in motion, and stepped into the dark.
+Maria: She set her legs in motion, and stepped into the dark.
+Maria: Fear, her one true companion.
+
+[[>|CaveRerun2.Part2]]
+[[Repeat|CaveRerun2.Part1]]
 ===
-
-
-
-
-
-
-title: CaveRerun3.Part2
+title: CaveRerun2.Part2
 tags: 
 colorID: 5
-position: 246,1230
+position: 773,1002
+---
+Joao: This time, she didn't reach the end of the trail.
+Joao: Her walking was slower this time, and she was practically dragging her feet when,
+Joao: From above her, It dropped its entire weight and crushed her chest first onto the floor.
+Joao: And It turned her around, Its entire body looming over her.
+Joao: But then, just in the edge of the light of Moon, she saw its underbelly.
+Joao: Extremely soft and pulsating slightly.
+Maria: This vision filled her up, 
+Maria: and she was dead before she realized.
+
+[[>|CampfireRerun3.Part1]]
+[[Repeat|CaveRerun2.Part2]]
+===
+title: CampfireRerun3.Part1
+tags: 
+colorID: 1
+position: 227,1248
+---
+Maria: In her makeshift camp, she was sitting on her bed made of dead leaves.
+Maria: "Can I do it?"
+Maria: "Am I fast enough?"
+Maria: "No..."
+Maria: "The question here is:"
+Maria: "Am I terrified enough?"
+Maria: "That's what will win me the fight."
+Maria: "Only through the midst of fear can you find courage and victory," 
+Maria: she remembered Ganji saying to her once.
+Maria: She managed to sleep that night and,
+Maria: for the first time ever in her life, she was happy for the nightmares.
+
+[[>|CaveRerun3.Part1]]
+[[Repeat|CampfireRerun3.Part1]]
+===
+
+title: CaveRerun3.Part1
+tags: 
+colorID: 5
+position: 518,1227
 ---
 Maria: She came to the point where the cave became slightly wider and the ceiling much taller.
-Joao: She knew exactly where it would be now.
-Joao: Her blade, Moon, gave the surrounding circular area a silverly glow.
-Maria: She reached the end of the trail.
+Joao: And she knew exactly she had to do.
+Maria: Her feet took her to the the end of the trail.
+Joao: Behind her, thing was already waiting for her in the dark, smelling the stink of her fear.
 Maria: She paused. And counted to three.
 Maria: One.
 Maria: Two.
-Maria: Three. And turning around, blade arm held back, she ran towards It.
-Maria: She thought she saw Its feral eyes betraying something that they previously hadn't:
+Maria: Three. 
+Maria: And turning around, blade arm held back, she rushed towards It.
+Maria: At that moment, Its feral eyes betrayed something they never had before:
 Maria: Surprise.
-Maria: She slid underneath it and, when the Thing's underbelly was right above her,
-Maria: she thrust Moon with all the force her arm could muster.
+Maria: She slid underneath it and, when the thing's underbelly was right above her,
+Maria: she thrust Moon upwards, with all the piercing force her arm could muster.
 Joao: Crawling out through the side, she pulled her sword out and a plethora of green pus 
 Joao: and viscera came tumbling out. 
-Joao: The painfilled scream that poured out of the Thing's mouth as it was dying was deafening.
-Joao: It fell, lifeless, on the stone floor, slowly evaporating into black dust.
+Joao: The painfilled scream that poured out of the thing's mouth as it was dying was deafening.
+Joao: She watched it until it its body grew lifeless.
+Joao: It then slowly evaporated into black dust.
 Maria: And, right in the middle of it, there was that which Kali had lost.
 
-[[>|CaveRerun.Part3]]
-[[Repeat|CaveRerun.Part2]]
+[[>|CaveRerun3.Part2]]
+[[Repeat|CaveRerun3.Part1]]
 ===
-title: CaveRerun3.Part3
+title: CaveRerun3.Part2
 tags: 
 colorID: 5
-position: 537,1236
+position: 787,1227
 ---
 Maria: When she picked it up, hollowness inside her chest was filled.
 Maria: A sense of peace flooded her entire being. And she could return home.
 Maria: Yet, she still felt different. You don't die and remain the same as you were before.
 Joao: No one does. 
 Joao: But still, she couldn't wait to tell Ganji about everything that happened.
-Joao: Her first death had happened. It was cause for celebration.
+Joao: She had died, and died, and died.
+Maria: But she managed to recover from it.
+Maria: She became The Hunter, and it the hunted.
+Joao: And it was cause for celebration.
 <<exit>>
 ===
