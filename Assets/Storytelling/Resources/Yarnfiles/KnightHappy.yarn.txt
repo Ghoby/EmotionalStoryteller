@@ -37,56 +37,8 @@ Maria: and layed on her makeshift matress of leaves and moss, using her pack as 
 Maria: "Tomorrow..." she remembered saying to herself as she fell asleep,
 Maria: "tomorrow, you're dead."
 
-[[>|OutsideCaveMorning.Part1]]
-[[Repeat|CampfireNight.Part2]]
-===
-title: OutsideCaveMorning.Part1
-tags: 3 | isEssential:False | [OBJECTIVE:0.0; Calm:0.3] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
-colorID: 3
-position: 805,229
----
-Joao: A layer of ashen clouds, like a grey thief,
-Joao: infiltrated themselves in the overhead blue sky and refused to leave.
-Joao: In this part of the woods, this meant visibility was heavily constrained to human eyes.
-Maria: Kali walked with the silence of a phantom through the trunks and bushes,
-Maria: her trained olfact and earing ready to receive the slightest of stimuli,
-Maria: right hand gripping the hilt of Sear, almost tenderly.
-Maria: Then, a metalic odor, almost too faint for detection, tickled her nose.
-Maria: She followed it slowly, in growing antecipation of its source.
-
-[[>|OutsideCaveMorning.Part2]]
-[[Repeat|OutsideCaveMorning.Part1]]
-===
-title: OutsideCaveMorning.Part2
-tags: 4 | isEssential:False | [OBJECTIVE:0.0; Calm:-0.2] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
-colorID: 3
-position: 1043,230
----
-Joao: Besides a tall pine tree, a mutilated human carcass lay in wait for her.
-Joao: The axe of the man still carved into the thick trunk,
-Joao: his hand, torn at the forearm, still holding on for the dear life of its dead owner.
-Maria: Getting on her knees besides the bloody scene, Kali inspected the man's injuries.
-Maria: Bruises, exposed fractures, lacerations, cuts and claw stabs, 
-Maria: entrails spread through a 2 meter radius. 
-Maria: From the body, a light blood trail slithered and vanished into the opposing greenery.
-Maria: "This happened just a couple of hours ago", Kali thought out loud.
-Maria: The whole thing was an image that even Ol'Glenn The Butcher would wince at.
-Joao: But the strangest, most confounding thing of all,
-Joao: was that It hadn't left a single bite mark on the woodsman, whatsoever;
-Joao: It hadn't had a single intention of feeding on the man.
-Joao: This Thing simply killed him for sport.
-Joao: Or maybe...
-Joao: A feeling had began growing on the back of Kali's consciousness during the past days.
-Joao: A feeling that, during the quietest moments of her quest,
-Joao: froze the insides with dread. 
-Joao: And after seeing Its gruesome work at close hand... 
-Joao: She thought... No! She KNEW this had to be bait. Bait for her.
-Maria: It was waiting for her.
-Joao: It was the hunter.
-Maria: She was the prey.
-
 [[>|CaveNoon.Part1]]
-[[Repeat|OutsideCaveMorning.Part2]]
+[[Repeat|CampfireNight.Part2]]
 ===
 title: CaveNoon.Part1
 tags: 5 | isEssential:True | [OBJECTIVE:0.2; Calm:0.0] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
@@ -113,7 +65,7 @@ tags: 6 | isEssential:False | [OBJECTIVE:0.2; Calm:0.4] | Joao.Emotion.Neutral.0
 colorID: 5
 position: 485,514
 ---
-Maria: The torch's light was enough for her to get her imediate bearings,
+Maria: The torch's light was enough for her to get her immediate bearings,
 Maria: but it also blinded Kali's eyes to the void outside the ring of light, 
 Maria: which, at times, seemed almost alive with thought and tentacle motion.
 Joao: Some years before, with Genji still carefully watching over her,
@@ -180,25 +132,8 @@ Maria: But she knew her body couldn't take much more of this.
 Joao: "Last chance," she thought to herself.
 Joao: And with all of her strength and will pulling for her body, she charged at It.
 
-[[>|CaveNoon.Part5]]
-[[Repeat|CaveNoon.Part4]]
-===
-title: CaveNoon.Part5
-tags: 9 | isEssential:False | [OBJECTIVE:-1.0; Calm:-0.8] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
-colorID: 5
-position: 1298,508
----
-Joao: It responding in tandem, charging at her in a galloping motion.
-Maria: She was violently knocked to ground.
-Maria: Her right arm completely broken, Sear thrown into the darkness of the cave.
-Maria: The Thing loomed over her, sadistic grin cut into Its monstrous maw.
-Joao: Then, holding her down with one vicious paw, and in a single, savage motion,
-Joao: It ripped out the entirety of her throat.
-Joao: As life flowed out of her body through her veins,
-Joao: a last, vapid sigh emanated from Kali's red lips.
-
 [[>|CampfireRerun.Part1]]
-[[Repeat|CaveNoon.Part5]]
+[[Repeat|CaveNoon.Part4]]
 ===
 title: CampfireRerun.Part1
 tags: 10 | isEssential:True | [OBJECTIVE:0.0; Calm:0.0] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
@@ -218,29 +153,12 @@ Maria: where before was something deeply important to her.
 Maria: But she couldn't remember what it was.
 Maria: "Snap out of it, Kali," she reprimended herself in anger.
 Joao: Ganji had warned her many hunters were mentally broken by their first death.
-Joao: She could very well attest to that, now.
+Joao: Having died, she could very well attest to that, now.
 Maria: Trying to clear her head, she proceded with the sharpening of her own blade,
 Maria: Moonlight.
 
-[[>|CampfireRerun.Part2]]
-[[Repeat|CampfireRerun.Part1]]
-===
-title: CampfireRerun.Part2
-tags: 11 | isEssential:False | [OBJECTIVE:0.0; Calm:-0.3] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
-colorID: 1
-position: 503,769
----
-Joao: She couldn't let it go, however.
-Joao: Every scrape and tear It made on her body,
-Joao: her dangling arm and dislodged shoulder,
-Joao: Its warm, stinking breath on her neck, right before ripping it open...
-Joao: These phantom memories filled her eyes, ears and mind.
-Joao: She did her best to push them away, but she couldn't.
-Maria: Her sleep that night was filled with visions.
-Maria: That goulish, mocking smile was forever engraved on the inside of her eyelids.
-
 [[>|CaveRerun.Part1]]
-[[Repeat|CampfireRerun.Part2]]
+[[Repeat|CampfireRerun.Part1]]
 ===
 title: CaveRerun.Part1
 tags: 12 | isEssential:True | [OBJECTIVE:0.2; Calm:-0.1] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
@@ -255,68 +173,6 @@ Maria: Holding it upwards, she went to meet her doom.
 
 [[>|CaveRerun.Part2]]
 [[Repeat|CaveRerun.Part1]]
-===
-title: CaveRerun.Part2
-tags: 13 | isEssential:False | [OBJECTIVE:-1.0; Calm:-0.9] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
-colorID: 5
-position: 1026,769
----
-Joao: The same place of before, the spot where the blood ends.
-Joao: Kali knew It was standing behind her, already eating her with those yellow eyes.
-Joao: But it was as if her legs were frozen. Her arms too.
-Joao: She screamed but no words come out of her mouth. 
-Joao: Fear had taken over her body, holding it still for the slaughter.
-Joao: She tried, and tried and tried to move her body, but it refused to obey.
-Joao: The heavy breathing behind her grew louder by the minute.
-Joao: She tried, this time harder, and again, and again, and again, and...
-Maria: She turned around. 
-Maria: It loomed Its entire body over her, the same mocking bloody grin carved in its muzzle,
-Maria: the same eyes, all devouring, piercing her entire being,
-Maria: Its nostrills feasting on her terror.
-Maria: Its and her eyes were glued to each other.
-Maria: And in a split second, her head was ripped from her body by Its jaws.
-
-[[>|CampfireRerun2.Part1]]
-[[Repeat|CaveRerun.Part2]]
-===
-title: CampfireRerun2.Part1
-tags: 14 | isEssential:False | [OBJECTIVE:0.0; Calm:-0.5] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
-colorID: 1
-position: 237,1002
----
-Joao: The sky, completely stripped of clouds, flourished with glistening stars.
-Joao: Every conceiveable constellation was there for the eye to see.
-Joao: But Kali didn't care. 
-Joao: Before her eyes, only those eyes and mocking grin seemed to loom.
-Maria: With each passing thought, it was if she escavated more and more into her soul.
-Maria: The void, the hollow, it was spreading. 
-Maria: Soon she wouldn't feel anymore.
-Maria: But she still did. And fear was what she felt.
-Maria: That night, she didn't sleep.
-
-[[>|CaveRerun2.Part1]]
-[[Repeat|CampfireRerun2.Part1]]
-===
-title: CaveRerun2.Part1
-tags: 15 | isEssential:False | [OBJECTIVE:0.2; Calm:-0.2] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
-colorID: 5
-position: 518,1004
----
-Joao: Again, she reached the cave and her nerves were in disarray.
-Joao: Every cell of her body was trembling uncontrollably, screaming for her to run.
-Joao: That it was useless. That she was weak. That if she continued,
-Joao: she would end up becoming something completely abscent of soul, 
-Joao: with a void in place of a beating heart.
-Maria: But she had to kill it. That was the only path ahead of her.
-Maria: Otherwise, what was the point of this whole endeavour?
-Maria: Was there even a point to begin with?
-Maria: "..."
-Maria: "There is. There has to be."
-Maria: She set her legs in motion, and stepped into the dark.
-Maria: Fear, her one true companion.
-
-[[>|CaveRerun2.Part2]]
-[[Repeat|CaveRerun2.Part1]]
 ===
 title: CaveRerun2.Part2
 tags: 16 | isEssential:True | [OBJECTIVE:0.0; Calm:0.0] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
@@ -336,27 +192,6 @@ Maria: and she was dead before she realized.
 [[Repeat|CaveRerun2.Part2]]
 ===
 title: CampfireRerun3.Part1
-tags: 17 | isEssential:False | [OBJECTIVE:0.0; Calm:0.2] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
-colorID: 1
-position: 227,1248
----
-Maria: In her makeshift camp, she was sitting on her bed made of dead leaves.
-Maria: "Can I do it?"
-Maria: "Am I fast enough?"
-Maria: "No..."
-Maria: "The question here is:"
-Maria: "Am I terrified enough?"
-Maria: "That's what will win me the fight."
-Maria: "Only through the midst of fear can you find courage and victory," 
-Maria: Ganji said to her, once.
-Maria: She managed to sleep that night and,
-Maria: for the first time ever in her life, she was happy for the nightmares.
-
-[[>|CaveRerun3.Part1]]
-[[Repeat|CampfireRerun3.Part1]]
-===
-
-title: CaveRerun3.Part1
 tags: 18 | isEssential:True | [OBJECTIVE:0.4; Calm:-0.2] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
 colorID: 5
 position: 518,1227
