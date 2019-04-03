@@ -355,7 +355,6 @@ Maria: for the first time ever in her life, she was happy for the nightmares.
 [[>|CaveRerun3.Part1]]
 [[Repeat|CampfireRerun3.Part1]]
 ===
-
 title: CaveRerun3.Part1
 tags: 18 | isEssential:True | [OBJECTIVE:0.4; Calm:-0.2] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
 colorID: 5

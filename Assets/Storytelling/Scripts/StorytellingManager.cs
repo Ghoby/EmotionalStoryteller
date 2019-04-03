@@ -16,9 +16,11 @@ public class StorytellingManager : MonoBehaviour
     private GameObject StorytellingPlanningManagerObj;
     [SerializeField]
     private GameObject StorytellingAgentObj;
+    [SerializeField]
+    private int MaxNarrativeNum = 10;
 
     // yarnfile related attributes
-    string OriginalPath = "Yarnfiles/PreTestDour.yarn"; // TO DO - get it from interface input
+    string OriginalPath = "Yarnfiles/KnightPlot.yarn"; // TO DO - get it from interface input
     string SolutionPath = "Assets/Storytelling/Resources/Yarnfiles/NewYarnfile.yarn.txt";
     TextAsset YarnfileAsset;
     Dictionary<int, StorytellingYarnfileNode> Nodes;
@@ -72,7 +74,11 @@ public class StorytellingManager : MonoBehaviour
         List<string> lines = new List<string>(YarnfileAsset.text.Split('\n'));
         CreateNodesFromYarnfile(lines);
 
-        InitiateGoap();
+        // PLANNING PHASE //////////////////////
+        //InitiateGoap();
+
+        List<KeyValuePair<int, StorytellingYarnfileNode>>[] narratives = GenerateRandomNarratives();
+
     }
 
     void Update()
@@ -163,6 +169,46 @@ public class StorytellingManager : MonoBehaviour
     void AddNode(int index, StorytellingYarnfileNode node)
     {
         Nodes.Add(index, node);
+    }
+
+    List<KeyValuePair<int, StorytellingYarnfileNode>>[] GenerateRandomNarratives()
+    {
+        List<KeyValuePair<int, StorytellingYarnfileNode>>[] randomNarrativeArray = new List<KeyValuePair<int, StorytellingYarnfileNode>>[MaxNarrativeNum];
+        for(int i = 0; i < MaxNarrativeNum; i++)
+        {
+            randomNarrativeArray[i] = GenerateSingleRandomNarrative();
+        }
+
+        randomNarrativeArray[0][0].Value.PrintInfo();
+        randomNarrativeArray[1][0].Value.PrintInfo();
+        randomNarrativeArray[4][0].Value.PrintInfo();
+        randomNarrativeArray[6][0].Value.PrintInfo();
+
+        return randomNarrativeArray;
+    }
+
+    List<KeyValuePair<int, StorytellingYarnfileNode>> GenerateSingleRandomNarrative()
+    {
+        List<KeyValuePair<int, StorytellingYarnfileNode>> narrative = new List<KeyValuePair<int, StorytellingYarnfileNode>>();
+        var randomValueGen = new System.Random();
+
+        foreach (KeyValuePair<int, StorytellingYarnfileNode> node in Nodes)
+        {
+            if(node.Value.GetIsEssential())
+            {
+                narrative.Add(new KeyValuePair<int, StorytellingYarnfileNode>(node.Value.GetIndex(), node.Value));
+            }
+            else
+            {
+                var randomValue = randomValueGen.Next(2);
+                if(randomValue == 1)
+                {
+                    narrative.Add(new KeyValuePair<int, StorytellingYarnfileNode>(node.Value.GetIndex(), node.Value));
+                }
+            }
+        }
+
+        return narrative;
     }
 
     void InitiateGoap()

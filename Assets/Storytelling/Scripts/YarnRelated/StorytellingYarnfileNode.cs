@@ -5,43 +5,47 @@ using ReGoap.Unity.FSM;
 using ReGoap.Utilities;
 
 // Using the state machine interface
-public class StorytellingYarnfileNode : SmState
+public class StorytellingYarnfileNode : MonoBehaviour
 {
     int Index;
-    List<string> PreConditions;
-    List<string> Effects;
+    bool IsEssential;
+    List<KeyValuePair<string, float>> Effects;
     string Body;
 
     public StorytellingYarnfileNode(int index, string body)
     {
-        base.Awake();
         Index = index;
         Body = body;
-       
-        PreConditions = FetchPreConditions();
+
+        IsEssential = CheckIfEssential();
         Effects = FetchEffects();
-        foreach(var p in PreConditions)
-        {
-            //print(p);
-        }
     }
 
-    List<string> FetchPreConditions()
+    bool CheckIfEssential()
     {
         var tagSection = Body.Split('\n')[1].Replace("tags: ", "");
-        var preCondSection = tagSection.Split('|')[1].Trim();
-        var preCondInterior = preCondSection.Split('\n')[0].Replace("[", "").Replace("]", "").Replace(" ", "");
+        var isEssentialTagString = tagSection.Split('|')[1].Trim();
+        var isEssentialTagStringValue = isEssentialTagString.Split(':')[1];
 
-        return new List<string>(preCondInterior.Split(';')); 
+        return isEssentialTagStringValue == "True";
     }
 
-    List<string> FetchEffects()
+    List<KeyValuePair<string, float>> FetchEffects()
     {
         var tagSection = Body.Split('\n')[1].Replace("tags: ", "");
         var effectsSection = tagSection.Split('|')[2].Trim();
         var effectsInterior = effectsSection.Split('\n')[0].Replace("[", "").Replace("]", "").Replace(" ", "");
+        var effectArray = effectsInterior.Split(';');
 
-        return new List<string>(effectsInterior.Split(';'));
+        var list = new List<KeyValuePair<string, float>>();
+        for(int i = 0; i < effectArray.Length; i++)
+        {
+            var effect = effectArray[i].Split(':');            
+            list.Add(new KeyValuePair<string, float>(effect[0], 
+                float.Parse(effect[1], System.Globalization.CultureInfo.InvariantCulture)));
+        }
+
+        return list;
     }
 
     public int GetIndex()
@@ -52,5 +56,22 @@ public class StorytellingYarnfileNode : SmState
     public string GetBody()
     {
         return Body;
+    }
+
+    public bool GetIsEssential()
+    {
+        return IsEssential;
+    }
+
+    public void PrintInfo()
+    {
+        string info = "";
+        info += Index + "; ";
+        info += IsEssential + "; ";
+        foreach (var effect in Effects)
+        {
+            info += effect.Key + "->" + effect.Value + "; ";
+        }
+        print(info);
     }
 }
