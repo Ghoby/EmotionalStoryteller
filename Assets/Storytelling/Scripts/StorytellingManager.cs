@@ -17,11 +17,14 @@ public class StorytellingManager : MonoBehaviour
     [SerializeField]
     private GameObject StorytellingAgentObj;
     [SerializeField]
-    private int MaxNarrativeNum = 10;
+    private int MaxNarrativeNum = 100;
+    [SerializeField]
+    private bool isHappyTone = true;
 
     // yarnfile related attributes
     string OriginalPath = "Yarnfiles/KnightPlot.yarn"; // TO DO - get it from interface input
-    string SolutionPath = "Assets/Storytelling/Resources/Yarnfiles/NewYarnfile.yarn.txt";
+    string HappySolutionPath = "Assets/Storytelling/Resources/Yarnfiles/Happy.yarn.txt";
+    string DourSolutionPath = "Assets/Storytelling/Resources/Yarnfiles/Dour.yarn.txt";
     TextAsset YarnfileAsset;
     Dictionary<int, StorytellingYarnfileNode> Nodes;
 
@@ -29,27 +32,7 @@ public class StorytellingManager : MonoBehaviour
     bool GoapFinished;
 
     void Awake()
-    {
-        /*
-        plot = new Yarn.Dialogue(new Yarn.MemoryVariableStore())
-        {
-            LogDebugMessage = delegate (string message)
-            {
-                DebugLog.Log(message);
-            },
-            LogErrorMessage = delegate (string message)
-            {
-                DebugLog.Err(message);
-            }
-        };
-
-        plot.LoadFile("C:/Users/Duarte Ferreira/Documents/_tese/EmotionalStoryteller/Assets/Storytelling/Resources/Yarnfiles/preview.yarn.txt");
-        */
-
-        // TO DO -> VER SE PARTE ACIMA É NECESSÁRIA; EU PREFIRO USAR UMA IMPLEMENTAÇÃO SÓ MINHA, TBH
-
-
-             
+    {             
         //Check if instance already exists
         if (Instance == null)
         {
@@ -78,7 +61,12 @@ public class StorytellingManager : MonoBehaviour
         //InitiateGoap();
 
         List<KeyValuePair<int, StorytellingYarnfileNode>>[] narratives = GenerateRandomNarratives();
+       
+        List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrativeHappy = GetBestNarrative(narratives, true);
+        List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrativeDour = GetBestNarrative(narratives, false);
 
+        CreateOutputYarnfile(bestNarrativeHappy, HappySolutionPath);
+        CreateOutputYarnfile(bestNarrativeDour, DourSolutionPath);
     }
 
     void Update()
@@ -86,7 +74,7 @@ public class StorytellingManager : MonoBehaviour
         if(GoapFinished)
         {
             // TO DO: COMPLETE REST OF FINAL OPERATIONS
-            CreateOutputYarnfile();
+            //CreateOutputYarnfile();
         }
     }
 
@@ -96,12 +84,12 @@ public class StorytellingManager : MonoBehaviour
         YarnfileAsset = (TextAsset) Resources.Load(OriginalPath);
     }
 
-    void CreateOutputYarnfile()
+    void CreateOutputYarnfile(List<KeyValuePair<int, StorytellingYarnfileNode>> narrative, string solutionPath)
     {
-        StreamWriter writer = new StreamWriter(SolutionPath, true);
+        StreamWriter writer = new StreamWriter(solutionPath, true);
 
         //TO DO - get it from new dictionary OR in the proper order of reading
-        foreach (KeyValuePair<int, StorytellingYarnfileNode> node in Nodes)
+        foreach (KeyValuePair<int, StorytellingYarnfileNode> node in narrative)
         {
             writer.Write(node.Value.GetBody());
         }
@@ -179,18 +167,12 @@ public class StorytellingManager : MonoBehaviour
             randomNarrativeArray[i] = GenerateSingleRandomNarrative();
         }
 
-        randomNarrativeArray[0][0].Value.PrintInfo();
-        randomNarrativeArray[1][0].Value.PrintInfo();
-        randomNarrativeArray[4][0].Value.PrintInfo();
-        randomNarrativeArray[6][0].Value.PrintInfo();
-
         return randomNarrativeArray;
     }
 
     List<KeyValuePair<int, StorytellingYarnfileNode>> GenerateSingleRandomNarrative()
     {
         List<KeyValuePair<int, StorytellingYarnfileNode>> narrative = new List<KeyValuePair<int, StorytellingYarnfileNode>>();
-        var randomValueGen = new System.Random();
 
         foreach (KeyValuePair<int, StorytellingYarnfileNode> node in Nodes)
         {
@@ -200,8 +182,8 @@ public class StorytellingManager : MonoBehaviour
             }
             else
             {
-                var randomValue = randomValueGen.Next(2);
-                if(randomValue == 1)
+                var randomValue = UnityEngine.Random.Range(0, 2);
+                if (randomValue == 1)
                 {
                     narrative.Add(new KeyValuePair<int, StorytellingYarnfileNode>(node.Value.GetIndex(), node.Value));
                 }
@@ -221,6 +203,106 @@ public class StorytellingManager : MonoBehaviour
 
     public void GOAPFinished()
     {
-        CreateOutputYarnfile();
+        //CreateOutputYarnfile();
+    }
+
+    List<KeyValuePair<int, StorytellingYarnfileNode>> GetBestNarrative(List<KeyValuePair<int, StorytellingYarnfileNode>>[] narratives, bool isHappy)
+    {
+        List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrative = null;
+        float bestObjectiveValue = 0f;
+        float currentObjectiveValue = 0f;
+        for(int i = 0; i < narratives.Length; i++)
+        {
+            currentObjectiveValue = EvaluateNarrative(narratives[i]);
+            if( (isHappy && currentObjectiveValue >= bestObjectiveValue) || (!isHappy && currentObjectiveValue <= bestObjectiveValue) )
+            {
+                bestNarrative = narratives[i];
+                bestObjectiveValue = currentObjectiveValue;
+            }
+        }
+
+        if(bestNarrative != null)
+        {
+            if(isHappy)
+                print("best objective value happy: " + bestObjectiveValue);
+            else
+                print("best objective value dour: " + bestObjectiveValue);
+            return bestNarrative;
+        }
+        else
+        {
+            print("null");
+        }
+        return new List<KeyValuePair<int, StorytellingYarnfileNode>>();
+    }
+
+    float EvaluateNarrative(List<KeyValuePair<int, StorytellingYarnfileNode>> narrative)
+    {
+        float objectiveValue = 0f;
+        List<float> tempObjValues = new List<float>();
+        for (int i = 0; i < narrative.Count; i += 3)
+        {
+            float obj1 = 0f;
+            float obj2 = 0f;
+            float obj3 = 0f;
+            int groupNodeCount = 1;
+            tempObjValues.Clear();
+
+            if (narrative[i].Value.Effects.Count > 0)
+            {
+                obj1 = GetNodeEffectValue(narrative[i].Value.Effects);
+            }
+            if (i+1 < narrative.Count && narrative[i].Value.Effects.Count > 0)
+            {
+                obj2 = GetNodeEffectValue(narrative[i].Value.Effects);
+                groupNodeCount++;
+            }
+            if (i+2 < narrative.Count && narrative[i].Value.Effects.Count > 0)
+            {
+                obj3 = GetNodeEffectValue(narrative[i].Value.Effects);
+                groupNodeCount++;
+            }
+
+            // evaluation 1
+            if( groupNodeCount == 1 || (groupNodeCount == 2 && obj1 == obj2) || (groupNodeCount == 3 && obj1 == obj2 && obj2 == obj3) )
+            {
+                objectiveValue += groupNodeCount * obj1;
+            }
+            // evaluation 2
+            else if( groupNodeCount == 2 && obj1 != obj2 )
+            {
+                objectiveValue += groupNodeCount * (obj2 - obj1);
+            }
+            // evaluation 2
+            else if( groupNodeCount == 3 && ( (obj1 <= obj2 && obj2 <= obj3) || (obj1 >= obj2 && obj2 >= obj3) ) )
+            {
+                objectiveValue += groupNodeCount * (obj3 - obj1);
+            }
+            // evaluation 3
+            else if (groupNodeCount == 3 && ((obj1 <= obj2 && obj2 >= obj3) || (obj1 >= obj2 && obj2 <= obj3)))
+            {
+                objectiveValue += groupNodeCount * (obj1 + obj3) * 0.5f;
+            }
+        }
+
+        return objectiveValue;
+    }
+
+    float GetNodeEffectValue(List<KeyValuePair<string, float>> Effects)
+    {
+        float obj = 0f;
+
+        foreach (var effect in Effects)
+        {
+            if (effect.Key.ToUpper() == effect.Key)
+            {
+                obj += effect.Value;
+            }
+            else
+            {
+                obj += effect.Value * 0.5f;
+            }
+        }
+        return obj;
     }
 }

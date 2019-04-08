@@ -9,7 +9,7 @@ public class StorytellingYarnfileNode : MonoBehaviour
 {
     int Index;
     bool IsEssential;
-    List<KeyValuePair<string, float>> Effects;
+    public List<KeyValuePair<string, float>> Effects;
     string Body;
 
     public StorytellingYarnfileNode(int index, string body)

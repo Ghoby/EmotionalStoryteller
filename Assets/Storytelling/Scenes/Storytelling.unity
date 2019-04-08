@@ -402,6 +402,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StorytellingPlanningManagerObj: {fileID: 2012643932}
   StorytellingAgentObj: {fileID: 130069787}
+  MaxNarrativeNum: 100
+  isHappyTone: 0
 --- !u!4 &1520903872
 Transform:
   m_ObjectHideFlags: 0

@@ -171,7 +171,7 @@ Maria: Her grip holding Moon as tightly as it could.
 Maria: She whispered a few words to the blade and it suddenly shone with silver light.
 Maria: Holding it upwards, she went to meet her doom.
 
-[[>|CaveRerun.Part2]]
+[[>|CaveRerun2.Part2]]
 [[Repeat|CaveRerun.Part1]]
 ===
 title: CaveRerun2.Part2
