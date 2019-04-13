@@ -23,22 +23,22 @@ public class StorytellingManager : MonoBehaviour
 
     // yarnfile related attributes
     string OriginalPath = "Yarnfiles/KnightPlot.yarn"; // TO DO - get it from interface input
-    string HappySolutionPath = "Assets/Storytelling/Resources/Yarnfiles/Happy.yarn.txt";
-    string DourSolutionPath = "Assets/Storytelling/Resources/Yarnfiles/Dour.yarn.txt";
+    string RandomHappySolutionPath = "Assets/Storytelling/Resources/Yarnfiles/RandomHappy.yarn.txt";
+    string RandomDourSolutionPath = "Assets/Storytelling/Resources/Yarnfiles/RandomDour.yarn.txt";
     TextAsset YarnfileAsset;
-    Dictionary<int, StorytellingYarnfileNode> Nodes;
+    List<KeyValuePair<int, StorytellingYarnfileNode>> Nodes;
 
     bool GoapInitiated;
     bool GoapFinished;
 
     void Awake()
-    {             
+    {
         //Check if instance already exists
         if (Instance == null)
         {
             //if not, set instance to this
             Instance = this;
-        }      
+        }
         //If Instance already exists and it's not this:
         else if (Instance != this)
         {
@@ -49,9 +49,9 @@ public class StorytellingManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         GoapInitiated = false;
-        GoapFinished = false;        
+        GoapFinished = false;
 
-        Nodes = new Dictionary<int, StorytellingYarnfileNode>();
+        Nodes = new List<KeyValuePair<int, StorytellingYarnfileNode>>();
 
         ReadYarnfile();
         List<string> lines = new List<string>(YarnfileAsset.text.Split('\n'));
@@ -60,13 +60,14 @@ public class StorytellingManager : MonoBehaviour
         // PLANNING PHASE //////////////////////
         //InitiateGoap();
 
-        List<KeyValuePair<int, StorytellingYarnfileNode>>[] narratives = GenerateRandomNarratives();
-       
-        List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrativeHappy = GetBestNarrative(narratives, true);
-        List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrativeDour = GetBestNarrative(narratives, false);
 
-        CreateOutputYarnfile(bestNarrativeHappy, HappySolutionPath);
-        CreateOutputYarnfile(bestNarrativeDour, DourSolutionPath);
+        //List<KeyValuePair<int, StorytellingYarnfileNode>>[] randomNarratives = GenerateRandomNarratives();
+        //List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrativeHappy = GetBestRandomNarrativeOmissionOnly(randomNarratives, true);
+        //List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrativeDour = GetBestRandomNarrativeOmissionOnly(randomNarratives, false);
+        //CreateOutputYarnfile(bestNarrativeHappy, RandomHappySolutionPath);
+        //CreateOutputYarnfile(bestNarrativeDour, RandomDourSolutionPath);
+
+        List<KeyValuePair<int, StorytellingYarnfileNode>>[] EssentialOnlyNarratives = GenerateEssentialOnlyNarratives();
     }
 
     void Update()
@@ -156,42 +157,10 @@ public class StorytellingManager : MonoBehaviour
 
     void AddNode(int index, StorytellingYarnfileNode node)
     {
-        Nodes.Add(index, node);
+        Nodes.Add(new KeyValuePair<int, StorytellingYarnfileNode>(index, node));
     }
 
-    List<KeyValuePair<int, StorytellingYarnfileNode>>[] GenerateRandomNarratives()
-    {
-        List<KeyValuePair<int, StorytellingYarnfileNode>>[] randomNarrativeArray = new List<KeyValuePair<int, StorytellingYarnfileNode>>[MaxNarrativeNum];
-        for(int i = 0; i < MaxNarrativeNum; i++)
-        {
-            randomNarrativeArray[i] = GenerateSingleRandomNarrative();
-        }
-
-        return randomNarrativeArray;
-    }
-
-    List<KeyValuePair<int, StorytellingYarnfileNode>> GenerateSingleRandomNarrative()
-    {
-        List<KeyValuePair<int, StorytellingYarnfileNode>> narrative = new List<KeyValuePair<int, StorytellingYarnfileNode>>();
-
-        foreach (KeyValuePair<int, StorytellingYarnfileNode> node in Nodes)
-        {
-            if(node.Value.GetIsEssential())
-            {
-                narrative.Add(new KeyValuePair<int, StorytellingYarnfileNode>(node.Value.GetIndex(), node.Value));
-            }
-            else
-            {
-                var randomValue = UnityEngine.Random.Range(0, 2);
-                if (randomValue == 1)
-                {
-                    narrative.Add(new KeyValuePair<int, StorytellingYarnfileNode>(node.Value.GetIndex(), node.Value));
-                }
-            }
-        }
-
-        return narrative;
-    }
+    
 
     void InitiateGoap()
     {
@@ -206,34 +175,22 @@ public class StorytellingManager : MonoBehaviour
         //CreateOutputYarnfile();
     }
 
-    List<KeyValuePair<int, StorytellingYarnfileNode>> GetBestNarrative(List<KeyValuePair<int, StorytellingYarnfileNode>>[] narratives, bool isHappy)
+    float GetNodeEffectValue(List<KeyValuePair<string, float>> Effects)
     {
-        List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrative = null;
-        float bestObjectiveValue = 0f;
-        float currentObjectiveValue = 0f;
-        for(int i = 0; i < narratives.Length; i++)
+        float obj = 0f;
+
+        foreach (var effect in Effects)
         {
-            currentObjectiveValue = EvaluateNarrative(narratives[i]);
-            if( (isHappy && currentObjectiveValue >= bestObjectiveValue) || (!isHappy && currentObjectiveValue <= bestObjectiveValue) )
+            if (effect.Key.ToUpper() == effect.Key)
             {
-                bestNarrative = narratives[i];
-                bestObjectiveValue = currentObjectiveValue;
+                obj += effect.Value;
+            }
+            else
+            {
+                obj += effect.Value * 0.5f;
             }
         }
-
-        if(bestNarrative != null)
-        {
-            if(isHappy)
-                print("best objective value happy: " + bestObjectiveValue);
-            else
-                print("best objective value dour: " + bestObjectiveValue);
-            return bestNarrative;
-        }
-        else
-        {
-            print("null");
-        }
-        return new List<KeyValuePair<int, StorytellingYarnfileNode>>();
+        return obj;
     }
 
     float EvaluateNarrative(List<KeyValuePair<int, StorytellingYarnfileNode>> narrative)
@@ -288,21 +245,142 @@ public class StorytellingManager : MonoBehaviour
         return objectiveValue;
     }
 
-    float GetNodeEffectValue(List<KeyValuePair<string, float>> Effects)
-    {
-        float obj = 0f;
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////// Random Generation of Narratives (Omission Only) ///////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        foreach (var effect in Effects)
+    List<KeyValuePair<int, StorytellingYarnfileNode>>[] GenerateRandomNarratives()
+    {
+        List<KeyValuePair<int, StorytellingYarnfileNode>>[] randomNarrativeArray = new List<KeyValuePair<int, StorytellingYarnfileNode>>[MaxNarrativeNum];
+        for (int i = 0; i < MaxNarrativeNum; i++)
         {
-            if (effect.Key.ToUpper() == effect.Key)
+            randomNarrativeArray[i] = GenerateSingleRandomNarrative();
+        }
+
+        return randomNarrativeArray;
+    }
+
+    List<KeyValuePair<int, StorytellingYarnfileNode>> GenerateSingleRandomNarrative()
+    {
+        List<KeyValuePair<int, StorytellingYarnfileNode>> narrative = new List<KeyValuePair<int, StorytellingYarnfileNode>>();
+
+        foreach (KeyValuePair<int, StorytellingYarnfileNode> node in Nodes)
+        {
+            if (node.Value.GetIsEssential())
             {
-                obj += effect.Value;
+                narrative.Add(new KeyValuePair<int, StorytellingYarnfileNode>(node.Value.GetIndex(), node.Value));
             }
             else
             {
-                obj += effect.Value * 0.5f;
+                var randomValue = UnityEngine.Random.Range(0, 2);
+                if (randomValue == 1)
+                {
+                    narrative.Add(new KeyValuePair<int, StorytellingYarnfileNode>(node.Value.GetIndex(), node.Value));
+                }
             }
         }
-        return obj;
+
+        return narrative;
     }
+
+    List<KeyValuePair<int, StorytellingYarnfileNode>> GetBestRandomNarrativeOmissionOnly(List<KeyValuePair<int, StorytellingYarnfileNode>>[] narratives, bool isHappy)
+    {
+        List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrative = null;
+        float bestObjectiveValue = 0f;
+        float currentObjectiveValue = 0f;
+        for (int i = 0; i < narratives.Length; i++)
+        {
+            currentObjectiveValue = EvaluateNarrative(narratives[i]);
+            if ((isHappy && currentObjectiveValue >= bestObjectiveValue) || (!isHappy && currentObjectiveValue <= bestObjectiveValue))
+            {
+                bestNarrative = narratives[i];
+                bestObjectiveValue = currentObjectiveValue;
+            }
+        }
+
+        if (bestNarrative != null)
+        {
+            if (isHappy)
+                print("best objective value happy: " + bestObjectiveValue);
+            else
+                print("best objective value dour: " + bestObjectiveValue);
+            return bestNarrative;
+        }
+        else
+        {
+            print("null");
+        }
+        return new List<KeyValuePair<int, StorytellingYarnfileNode>>();
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////// Generation of Narratives (Omission and Reorganizing) //////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    List<KeyValuePair<int, StorytellingYarnfileNode>>[] GenerateEssentialOnlyNarratives()
+    {
+        List<KeyValuePair<int, StorytellingYarnfileNode>>[] randomNarrativeArray = new List<KeyValuePair<int, StorytellingYarnfileNode>>[MaxNarrativeNum];
+        for (int i = 0; i < MaxNarrativeNum; i++)
+        {
+            randomNarrativeArray[i] = GenerateSingleEssentialOnlyNarrative();
+        }
+
+        return randomNarrativeArray;
+    }
+
+    List<KeyValuePair<int, StorytellingYarnfileNode>> GenerateSingleEssentialOnlyNarrative()
+    {
+        List<KeyValuePair<int, StorytellingYarnfileNode>> narrative = new List<KeyValuePair<int, StorytellingYarnfileNode>>();
+
+        foreach (KeyValuePair<int, StorytellingYarnfileNode> node in Nodes)
+        {
+            if (node.Value.GetIsEssential())
+            {
+                narrative.Add(new KeyValuePair<int, StorytellingYarnfileNode>(node.Value.GetIndex(), node.Value));
+            }
+        }
+
+        return narrative;
+    }
+
+    List<KeyValuePair<int, StorytellingYarnfileNode>> GetBestRandomNarrativeReorganize(List<KeyValuePair<int, StorytellingYarnfileNode>> narrative, bool isHappy)
+    {
+        List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrative = new List<KeyValuePair<int, StorytellingYarnfileNode>>(narrative);
+        float currentObjectiveValue = 0f;
+        float bestObjectiveValue = 0f;
+        int bestIndex = 0;
+
+        if (isHappy)
+        {
+            bestObjectiveValue = float.NegativeInfinity;
+        }
+        else
+        {
+            bestObjectiveValue = float.PositiveInfinity;
+        }
+
+        foreach(var node in Nodes)
+        {
+            currentObjectiveValue = EvaluateNarrative(narrative);
+            if(!node.Value.GetIsEssential())
+            {
+                for(int i = 0; i <= narrative.Count; i++)
+                {
+                    bestNarrative.Insert(i, node);
+                    float temp = EvaluateNarrative(bestNarrative);
+                    if((isHappy && temp >=  bestObjectiveValue) || (!isHappy && temp <= bestObjectiveValue))
+                    {
+                        bestObjectiveValue = temp;
+                        bestIndex = i;
+                    }
+                    bestNarrative.RemoveAt(i);
+                }
+
+                bestNarrative.Insert(bestIndex, node);
+            }
+        }
+
+        return bestNarrative;
+    }
+
 }
