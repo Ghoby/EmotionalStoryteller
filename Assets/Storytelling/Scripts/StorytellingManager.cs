@@ -23,8 +23,8 @@ public class StorytellingManager : MonoBehaviour
 
     // yarnfile related attributes
     string OriginalPath = "Yarnfiles/KnightPlot.yarn"; // TO DO - get it from interface input
-    string RandomHappySolutionPath = "Assets/Storytelling/Resources/Yarnfiles/RandomHappy.yarn.txt";
-    string RandomDourSolutionPath = "Assets/Storytelling/Resources/Yarnfiles/RandomDour.yarn.txt";
+    string HappySolutionPath = "Assets/Storytelling/Resources/Yarnfiles/RandomHappy.yarn.txt";
+    string DourSolutionPath = "Assets/Storytelling/Resources/Yarnfiles/RandomDour.yarn.txt";
     TextAsset YarnfileAsset;
     List<KeyValuePair<int, StorytellingYarnfileNode>> Nodes;
 
@@ -46,8 +46,8 @@ public class StorytellingManager : MonoBehaviour
             Destroy(gameObject);
         }
         //Sets this to not be destroyed when reloading scene
-        DontDestroyOnLoad(gameObject);
 
+        DontDestroyOnLoad(gameObject);
         GoapInitiated = false;
         GoapFinished = false;
 
@@ -57,23 +57,12 @@ public class StorytellingManager : MonoBehaviour
         List<string> lines = new List<string>(YarnfileAsset.text.Split('\n'));
         CreateNodesFromYarnfile(lines);
 
+        InitiateNarrativeGeneration();
+        
         // PLANNING PHASE //////////////////////
         //InitiateGoap();
 
 
-        //List<KeyValuePair<int, StorytellingYarnfileNode>>[] randomNarratives = GenerateRandomNarratives();
-        //List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrativeHappy = GetBestRandomNarrativeOmissionOnly(randomNarratives, true);
-        //List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrativeDour = GetBestRandomNarrativeOmissionOnly(randomNarratives, false);
-        //CreateOutputYarnfile(bestNarrativeHappy, RandomHappySolutionPath);
-        //CreateOutputYarnfile(bestNarrativeDour, RandomDourSolutionPath);
-
-        List<KeyValuePair<int, StorytellingYarnfileNode>>[] EssentialOnlyNarratives = GenerateEssentialOnlyNarratives();
-        List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrativeHappy = GetBestRandomNarrativeReorganize(EssentialOnlyNarratives, true);
-        //List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrativeDour = GetBestRandomNarrativeReorganize(EssentialOnlyNarratives, false);
-        foreach(var node in bestNarrativeHappy)
-        {
-            node.Value.PrintInfo();
-        }
     }
 
     void Update()
@@ -152,6 +141,13 @@ public class StorytellingManager : MonoBehaviour
 
             lineCounter++;
         }
+
+        Nodes.Sort(SortByTimestamp);
+    }
+
+    static int SortByTimestamp(KeyValuePair<int, StorytellingYarnfileNode> n1, KeyValuePair<int, StorytellingYarnfileNode> n2)
+    {
+        return n1.Key.CompareTo(n2.Key);
     }
 
     string GetNameForNode(string firstLine)
@@ -166,6 +162,23 @@ public class StorytellingManager : MonoBehaviour
         Nodes.Add(new KeyValuePair<int, StorytellingYarnfileNode>(index, node));
     }
 
+    void InitiateNarrativeGeneration()
+    {
+        //List<KeyValuePair<int, StorytellingYarnfileNode>>[] randomNarratives = GenerateRandomNarratives();
+        //List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrativeHappy = GetBestRandomNarrativeOmissionOnly(randomNarratives, true);
+        //List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrativeDour = GetBestRandomNarrativeOmissionOnly(randomNarratives, false);
+        //CreateOutputYarnfile(bestNarrativeHappy, RandomHappySolutionPath);
+        //CreateOutputYarnfile(bestNarrativeDour, RandomDourSolutionPath);
+
+        List<KeyValuePair<int, StorytellingYarnfileNode>>[] EssentialOnlyNarratives = GenerateEssentialOnlyNarratives();
+        List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrativeHappy = GetBestRandomNarrativeReorganize(EssentialOnlyNarratives, true);
+        //List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrativeDour = GetBestRandomNarrativeReorganize(EssentialOnlyNarratives, false);
+        foreach (var node in bestNarrativeHappy)
+        {
+            node.Value.PrintInfo();
+        }
+        CreateOutputYarnfile(bestNarrativeHappy, HappySolutionPath);
+    }
     
 
     void InitiateGoap()
