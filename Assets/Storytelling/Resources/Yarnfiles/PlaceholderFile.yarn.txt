@@ -1,0 +1,8 @@
+title: Placeholder.Part1
+tags: 1 | isEssential:True | [RELATIONSHIP:1] | Joao.Emotion.Neutral.0,9 Maria.Emotion.Happiness.0,5
+colorID: 6
+position: -1413,-1546
+---
+
+<<exit>>
+===

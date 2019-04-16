@@ -4,7 +4,7 @@ using UnityEngine;
 using ReGoap.Core;
 using System.IO;
 using Yarn;
-using Utilities;
+using UnityEngine.UI;
 
 public class StorytellingManager : MonoBehaviour
 {
@@ -19,17 +19,22 @@ public class StorytellingManager : MonoBehaviour
     [SerializeField]
     private int MaxNarrativeNum = 100;
     [SerializeField]
-    private bool isHappyTone = true;
+    private Image YarnfileSelector; // set in editor
+    [SerializeField]
+    private Image ToneSelector; // set in editor
 
     // yarnfile related attributes
-    string OriginalPath = "Yarnfiles/KnightPlot.yarn"; // TO DO - get it from interface input
+    public string OriginalPath = "C:/Users/Duarte Ferreira/Documents/_tese/EmotionalStoryteller/Assets/Storytelling/Resources/Yarnfiles/PlaceholderFile.yarn.txt";
     string HappySolutionPath = "Assets/Storytelling/Resources/Yarnfiles/RandomHappy.yarn.txt";
     string DourSolutionPath = "Assets/Storytelling/Resources/Yarnfiles/RandomDour.yarn.txt";
     TextAsset YarnfileAsset;
     List<KeyValuePair<int, StorytellingYarnfileNode>> Nodes;
-
+    public bool isHappyTone;
+    
     bool GoapInitiated;
     bool GoapFinished;
+
+    public StorytellingUIManager UIManager;
 
     void Awake()
     {
@@ -46,45 +51,58 @@ public class StorytellingManager : MonoBehaviour
             Destroy(gameObject);
         }
         //Sets this to not be destroyed when reloading scene
-
         DontDestroyOnLoad(gameObject);
+
         GoapInitiated = false;
         GoapFinished = false;
 
         Nodes = new List<KeyValuePair<int, StorytellingYarnfileNode>>();
-
-        ReadYarnfile();
-        List<string> lines = new List<string>(YarnfileAsset.text.Split('\n'));
-        CreateNodesFromYarnfile(lines);
-
-        InitiateNarrativeGeneration();
+        UIManager = new StorytellingUIManager(YarnfileSelector, ToneSelector);
         
         // PLANNING PHASE //////////////////////
         //InitiateGoap();
-
-
     }
 
     void Update()
     {
-        if(GoapFinished)
-        {
-            // TO DO: COMPLETE REST OF FINAL OPERATIONS
-            //CreateOutputYarnfile();
-        }
+        
     }
 
-    void ReadYarnfile()
+    // called when the play button is pressed (in FileInputHook.cs)
+    public void InitiateStorytellingProcess(bool isHappy)
+    {
+        isHappyTone = isHappy;
+
+        ReadYarnfile();
+        //List<string> lines = new List<string>(YarnfileAsset.text.Split('\n'));
+        List<string> lines = new List<string>(ReadYarnfile().Split('\n'));
+        CreateNodesFromYarnfile(lines);
+
+        InitiateNarrativeGeneration();
+    }
+
+    public void SetYarnfilePath(string path)
+    {
+        OriginalPath = path;
+    }
+
+    public void SetNarrativeTone(bool isHappy)
+    {
+        isHappyTone = isHappy;
+    }
+
+    string ReadYarnfile()
     {
         print(OriginalPath);
-        YarnfileAsset = (TextAsset) Resources.Load(OriginalPath);
+
+        StreamReader reader = new StreamReader(OriginalPath);
+        return reader.ReadToEnd();
     }
 
     void CreateOutputYarnfile(List<KeyValuePair<int, StorytellingYarnfileNode>> narrative, string solutionPath)
     {
         StreamWriter writer = new StreamWriter(solutionPath, true);
-
-        //TO DO - get it from new dictionary OR in the proper order of reading
+        
         foreach (KeyValuePair<int, StorytellingYarnfileNode> node in narrative)
         {
             writer.Write(node.Value.GetBody());
@@ -171,13 +189,12 @@ public class StorytellingManager : MonoBehaviour
         //CreateOutputYarnfile(bestNarrativeDour, RandomDourSolutionPath);
 
         List<KeyValuePair<int, StorytellingYarnfileNode>>[] EssentialOnlyNarratives = GenerateEssentialOnlyNarratives();
-        List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrativeHappy = GetBestRandomNarrativeReorganize(EssentialOnlyNarratives, true);
-        //List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrativeDour = GetBestRandomNarrativeReorganize(EssentialOnlyNarratives, false);
-        foreach (var node in bestNarrativeHappy)
+        List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrative = GetBestRandomNarrativeReorganize(EssentialOnlyNarratives, isHappyTone);
+        foreach (var node in bestNarrative)
         {
             node.Value.PrintInfo();
         }
-        CreateOutputYarnfile(bestNarrativeHappy, HappySolutionPath);
+        CreateOutputYarnfile(bestNarrative, HappySolutionPath);
     }
     
 

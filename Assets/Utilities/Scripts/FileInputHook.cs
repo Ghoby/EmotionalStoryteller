@@ -72,4 +72,8 @@ public class FileInputHook : MonoBehaviour
             Submit();
         }
     }
+
+    // STORYTELLING SPECIFIC BUTTON FUNCTIONS
+
+    
 }
