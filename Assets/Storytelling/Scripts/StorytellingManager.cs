@@ -37,6 +37,8 @@ public class StorytellingManager : MonoBehaviour
 
     public StorytellingUIManager UIManager;
 
+    int narrativesIndex;
+
     void Awake()
     {
         //Check if instance already exists
@@ -68,8 +70,7 @@ public class StorytellingManager : MonoBehaviour
     {
         
     }
-
-    // called when the play button is pressed (in FileInputHook.cs)
+    
     public void InitiateStorytellingProcess(bool isHappy)
     {
         isHappyTone = isHappy;
@@ -77,7 +78,15 @@ public class StorytellingManager : MonoBehaviour
         List<string> lines = new List<string>(ReadYarnfile().Split('\n'));
         CreateNodesFromYarnfile(lines);
 
-        print(isHappyTone);
+        if(isHappyTone)
+        {
+            print("Happy");
+        }
+        else
+        {
+            print("Dour");
+        }
+        
         InitiateNarrativeGeneration();
     }
 
@@ -190,24 +199,27 @@ public class StorytellingManager : MonoBehaviour
         //CreateOutputYarnfile(bestNarrativeHappy, RandomHappySolutionPath);
         //CreateOutputYarnfile(bestNarrativeDour, RandomDourSolutionPath);
 
-        List<KeyValuePair<int, StorytellingYarnfileNode>>[] EssentialOnlyNarratives = GenerateEssentialOnlyNarratives();
-        List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrative = GetBestRandomNarrativeReorganize(EssentialOnlyNarratives, isHappyTone);
-        foreach (var node in bestNarrative)
-        {
-            node.Value.PrintInfo();
-        }
+        //List<KeyValuePair<int, StorytellingYarnfileNode>>[] EssentialOnlyNarratives = GenerateEssentialOnlyNarratives(MaxNarrativeNum);
+        //List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrative = GetBestRandomNarrativeReorganize(EssentialOnlyNarratives, isHappyTone);
+        //foreach (var node in bestNarrative)
+        //{
+        //    node.Value.PrintInfo();
+        //}
 
 
-        string solutionPath = SolutionPath;
-        if(isHappyTone)
-        {
-            solutionPath += "_Happy";
-        }
-        else
-        {
-            solutionPath += "_Dour";
-        }
-        CreateOutputYarnfile(bestNarrative, solutionPath + "SolutionNarrative.yarn.txt");
+        //string solutionPath = SolutionPath;
+        //if(isHappyTone)
+        //{
+        //    solutionPath += "_Happy";
+        //}
+        //else
+        //{
+        //    solutionPath += "_Dour";
+        //}
+        //CreateOutputYarnfile(bestNarrative, solutionPath + "SolutionNarrative.yarn.txt");
+
+        List<KeyValuePair<int, StorytellingYarnfileNode>>[] narratives = BruteForceAllNarrativesOmissionOnly();
+        print("--> " + narratives.Length);
     }
     
 
@@ -366,24 +378,24 @@ public class StorytellingManager : MonoBehaviour
     /////////////////////////////////// Generation of Narratives (Omission and Reorganizing) //////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    List<KeyValuePair<int, StorytellingYarnfileNode>>[] GenerateEssentialOnlyNarratives()
+    List<KeyValuePair<int, StorytellingYarnfileNode>>[] GenerateEssentialOnlyNarratives(int max)
     {
-        List<KeyValuePair<int, StorytellingYarnfileNode>>[] randomEssentialNarrativeArray = new List<KeyValuePair<int, StorytellingYarnfileNode>>[MaxNarrativeNum];
+        List<KeyValuePair<int, StorytellingYarnfileNode>>[] randomEssentialNarrativeArray = new List<KeyValuePair<int, StorytellingYarnfileNode>>[max];
         for (int i = 0; i < MaxNarrativeNum; i++)
         {
-            randomEssentialNarrativeArray[i] = GenerateSingleEssentialOnlyNarrative();
+            randomEssentialNarrativeArray[i] = GenerateOneTypeOnlyNarrative(true);
         }
 
         return randomEssentialNarrativeArray;
     }
 
-    List<KeyValuePair<int, StorytellingYarnfileNode>> GenerateSingleEssentialOnlyNarrative()
+    List<KeyValuePair<int, StorytellingYarnfileNode>> GenerateOneTypeOnlyNarrative(bool getEssential)
     {
         List<KeyValuePair<int, StorytellingYarnfileNode>> narrative = new List<KeyValuePair<int, StorytellingYarnfileNode>>();
 
         foreach (KeyValuePair<int, StorytellingYarnfileNode> node in Nodes)
         {
-            if (node.Value.GetIsEssential())
+            if (node.Value.GetIsEssential() == getEssential)
             {
                 narrative.Add(new KeyValuePair<int, StorytellingYarnfileNode>(node.Value.GetIndex(), node.Value));
             }
@@ -439,4 +451,98 @@ public class StorytellingManager : MonoBehaviour
         return narratives[maxIndex];
     }
 
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////// All Possibilities (Brute-Force approach) //////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public double integerFactorialRecursion(int number)
+    {        
+        double result = 1;
+        while (number > 1)
+        {
+            result = result * number;
+            number = number - 1;
+        }
+        return result;
+    }
+
+    double CalculateFullPossibilitySpaceSize()
+    {
+        double result = 0;
+        List<KeyValuePair<int, StorytellingYarnfileNode>> essentialOnlyNarrative = GenerateOneTypeOnlyNarrative(true);
+        List<KeyValuePair<int, StorytellingYarnfileNode>> nonEssentialOnlyNarrative = GenerateOneTypeOnlyNarrative(false);
+
+        int n = essentialOnlyNarrative.Count;
+        int m = nonEssentialOnlyNarrative.Count;
+
+        for (int i = 1; i <= m; i++)
+        {
+            double temp = 0;
+            for(int j = 0; j <= n || j < i; j++)
+            {
+                temp += (n + 1) * integerFactorialRecursion(i - j) * (integerFactorialRecursion(n) / integerFactorialRecursion(n - i));
+            }
+            temp *= integerFactorialRecursion(m) / (integerFactorialRecursion(i) * integerFactorialRecursion(m - i));
+            result += temp;
+        }
+
+        print(result);
+        return result;
+    }
+    
+
+    List<KeyValuePair<int, StorytellingYarnfileNode>>[] BruteForceAllNarrativesOmissionOnly()
+    {
+        List<KeyValuePair<int, StorytellingYarnfileNode>> nonEssentialOnlyNarrative = GenerateOneTypeOnlyNarrative(false);
+        List<KeyValuePair<int, StorytellingYarnfileNode>>[] narrativesArray = new List<KeyValuePair<int, StorytellingYarnfileNode>>[(int)Math.Pow(2, nonEssentialOnlyNarrative.Count)];
+        narrativesArray[0] = new List<KeyValuePair<int, StorytellingYarnfileNode>>();
+        narrativesIndex = 0;
+
+        OmissionRecursiveGeneration(ref narrativesArray, new List<KeyValuePair<int, StorytellingYarnfileNode>>(Nodes), 0, narrativesIndex);
+        
+        return narrativesArray;
+    }
+
+
+    // CORRIGIR
+    void OmissionRecursiveGeneration(ref List<KeyValuePair<int, StorytellingYarnfileNode>>[] narrativesArray, 
+        List<KeyValuePair<int, StorytellingYarnfileNode>> nodes, int index, int narrativesIndex)
+    {
+        if(index == nodes.Count - 1)
+        {
+            var x = narrativesArray[narrativesIndex];
+            if (!nodes[index].Value.GetIsEssential())
+            {
+                narrativesIndex++;
+                if (narrativesIndex % 10 == 0)
+                {
+                    print(narrativesIndex);
+                }
+            }
+            narrativesArray[narrativesIndex] = new List<KeyValuePair<int, StorytellingYarnfileNode>>(narrativesArray[narrativesIndex - 1]);
+            narrativesArray[narrativesIndex].Add(nodes[index]);
+            x = narrativesArray[narrativesIndex];
+
+            print("aa");
+        }
+        else
+        {
+            if(nodes[index].Value.GetIsEssential())
+            {
+                narrativesArray[narrativesIndex].Add(nodes[index]);
+                OmissionRecursiveGeneration(ref narrativesArray, nodes, index + 1, narrativesIndex);
+            }
+            else
+            {
+                OmissionRecursiveGeneration(ref narrativesArray, nodes, index + 1, narrativesIndex);
+                narrativesIndex++;
+                if(narrativesIndex % 10 == 0)
+                {
+                    print(narrativesIndex);
+                }
+                narrativesArray[narrativesIndex].Add(nodes[index]);
+                OmissionRecursiveGeneration(ref narrativesArray, nodes, index + 1, narrativesIndex);
+            }
+        }
+    }
 }
