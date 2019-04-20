@@ -14,7 +14,7 @@ public class StorytellingUIManager : MonoBehaviour
         ToneSelectorObject = ToneSelector;
         Group = ToneSelectorObject.gameObject.GetComponentInChildren<ToggleGroup>();
         ToneSelectorObject.gameObject.GetComponentInChildren<Toggle>().isOn = true;
-        YarnfileSelectorObject.gameObject.GetComponentInChildren<InputField>().text = StorytellingManager.Instance.OriginalPath;
+        YarnfileSelectorObject.gameObject.GetComponentInChildren<InputField>().text = "";
 
         SetYarnfileSelector(true);
         SetToneSelector(false);

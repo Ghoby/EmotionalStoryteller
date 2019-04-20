@@ -17,7 +17,7 @@ public class StorytellingManager : MonoBehaviour
     [SerializeField]
     private GameObject StorytellingAgentObj;
     [SerializeField]
-    private int MaxNarrativeNum = 100;
+    private int MaxNarrativeNum = 10000;
     [SerializeField]
     private Image YarnfileSelector; // set in editor
     [SerializeField]
@@ -27,6 +27,7 @@ public class StorytellingManager : MonoBehaviour
     public string OriginalPath = "C:/Users/Duarte Ferreira/Documents/_tese/EmotionalStoryteller/Assets/Storytelling/Resources/Yarnfiles/PlaceholderFile.yarn.txt";
     string HappySolutionPath = "Assets/Storytelling/Resources/Yarnfiles/RandomHappy.yarn.txt";
     string DourSolutionPath = "Assets/Storytelling/Resources/Yarnfiles/RandomDour.yarn.txt";
+    string SolutionPath = "Assets/Storytelling/Resources/Yarnfiles/";
     TextAsset YarnfileAsset;
     List<KeyValuePair<int, StorytellingYarnfileNode>> Nodes;
     public bool isHappyTone;
@@ -72,12 +73,11 @@ public class StorytellingManager : MonoBehaviour
     public void InitiateStorytellingProcess(bool isHappy)
     {
         isHappyTone = isHappy;
-
-        ReadYarnfile();
-        //List<string> lines = new List<string>(YarnfileAsset.text.Split('\n'));
+        
         List<string> lines = new List<string>(ReadYarnfile().Split('\n'));
         CreateNodesFromYarnfile(lines);
 
+        print(isHappyTone);
         InitiateNarrativeGeneration();
     }
 
@@ -101,6 +101,8 @@ public class StorytellingManager : MonoBehaviour
 
     void CreateOutputYarnfile(List<KeyValuePair<int, StorytellingYarnfileNode>> narrative, string solutionPath)
     {
+        print(solutionPath);
+
         StreamWriter writer = new StreamWriter(solutionPath, true);
         
         foreach (KeyValuePair<int, StorytellingYarnfileNode> node in narrative)
@@ -194,7 +196,18 @@ public class StorytellingManager : MonoBehaviour
         {
             node.Value.PrintInfo();
         }
-        CreateOutputYarnfile(bestNarrative, HappySolutionPath);
+
+
+        string solutionPath = SolutionPath;
+        if(isHappyTone)
+        {
+            solutionPath += "_Happy";
+        }
+        else
+        {
+            solutionPath += "_Dour";
+        }
+        CreateOutputYarnfile(bestNarrative, solutionPath + "SolutionNarrative.yarn.txt");
     }
     
 

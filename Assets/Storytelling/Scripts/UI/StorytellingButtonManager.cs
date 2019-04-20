@@ -43,9 +43,12 @@ public class StorytellingButtonManager : MonoBehaviour
     {
         string path = StorytellingManager.Instance.UIManager.GetInputPath();
 
-        StorytellingManager.Instance.SetYarnfilePath(path);
-        StorytellingManager.Instance.UIManager.SetYarnfileSelector(false);
-        StorytellingManager.Instance.UIManager.SetToneSelector(true);
+        if(path != null && path != "")
+        {
+            StorytellingManager.Instance.SetYarnfilePath(path);
+            StorytellingManager.Instance.UIManager.SetYarnfileSelector(false);
+            StorytellingManager.Instance.UIManager.SetToneSelector(true);
+        }        
     }
 
     public void PlayButton()
