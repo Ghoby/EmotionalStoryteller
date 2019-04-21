@@ -37,7 +37,7 @@ public class StorytellingManager : MonoBehaviour
 
     public StorytellingUIManager UIManager;
 
-    int narrativesIndex;
+    int NarrativesIndex;
 
     void Awake()
     {
@@ -193,11 +193,15 @@ public class StorytellingManager : MonoBehaviour
 
     void InitiateNarrativeGeneration()
     {
+        /// RANDOM APPROACH
+
         //List<KeyValuePair<int, StorytellingYarnfileNode>>[] randomNarratives = GenerateRandomNarratives();
-        //List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrativeHappy = GetBestRandomNarrativeOmissionOnly(randomNarratives, true);
-        //List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrativeDour = GetBestRandomNarrativeOmissionOnly(randomNarratives, false);
+        //List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrativeHappy = GetBestNarrative(randomNarratives, true);
+        //List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrativeDour = GetBestNarrative(randomNarratives, false);
         //CreateOutputYarnfile(bestNarrativeHappy, RandomHappySolutionPath);
         //CreateOutputYarnfile(bestNarrativeDour, RandomDourSolutionPath);
+
+        /// RANDOM WITH REORGANIZATION
 
         //List<KeyValuePair<int, StorytellingYarnfileNode>>[] EssentialOnlyNarratives = GenerateEssentialOnlyNarratives(MaxNarrativeNum);
         //List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrative = GetBestRandomNarrativeReorganize(EssentialOnlyNarratives, isHappyTone);
@@ -205,23 +209,28 @@ public class StorytellingManager : MonoBehaviour
         //{
         //    node.Value.PrintInfo();
         //}
+        
 
+        /// BRUTE FORCE (OMISSION ONLY)
 
-        //string solutionPath = SolutionPath;
-        //if(isHappyTone)
-        //{
-        //    solutionPath += "_Happy";
-        //}
-        //else
-        //{
-        //    solutionPath += "_Dour";
-        //}
-        //CreateOutputYarnfile(bestNarrative, solutionPath + "SolutionNarrative.yarn.txt");
+        List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrative = BruteForceBestNarrativeOmissionOnly(isHappyTone);
+        foreach(var node in bestNarrative)
+        {
+            node.Value.PrintInfo();
+        }
 
-        List<KeyValuePair<int, StorytellingYarnfileNode>>[] narratives = BruteForceAllNarrativesOmissionOnly();
-        print("--> " + narratives.Length);
+        string solutionPath = SolutionPath;
+        if (isHappyTone)
+        {
+            solutionPath += "_Happy";
+        }
+        else
+        {
+            solutionPath += "_Dour";
+        }
+        CreateOutputYarnfile(bestNarrative, solutionPath + "SolutionNarrative.yarn.txt");
     }
-    
+
 
     void InitiateGoap()
     {
@@ -344,7 +353,7 @@ public class StorytellingManager : MonoBehaviour
         return narrative;
     }
 
-    List<KeyValuePair<int, StorytellingYarnfileNode>> GetBestRandomNarrativeOmissionOnly(List<KeyValuePair<int, StorytellingYarnfileNode>>[] narratives, bool isHappy)
+    List<KeyValuePair<int, StorytellingYarnfileNode>> GetBestNarrative(List<KeyValuePair<int, StorytellingYarnfileNode>>[] narratives, bool isHappy)
     {
         List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrative = null;
         float bestObjectiveValue = 0f;
@@ -491,57 +500,52 @@ public class StorytellingManager : MonoBehaviour
     }
     
 
-    List<KeyValuePair<int, StorytellingYarnfileNode>>[] BruteForceAllNarrativesOmissionOnly()
+    List<KeyValuePair<int, StorytellingYarnfileNode>> BruteForceBestNarrativeOmissionOnly(bool isHappy)
     {
         List<KeyValuePair<int, StorytellingYarnfileNode>> nonEssentialOnlyNarrative = GenerateOneTypeOnlyNarrative(false);
-        List<KeyValuePair<int, StorytellingYarnfileNode>>[] narrativesArray = new List<KeyValuePair<int, StorytellingYarnfileNode>>[(int)Math.Pow(2, nonEssentialOnlyNarrative.Count)];
-        narrativesArray[0] = new List<KeyValuePair<int, StorytellingYarnfileNode>>();
-        narrativesIndex = 0;
+        List<KeyValuePair<int, StorytellingYarnfileNode>>[] narratives = new List<KeyValuePair<int, StorytellingYarnfileNode>>[(int)Math.Pow(2, nonEssentialOnlyNarrative.Count)];
+        narratives[0] = new List<KeyValuePair<int, StorytellingYarnfileNode>>();
+        NarrativesIndex = 0;
 
-        OmissionRecursiveGeneration(ref narrativesArray, new List<KeyValuePair<int, StorytellingYarnfileNode>>(Nodes), 0, narrativesIndex);
-        
-        return narrativesArray;
+        OmissionRecursiveGeneration(ref narratives, new List<KeyValuePair<int, StorytellingYarnfileNode>>(Nodes), 0, 0);
+
+        return GetBestNarrative(narratives, isHappyTone);
     }
 
 
     // CORRIGIR
     void OmissionRecursiveGeneration(ref List<KeyValuePair<int, StorytellingYarnfileNode>>[] narrativesArray, 
-        List<KeyValuePair<int, StorytellingYarnfileNode>> nodes, int index, int narrativesIndex)
+        List<KeyValuePair<int, StorytellingYarnfileNode>> nodes, int index, int aux)
     {
         if(index == nodes.Count - 1)
         {
-            var x = narrativesArray[narrativesIndex];
+            var x = narrativesArray[NarrativesIndex];
             if (!nodes[index].Value.GetIsEssential())
             {
-                narrativesIndex++;
-                if (narrativesIndex % 10 == 0)
-                {
-                    print(narrativesIndex);
-                }
+                NarrativesIndex++;
             }
-            narrativesArray[narrativesIndex] = new List<KeyValuePair<int, StorytellingYarnfileNode>>(narrativesArray[narrativesIndex - 1]);
-            narrativesArray[narrativesIndex].Add(nodes[index]);
-            x = narrativesArray[narrativesIndex];
-
-            print("aa");
+            narrativesArray[NarrativesIndex] = new List<KeyValuePair<int, StorytellingYarnfileNode>>(narrativesArray[NarrativesIndex - 1]);
+            narrativesArray[NarrativesIndex].Add(nodes[index]);
+            x = narrativesArray[NarrativesIndex];
         }
-        else
+        else if(index < nodes.Count - 1)
         {
             if(nodes[index].Value.GetIsEssential())
             {
-                narrativesArray[narrativesIndex].Add(nodes[index]);
-                OmissionRecursiveGeneration(ref narrativesArray, nodes, index + 1, narrativesIndex);
+                narrativesArray[NarrativesIndex].Add(nodes[index]);
+                OmissionRecursiveGeneration(ref narrativesArray, nodes, index + 1, aux + 1);
             }
             else
             {
-                OmissionRecursiveGeneration(ref narrativesArray, nodes, index + 1, narrativesIndex);
-                narrativesIndex++;
-                if(narrativesIndex % 10 == 0)
+                OmissionRecursiveGeneration(ref narrativesArray, nodes, index + 1, aux);
+                NarrativesIndex++;
+                narrativesArray[NarrativesIndex] = new List<KeyValuePair<int, StorytellingYarnfileNode>>();
+                for(int x = 0; x < aux; x++)
                 {
-                    print(narrativesIndex);
+                    narrativesArray[NarrativesIndex].Add(narrativesArray[NarrativesIndex - 1][x]);
                 }
-                narrativesArray[narrativesIndex].Add(nodes[index]);
-                OmissionRecursiveGeneration(ref narrativesArray, nodes, index + 1, narrativesIndex);
+                narrativesArray[NarrativesIndex].Add(nodes[index]);
+                OmissionRecursiveGeneration(ref narrativesArray, nodes, index + 1, aux + 1);
             }
         }
     }
