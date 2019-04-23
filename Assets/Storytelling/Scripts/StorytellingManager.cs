@@ -110,6 +110,8 @@ public class StorytellingManager : MonoBehaviour
 
     void CreateOutputYarnfile(List<KeyValuePair<int, StorytellingYarnfileNode>> narrative, string solutionPath)
     {
+        FixNarrativeConnections(ref narrative);
+
         print(solutionPath);
 
         StreamWriter writer = new StreamWriter(solutionPath, true);
@@ -122,6 +124,22 @@ public class StorytellingManager : MonoBehaviour
         writer.Close();
         print("Done");
     }
+
+    void FixNarrativeConnections(ref List<KeyValuePair<int, StorytellingYarnfileNode>> narrative)
+    {
+        for(int i = 0; i < narrative.Count; i++)
+        {
+            if(i < narrative.Count - 1)
+            {
+                narrative[i].Value.SetTransitions(narrative[i + 1].Value.GetTitle(), false);
+            }
+            else
+            {
+                narrative[i].Value.SetTransitions("", true);
+            }
+        }
+    }
+
 
 
     // version that creates nodes whose index is the number by which it appeared in the yarnfile

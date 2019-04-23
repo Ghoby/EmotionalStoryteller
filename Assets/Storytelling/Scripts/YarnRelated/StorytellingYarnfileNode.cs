@@ -11,11 +11,13 @@ public class StorytellingYarnfileNode : MonoBehaviour
     bool IsEssential;
     public List<KeyValuePair<string, float>> Effects;
     string Body;
+    string Title;
 
     public StorytellingYarnfileNode(int index, string body)
     {
         Index = index;
-        Body = body;
+        Body = ExtractCoreBody(body);
+        Title = ExtractTitle(body);
 
         IsEssential = CheckIfEssential();
         Effects = FetchEffects();
@@ -28,6 +30,27 @@ public class StorytellingYarnfileNode : MonoBehaviour
         var isEssentialTagStringValue = isEssentialTagString.Split(':')[1];
 
         return isEssentialTagStringValue == "True";
+    }
+
+    string ExtractCoreBody(string body)
+    {
+        string coreBody = "";
+        string[] splitBody = body.Split('\n');
+        for(int i = 0; i < splitBody.Length; i++)
+        {   
+            if (splitBody[i] == "\r")
+            {
+                break;
+            }
+            coreBody += splitBody[i] + "\n";
+        }
+
+        return coreBody;
+    }
+
+    string ExtractTitle(string body)
+    {
+        return body.Split('\n')[0].Replace("title: ", "").Trim();
     }
 
     List<KeyValuePair<string, float>> FetchEffects()
@@ -48,6 +71,18 @@ public class StorytellingYarnfileNode : MonoBehaviour
         return list;
     }
 
+    public void SetTransitions(string nextNodeName, bool isExit)
+    {       
+        if(!isExit)
+        {
+            Body += "\n[[>|" + nextNodeName + "]]\n[[Repeat|" + Title + "]]\n===\n";
+        }
+        else
+        {
+            Body += "\n<<exit>>\n===\n";
+        }
+    }
+
     public int GetIndex()
     {
         return Index;
@@ -56,6 +91,11 @@ public class StorytellingYarnfileNode : MonoBehaviour
     public string GetBody()
     {
         return Body;
+    }
+
+    public string GetTitle()
+    {
+        return Title;
     }
 
     public bool GetIsEssential()
