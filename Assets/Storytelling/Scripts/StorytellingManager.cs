@@ -42,6 +42,11 @@ public class StorytellingManager : MonoBehaviour
     readonly float EqualVariationLimit = 0.2f;
     KeyValuePair<float, float>[] NarrativeMoodVariationArray; // array that will be used in the emotional variation of narrators
 
+    string MariaHappyExpression = "<<Feel Maria Neutral 0.8 None>>\n<< Feel Maria Happiness 0.8 None>>\n";
+    string MariaSadExpression = "<<Feel Maria Neutral 0.8 None>>\n<< Feel Maria Sadness 0.8 None>>\n";
+    string JoaoFearExpression = "<<Feel Joao Neutral 0.8 None>>\n<< Feel Joao Fear 0.8 None>>\n";
+    string JoaoSurpriseExpression = "<<Feel Joao Neutral 0.8 None>>\n<< Feel Joao Surprise 0.8 None>>\n";
+
     void Awake()
     {
         //Check if instance already exists
@@ -115,7 +120,8 @@ public class StorytellingManager : MonoBehaviour
     { 
         //FixNarratorOrder(ref narrative, false);
         FixNarratorOrder(ref narrative, true);
-        FixNarrativeConnections(ref narrative);
+        FixNarratorEmotionalExpressions(ref narrative);
+        FixNarrativeConnections(ref narrative);        
 
         print(solutionPath);
 
@@ -142,6 +148,44 @@ public class StorytellingManager : MonoBehaviour
             {
                 narrative[i].Value.SetTransitions("", true);
             }
+        }
+    }
+
+    void FixNarratorEmotionalExpressions(ref List<KeyValuePair<int, StorytellingYarnfileNode>> narrative)
+    {
+        for (int i = 0; i < narrative.Count; i++)
+        {
+            string[] nodeLines = narrative[i].Value.GetBody().Split('\n');
+            string newBody = "";
+
+            for (int j = 0; j < nodeLines.Length - 1; j++)
+            {
+                if (j >= 5)
+                {
+                    if (nodeLines[j].Contains("<<objective>>"))
+                    {
+                        if (NarrativeMoodVariationArray[i].Value >= 2f)
+                        {
+                            newBody += JoaoSurpriseExpression;
+                        }
+                        if(NarrativeMoodVariationArray[i].Key > 0f)
+                        {
+                            newBody += MariaHappyExpression;
+                        }
+
+                        if (NarrativeMoodVariationArray[i].Value <= -2f)
+                        {
+                            newBody += JoaoFearExpression;
+                        }
+                        if (NarrativeMoodVariationArray[i].Key < 0f)
+                        {
+                            newBody += MariaSadExpression;
+                        }
+                    }
+                }
+                newBody += nodeLines[j] + "\n";
+            }
+            narrative[i].Value.SetBody(newBody);
         }
     }
 
@@ -210,14 +254,17 @@ public class StorytellingManager : MonoBehaviour
                     }
                     else
                     {
-                        if(NarrativeMoodVariationArray[i].Value >= 2f || NarrativeMoodVariationArray[i].Key > 0f)
+                        if(nodeLines[j].Contains("<<objective>>"))
                         {
-                            currentName = narratorNames[0] + ":";
-                        }
-                        else if (NarrativeMoodVariationArray[i].Value <= -2f || NarrativeMoodVariationArray[i].Key < 0f)
-                        {
-                            currentName = narratorNames[1] + ":";
-                        }                        
+                            if (NarrativeMoodVariationArray[i].Value >= 2f || NarrativeMoodVariationArray[i].Key > 0f)
+                            {
+                                currentName = narratorNames[0] + ":";
+                            }
+                            else if (NarrativeMoodVariationArray[i].Value <= -2f || NarrativeMoodVariationArray[i].Key < 0f)
+                            {
+                                currentName = narratorNames[1] + ":";
+                            }
+                        }                                         
                     }                    
                 }
                 newBody += nodeLines[j] + "\n";

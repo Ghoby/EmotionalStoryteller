@@ -3,6 +3,8 @@ tags: 1 | isEssential:False | [OBJECTIVE:0.0; Calm:0.3] | Joao.Emotion.Neutral.0
 colorID: 1
 position: 238,236
 ---
+<<Feel Maria Neutral 0.8 None>>
+<< Feel Maria Happiness 0.8 None>>
 <<objective>>
 Maria: The sky, completely stripped of clouds, flourished with glistening stars.
 Maria: Every conceiveable constellation was there for the eye to see.
@@ -33,6 +35,8 @@ Maria: named for the simmering heat its blade generated when swung or thrusted.
 Maria: And tomorrow, Kali would hopefully put it to good use.
 Maria: She had been following Its trail for more than a day now.
 Maria: Sooner or later, it would end.
+<<Feel Maria Neutral 0.8 None>>
+<< Feel Maria Happiness 0.8 None>>
 <<objective>>
 Maria: When she was done with the blade, she carefully placed it in its sheath,
 Maria: and layed on her makeshift matress of leaves and moss, using her pack as a pillow.
@@ -61,6 +65,8 @@ Maria: was that It hadn't left a single bite mark on the woodsman, whatsoever;
 Maria: It hadn't had a single intention of feeding on the man.
 Maria: This Thing simply killed him for sport.
 Maria: Or maybe...
+<<Feel Maria Neutral 0.8 None>>
+<< Feel Maria Sadness 0.8 None>>
 <<objective>>
 Joao: A feeling had began growing on the back of Kali's consciousness during the past days.
 Joao: A feeling that, during the quietest moments of her quest,
@@ -82,6 +88,10 @@ position: 235,521
 Joao: The blood trail led to an enormous cave.
 Joao: It's entrance, a wide-open mouth of dark gloom ripping out of the body of the hill's wall, 
 Joao: broken and sharp stalactite and stalagmite fangs in wait of any entering prey. 
+<<Feel Joao Neutral 0.8 None>>
+<< Feel Joao Surprise 0.8 None>>
+<<Feel Maria Neutral 0.8 None>>
+<< Feel Maria Happiness 0.8 None>>
 <<objective>>
 Maria: Grabbing a broken oak branch from the surrounding treeline, she took a bundle of dead leaves,
 Maria: wrapped them around one of the branch's ends with some linen cloth soaked in old licor and,
@@ -111,6 +121,10 @@ Maria: In the village, they were received with tremendous celebration and rejoic
 Maria: They even brought out some of the leftover fireworks from New Year's Celebration,
 Maria: and fired them up into the stars. 
 Maria: That was one of the happiest nights of Kali's life.
+<<Feel Joao Neutral 0.8 None>>
+<< Feel Joao Surprise 0.8 None>>
+<<Feel Maria Neutral 0.8 None>>
+<< Feel Maria Happiness 0.8 None>>
 <<objective>>
 Maria: Kali smilled at the thought,
 Maria: and the looming darkness felt like it had lost some of its initial weight.
@@ -131,6 +145,8 @@ Maria: Any sign of shifting movement, any slight noise at the edge of earing,
 Maria: any wiff of decayed flesh, any pair of eyes glowing in the midst of the gloom,
 Maria: her senses and muscles were ready to receive and respond, accordingly.
 Maria: The trail ended abruptly. 
+<<Feel Maria Neutral 0.8 None>>
+<< Feel Maria Happiness 0.8 None>>
 <<objective>>
 Maria: As if in one moment the blood was steadily falling to the ground,
 Maria: and in another it had suddenly stopped.
@@ -153,8 +169,10 @@ Maria: and thrusted the blade into It, but the Thing swiftly dodged her attack,
 Maria: and, with Its huge, bloated left arm, pounded her to the ground.
 Maria: Kali, all air suddenly rushing out of her chest, felt like she was hit by a battering ram.
 Maria: As she regained her breath, she couldn't help but smell It. 
-Maria: A nausious reek, a mix of rotten flesh, bile and sulfur.
+<<Feel Maria Neutral 0.8 None>>
+<< Feel Maria Sadness 0.8 None>>
 <<objective>>
+Joao: A nausious reek, a mix of rotten flesh, bile and sulfur.
 Joao: Sear still in hand, she picked up the dropped torch, its light weaker than before.
 Joao: But it was enough for Kali to catch a glimpse of Its crimson filled, hairy snout, 
 Joao: rows of brownish, sharp teeth adorning a hungry, devilish grin.
@@ -171,6 +189,8 @@ tags: 9 | isEssential:True | [OBJECTIVE:0.0; Calm:0.0] | Joao.Emotion.Neutral.0,
 colorID: 5
 position: 1031,512
 ---
+<<Feel Joao Neutral 0.8 None>>
+<< Feel Joao Surprise 0.8 None>>
 <<objective>>
 Maria: Kali couldn't say if this rush of attacks had lasted 2 minutes or 2 hours.
 Maria: When It stopped, Kali had the the entirety of her coat and trousers ripped and bloodied.
@@ -216,6 +236,8 @@ colorID: 5
 position: 770,768
 ---
 Maria: Once more, she reached the cave's threshold. 
+<<Feel Maria Neutral 0.8 None>>
+<< Feel Maria Happiness 0.8 None>>
 <<objective>>
 Maria: Hesitation rushed over her, yet she still walked in, very slowly.
 Maria: Her grip holding Moon as tightly as it could.
@@ -239,6 +261,8 @@ Maria: She tried, and tried and tried to move her body, but it refused to obey.
 Maria: The heavy breathing behind her grew louder by the minute.
 Maria: She tried, this time harder, and again, and again, and again, and...
 Maria: She turned around.
+<<Feel Maria Neutral 0.8 None>>
+<< Feel Maria Sadness 0.8 None>>
 <<objective>>
 Joao: It loomed Its entire body over her, the same mocking bloody grin carved in its muzzle,
 Joao: the same eyes, all devouring, piercing her entire being,
@@ -256,6 +280,10 @@ position: 237,1002
 ---
 Joao: The sky, completely stripped of clouds, flourished with glistening stars.
 Joao: Every conceiveable constellation was there for the eye to see.
+<<Feel Joao Neutral 0.8 None>>
+<< Feel Joao Surprise 0.8 None>>
+<<Feel Maria Neutral 0.8 None>>
+<< Feel Maria Sadness 0.8 None>>
 <<objective>>
 Maria: But Kali didn't care. 
 Maria: Before her eyes, only those eyes and mocking grin seemed to loom.
@@ -280,6 +308,8 @@ Maria: And It turned her around, Its entire body looming over her.
 Maria: But then, just in the edge of the light of Moon, she saw its underbelly.
 Maria: Extremely soft and pulsating, ever so slightly.
 Maria: This vision filled her up with... hope? 
+<<Feel Joao Neutral 0.8 None>>
+<< Feel Joao Surprise 0.8 None>>
 <<objective>>
 Maria: She was dead before she realized.
 
@@ -296,6 +326,10 @@ Maria: And she knew exactly she had to do.
 Maria: Her feet took her to the the end of the trail.
 Maria: Behind her, the Thing was already waiting for her in the dark, smelling the stink of her fear.
 Maria: She paused. And counted to three.
+<<Feel Joao Neutral 0.8 None>>
+<< Feel Joao Surprise 0.8 None>>
+<<Feel Maria Neutral 0.8 None>>
+<< Feel Maria Happiness 0.8 None>>
 <<objective>>
 Maria: One.
 Maria: Two.
@@ -317,6 +351,10 @@ Maria: She slid underneath it and, when the thing's underbelly was right above h
 Maria: she thrust Moon upwards, with all the piercing force her arm could muster.
 Maria: Crawling out through the side, she pulled her sword out and a plethora of green pus 
 Maria: and viscera came tumbling out.
+<<Feel Joao Neutral 0.8 None>>
+<< Feel Joao Surprise 0.8 None>>
+<<Feel Maria Neutral 0.8 None>>
+<< Feel Maria Happiness 0.8 None>>
 <<objective>>
 Maria: The painfilled scream that poured out of the thing's mouth as it was dying was deafening.
 Maria: She watched it until it its body grew lifeless.
@@ -331,6 +369,10 @@ tags: 21 | isEssential:False | [OBJECTIVE:1.0; Calm:1.0] | Joao.Emotion.Neutral.
 colorID: 5
 position: 1000,1227
 ---
+<<Feel Joao Neutral 0.8 None>>
+<< Feel Joao Surprise 0.8 None>>
+<<Feel Maria Neutral 0.8 None>>
+<< Feel Maria Happiness 0.8 None>>
 <<objective>>
 Maria: When she picked it up, the hollowness inside her chest was filled.
 Maria: A sense of peace flooded her entire being. And she could return home.
