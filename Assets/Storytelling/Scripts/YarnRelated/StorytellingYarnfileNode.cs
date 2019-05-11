@@ -88,6 +88,11 @@ public class StorytellingYarnfileNode : MonoBehaviour
         return Index;
     }
 
+    public void SetBody(string body)
+    {
+        Body = body;
+    }
+
     public string GetBody()
     {
         return Body;

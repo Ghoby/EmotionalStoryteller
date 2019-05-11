@@ -39,7 +39,8 @@ public class StorytellingManager : MonoBehaviour
 
     int NarrativesIndex;
 
-    readonly float equalVariationLimit = 0.1f;
+    readonly float EqualVariationLimit = 0.2f;
+    KeyValuePair<float, float>[] NarrativeMoodVariationArray; // array that will be used in the emotional variation of narrators
 
     void Awake()
     {
@@ -111,12 +112,14 @@ public class StorytellingManager : MonoBehaviour
     }
 
     void CreateOutputYarnfile(List<KeyValuePair<int, StorytellingYarnfileNode>> narrative, string solutionPath)
-    {
+    { 
+        //FixNarratorOrder(ref narrative, false);
+        FixNarratorOrder(ref narrative, true);
         FixNarrativeConnections(ref narrative);
 
         print(solutionPath);
 
-        StreamWriter writer = new StreamWriter(solutionPath, true);
+        StreamWriter writer = new StreamWriter(solutionPath, false);
         
         foreach (KeyValuePair<int, StorytellingYarnfileNode> node in narrative)
         {
@@ -142,29 +145,86 @@ public class StorytellingManager : MonoBehaviour
         }
     }
 
+    void FixNarratorOrder(ref List<KeyValuePair<int, StorytellingYarnfileNode>> narrative, bool useMoodInNarration)
+    {
+        if(useMoodInNarration)
+        {
+            FixNarratorOrderWithMood(ref narrative);
+            return;
+        }
+        FixNarratorOrderSimple(ref narrative);
+    }
 
+    void FixNarratorOrderSimple(ref List<KeyValuePair<int, StorytellingYarnfileNode>> narrative)
+    {
+        string[] narratorNames = { "Maria", "Joao" };
+        int nameIndex = UnityEngine.Random.Range(0, 2);
+        
+        foreach(var node in narrative)
+        {
+            string currentName = narratorNames[nameIndex % 2] + ":";
+            string[] nodeLines = node.Value.GetBody().Split('\n');
+            string newBody = "";
 
-    // version that creates nodes whose index is the number by which it appeared in the yarnfile
-    //void CreateNodesFromYarnfile(List<string> lines)
-    //{
-    //    int index = 0;
-    //    string nodeTemp = "";
+            // Until nodeLines.Length-2 because nodeLines.Length-1 is "", so there's no use in checking it out
+            for (int i = 0; i < nodeLines.Length - 1; i++)
+            {
+                // First condition checks if the loop as passed the header section of the file
+                // Second condition checks if the line is in fact a interior tag
+                if(i >= 5 && !nodeLines[i].Contains("<<"))
+                {
+                    nodeLines[i] = currentName + nodeLines[i].Split(new char[] { ':' }, 2)[1];
+                }
+                newBody += nodeLines[i] + "\n";
+            }
 
-    //    foreach (string line in lines)
-    //    {
-    //        if (line.Contains("title: "))
-    //        {
-    //            index++;
-    //        }
-    //        nodeTemp += line + "\n"; // stack node
-    //        if (line == "===\r" || line == "===") // flush node
-    //        {
-    //            StorytellingYarnfileNode yarnNode = new StorytellingYarnfileNode(index, nodeTemp);
-    //            AddNode(index, yarnNode);
-    //            nodeTemp = "";
-    //        }
-    //    }
-    //}
+            node.Value.SetBody(newBody);
+            nameIndex++;
+        }        
+    }
+
+    void FixNarratorOrderWithMood(ref List<KeyValuePair<int, StorytellingYarnfileNode>> narrative)
+    {
+        string[] narratorNames = { "Maria", "Joao" };
+        string currentName = "";
+
+        for (int i = 0; i < narrative.Count; i++)
+        {
+            string[] nodeLines = narrative[i].Value.GetBody().Split('\n');
+            string newBody = "";
+
+            if(i == 0)
+            {
+                if (NarrativeMoodVariationArray[i].Key > 0f)       { currentName = narratorNames[0] + ":"; }
+                else if (NarrativeMoodVariationArray[i].Key < 0f)  { currentName = narratorNames[1] + ":"; }
+                else                                               { currentName = narratorNames[UnityEngine.Random.Range(0, 2)] + ":"; }
+            }            
+
+            for (int j = 0; j < nodeLines.Length - 1; j++)
+            {
+                if (j >= 5)
+                {
+                    if (!nodeLines[j].Contains("<<"))
+                    {
+                        nodeLines[j] = currentName + nodeLines[j].Split(new char[] { ':' }, 2)[1];
+                    }
+                    else
+                    {
+                        if(NarrativeMoodVariationArray[i].Value >= 2f || NarrativeMoodVariationArray[i].Key > 0f)
+                        {
+                            currentName = narratorNames[0] + ":";
+                        }
+                        else if (NarrativeMoodVariationArray[i].Value <= -2f || NarrativeMoodVariationArray[i].Key < 0f)
+                        {
+                            currentName = narratorNames[1] + ":";
+                        }                        
+                    }                    
+                }
+                newBody += nodeLines[j] + "\n";
+            }
+            narrative[i].Value.SetBody(newBody);
+        }        
+    }
 
 
     // version that creates nodes whose index in the dictionary is the timestamp they contain
@@ -291,13 +351,13 @@ public class StorytellingManager : MonoBehaviour
     {
         float result = 0f;
 
-        if(obj2 - obj1 > equalVariationLimit)
+        if(obj2 - obj1 > EqualVariationLimit)
         {
-            if(obj3 - obj2 > equalVariationLimit)
+            if(obj3 - obj2 > EqualVariationLimit)
             {
                 result = 2f;
             }
-            else if (obj3 - obj2 < -equalVariationLimit)
+            else if (obj3 - obj2 < -EqualVariationLimit)
             {
                 result = -3f;
             }
@@ -306,13 +366,13 @@ public class StorytellingManager : MonoBehaviour
                 result = 1f;
             }
         }
-        else if(obj2 - obj1 < -equalVariationLimit)
+        else if(obj2 - obj1 < -EqualVariationLimit)
         {
-            if (obj3 - obj2 > equalVariationLimit)
+            if (obj3 - obj2 > EqualVariationLimit)
             {
                 result = 3f;
             }
-            else if (obj3 - obj2 < -equalVariationLimit)
+            else if (obj3 - obj2 < -EqualVariationLimit)
             {
                 result = -2f;
             }
@@ -323,13 +383,13 @@ public class StorytellingManager : MonoBehaviour
         }
         else
         {
-            if (obj3 - obj2 > equalVariationLimit)
+            if (obj3 - obj2 > EqualVariationLimit)
             {
-                result = 2f;
+                result = 1f;
             }
-            else if (obj3 - obj2 < -equalVariationLimit)
+            else if (obj3 - obj2 < -EqualVariationLimit)
             {
-                result = -2f;
+                result = -1f;
             }
             else
             {
@@ -390,27 +450,31 @@ public class StorytellingManager : MonoBehaviour
         return objectiveValue;
     }
 
-    float EvaluateNarrativeBetter(List<KeyValuePair<int, StorytellingYarnfileNode>> narrative)
+    float EvaluateNarrativeBetter(List<KeyValuePair<int, StorytellingYarnfileNode>> narrative, bool registerVariation)
     {
         float objectiveValue = 0f;
-
-        for (int i = 0; i < narrative.Count; i += 3)
+        if(registerVariation)
+        {
+            NarrativeMoodVariationArray = new KeyValuePair<float, float>[(int) narrative.Count];
+        }
+        
+        for (int i = 0; i < narrative.Count; i += 1)
         {
             float obj1 = 0f;
             float obj2 = 0f;
             float obj3 = 0f;
-                        
+                                   
             if (i - 2 >= 0 && narrative[i].Value.Effects.Count > 0)
             {
-                obj1 = GetNodeEffectValue(narrative[i].Value.Effects);
+                obj1 = GetNodeEffectValue(narrative[i - 2].Value.Effects);
             }
             else
             {
                 obj1 = 0f;
             }
-            if (i - 1 >= narrative.Count && narrative[i].Value.Effects.Count > 0)
+            if (i - 1 >= 0 && narrative[i].Value.Effects.Count > 0)
             {
-                obj2 = GetNodeEffectValue(narrative[i].Value.Effects);
+                obj2 = GetNodeEffectValue(narrative[i - 1].Value.Effects);
             }
             else
             {
@@ -421,10 +485,60 @@ public class StorytellingManager : MonoBehaviour
                 obj3 = GetNodeEffectValue(narrative[i].Value.Effects);
             }
 
-            objectiveValue += obj3 + GetMoodVariationValue(obj1, obj2, obj3);
+            float varVal = GetMoodVariationValue(obj1, obj2, obj3);                        
+            objectiveValue += obj3 + varVal;
+
+            if (registerVariation)
+            {               
+                NarrativeMoodVariationArray[i] = new KeyValuePair<float, float>(obj3, varVal);
+            }
         }
 
         return objectiveValue;
+    }
+
+
+    List<KeyValuePair<int, StorytellingYarnfileNode>> GetBestNarrative(List<KeyValuePair<int, StorytellingYarnfileNode>>[] narratives, bool isHappy)
+    {
+        List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrative = null;
+        float bestObjectiveValue = 0f;
+        float currentObjectiveValue = 0f;
+        int bestIndex = 0;
+        for (int i = 0; i < narratives.Length; i++)
+        {
+            //currentObjectiveValue = EvaluateNarrativeSimple(narratives[i]);
+
+            if (i == 7349)
+            {
+                print("x");
+            }
+
+            currentObjectiveValue = EvaluateNarrativeBetter(narratives[i], false);
+            if ((isHappy && currentObjectiveValue >= bestObjectiveValue) || (!isHappy && currentObjectiveValue <= bestObjectiveValue))
+            {
+                bestNarrative = narratives[i];
+                bestObjectiveValue = currentObjectiveValue;
+                bestIndex = i;
+            }
+        }
+
+        if (bestNarrative != null)
+        {
+            EvaluateNarrativeBetter(bestNarrative, true);
+
+            if (isHappy)
+                print("best objective value happy: " + bestObjectiveValue);
+            else
+                print("best objective value dour: " + bestObjectiveValue);
+
+            print("best index: " + bestIndex);
+            return bestNarrative;
+        }
+        else
+        {
+            print("null");
+        }
+        return new List<KeyValuePair<int, StorytellingYarnfileNode>>();
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -463,41 +577,6 @@ public class StorytellingManager : MonoBehaviour
         }
 
         return narrative;
-    }
-
-    List<KeyValuePair<int, StorytellingYarnfileNode>> GetBestNarrative(List<KeyValuePair<int, StorytellingYarnfileNode>>[] narratives, bool isHappy)
-    {
-        List<KeyValuePair<int, StorytellingYarnfileNode>> bestNarrative = null;
-        float bestObjectiveValue = 0f;
-        float currentObjectiveValue = 0f;
-        int bestIndex = 0;
-        for (int i = 0; i < narratives.Length; i++)
-        {
-            currentObjectiveValue = EvaluateNarrativeSimple(narratives[i]);
-            //currentObjectiveValue = EvaluateNarrativeBetter(narratives[i]);
-            if ((isHappy && currentObjectiveValue >= bestObjectiveValue) || (!isHappy && currentObjectiveValue <= bestObjectiveValue))
-            {
-                bestNarrative = narratives[i];
-                bestObjectiveValue = currentObjectiveValue;
-                bestIndex = i;
-            }
-        }
-
-        if (bestNarrative != null)
-        {
-            if (isHappy)
-                print("best objective value happy: " + bestObjectiveValue);
-            else
-                print("best objective value dour: " + bestObjectiveValue);
-
-            print("best index: " + bestIndex);
-            return bestNarrative;
-        }
-        else
-        {
-            print("null");
-        }
-        return new List<KeyValuePair<int, StorytellingYarnfileNode>>();
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

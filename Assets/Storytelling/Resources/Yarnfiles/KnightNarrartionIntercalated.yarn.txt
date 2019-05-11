@@ -44,9 +44,9 @@ tags: 5 | isEssential:True | [OBJECTIVE:0.2; Calm:-0.2] | Joao.Emotion.Neutral.0
 colorID: 5
 position: 235,521
 ---
-Joao: The blood trail led to an enormous cave.
-Joao: It's entrance, a wide-open mouth of dark gloom ripping out of the body of the hill's wall, 
-Joao: broken and sharp stalactite and stalagmite fangs in wait of any entering prey. 
+Maria: The blood trail led to an enormous cave.
+Maria: It's entrance, a wide-open mouth of dark gloom ripping out of the body of the hill's wall, 
+Maria: broken and sharp stalactite and stalagmite fangs in wait of any entering prey. 
 <<objective>>
 Maria: Grabbing a broken oak branch from the surrounding treeline, she took a bundle of dead leaves,
 Maria: wrapped them around one of the branch's ends with some linen cloth soaked in old licor and,

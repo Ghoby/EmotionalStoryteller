@@ -1904,6 +1904,7 @@ MonoBehaviour:
   OriginalPath: C:/Users/Duarte Ferreira/Documents/_tese/EmotionalStoryteller/Assets/Storytelling/Resources/Yarnfiles/JoePlot.yarn.txt
   isHappyTone: 0
   UIManager: {fileID: 0}
+  evaluationStep: 1
 --- !u!4 &1520903872
 Transform:
   m_ObjectHideFlags: 0
