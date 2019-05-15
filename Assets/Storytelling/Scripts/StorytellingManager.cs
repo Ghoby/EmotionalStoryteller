@@ -36,7 +36,7 @@ public class StorytellingManager : MonoBehaviour
     public string OriginalPath = "C:/Users/Duarte Ferreira/Documents/_tese/EmotionalStoryteller/Assets/Storytelling/Resources/Yarnfiles/PlaceholderFile.yarn.txt";
     string HappySolutionPath = "Assets/Storytelling/Resources/Yarnfiles/RandomHappy.yarn.txt";
     string DourSolutionPath = "Assets/Storytelling/Resources/Yarnfiles/RandomDour.yarn.txt";
-    string SolutionPath = "Assets/Storytelling/Resources/Yarnfiles/";
+    string SolutionPath = "/Storytelling/Resources/Yarnfiles/";
     TextAsset YarnfileAsset;
     List<KeyValuePair<int, StorytellingYarnfileNode>> Nodes;
     public bool isHappyTone;
@@ -143,7 +143,7 @@ public class StorytellingManager : MonoBehaviour
 
         print(solutionPath);
 
-        StreamWriter writer = new StreamWriter(solutionPath, false);
+        StreamWriter writer = new StreamWriter("Assets" + solutionPath, false);
         
         foreach (KeyValuePair<int, StorytellingYarnfileNode> node in narrative)
         {
@@ -831,7 +831,7 @@ public class StorytellingManager : MonoBehaviour
 
     public void WriteInMemory(string solutionPath, string initialNode)
     {
-        PlayerPrefs.SetString("YarnfilePath", solutionPath);
+        PlayerPrefs.SetString("YarnfilePath", Application.dataPath + solutionPath);
         PlayerPrefs.SetString("InitialNodeName", initialNode);
 
         print(PlayerPrefs.GetString("YarnfilePath"));

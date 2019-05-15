@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections;
 using System.IO;
 using System.Linq;
 using HookControl;
@@ -23,6 +24,11 @@ public class Preview : MonoBehaviour
 
     [SerializeField] private PreviewDebugLogger _previewDebugLogger;
 
+    // storytelling
+    bool BuildUp;
+    float StartTime;
+    float TimeLimit = 2f;
+
     // Use this for initialization
     void Start()
     {
@@ -35,7 +41,19 @@ public class Preview : MonoBehaviour
         }
 
         Playing = false;
-        FileSelectInput();
+
+        // Non-storytelling /////////////////////////////////////////////////////////////////////////////////////
+        //FileSelectInput();
+
+        // storytelling /////////////////////////////////////////////////////////////////////////////////////////
+        InitTutors(PlayerPrefs.GetString("YarnfilePath"), PlayerPrefs.GetString("InitialNodeName"));
+        BuildUp = true;
+        StartTime = Time.time;
+    }
+
+    IEnumerator Wait(int time)
+    {
+        yield return new WaitForSecondsRealtime(time);
     }
 
     private void FileSelectInput()
@@ -210,6 +228,13 @@ public class Preview : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // STORYTELLING//////////////////////////////////////////////////////////////////////////////////////
+        if(BuildUp && Time.time - StartTime >= TimeLimit)
+        {
+            BuildUp = false;
+            Playing = true;
+        }
+        // NON-STORYTELLING ////////////////////////////////////////////////////////////////////////////////
         if (Playing)
         {
             _manager.Update();

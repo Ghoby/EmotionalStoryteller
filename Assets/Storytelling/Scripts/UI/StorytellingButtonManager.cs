@@ -64,6 +64,6 @@ public class StorytellingButtonManager : MonoBehaviour
 
     public void PlayButton()
     {
-        // TO DO
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Preview", UnityEngine.SceneManagement.LoadSceneMode.Single);
     }
 }
