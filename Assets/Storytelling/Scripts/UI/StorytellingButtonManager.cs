@@ -51,7 +51,7 @@ public class StorytellingButtonManager : MonoBehaviour
         }        
     }
 
-    public void PlayButton()
+    public void Next2Button()
     {
         Toggle activeToggle = StorytellingManager.Instance.UIManager.GetActiveToggle();
         bool isHappy = (activeToggle.gameObject.name == "HappyButton");
@@ -60,5 +60,10 @@ public class StorytellingButtonManager : MonoBehaviour
         StorytellingManager.Instance.UIManager.SetToneSelector(false);
 
         StorytellingManager.Instance.InitiateStorytellingProcess(isHappy);
+    }
+
+    public void PlayButton()
+    {
+        // TO DO
     }
 }

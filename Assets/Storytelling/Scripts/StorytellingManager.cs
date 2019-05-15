@@ -18,10 +18,19 @@ public class StorytellingManager : MonoBehaviour
     private GameObject StorytellingAgentObj;
     [SerializeField]
     private int MaxNarrativeNum = 10000;
+
+    // UI elements & related
     [SerializeField]
     private Image YarnfileSelector; // set in editor
     [SerializeField]
     private Image ToneSelector; // set in editor
+    [SerializeField]
+    private Text ProcessingFileText; // set in editor
+    [SerializeField]
+    private Button PlayButton; // set in editor
+
+    readonly string FileIsProcessingText = "File is processing.\n\nPlease wait...";
+    readonly string FileIsCompletedText = "Processing complete!";
 
     // yarnfile related attributes
     public string OriginalPath = "C:/Users/Duarte Ferreira/Documents/_tese/EmotionalStoryteller/Assets/Storytelling/Resources/Yarnfiles/PlaceholderFile.yarn.txt";
@@ -42,13 +51,19 @@ public class StorytellingManager : MonoBehaviour
     readonly float EqualVariationLimit = 0.2f;
     KeyValuePair<float, float>[] NarrativeMoodVariationArray; // array that will be used in the emotional variation of narrators
 
-    string MariaHappyExpression = "<<Feel Maria Neutral 0.8 None>>\n<< Feel Maria Happiness 0.8 None>>\n";
-    string MariaSadExpression = "<<Feel Maria Neutral 0.8 None>>\n<< Feel Maria Sadness 0.8 None>>\n";
-    string JoaoFearExpression = "<<Feel Joao Neutral 0.8 None>>\n<< Feel Joao Fear 0.8 None>>\n";
-    string JoaoSurpriseExpression = "<<Feel Joao Neutral 0.8 None>>\n<< Feel Joao Surprise 0.8 None>>\n";
+    readonly string MariaNeutralExpression = "<<Feel Maria Neutral 0.8 None>>\n";    
+    readonly string MariaHappyExpression = "<<Feel Maria Neutral 0.8 None>>\n<<Feel Maria Happiness 0.8 None>>\n";
+    readonly string MariaSadExpression = "<<Feel Maria Neutral 0.8 None>>\n<<Feel Maria Sadness 0.8 None>>\n";
+    readonly string JoaoNeutralExpression = "<<Feel Joao Neutral 0.8 None>>\n";
+    readonly string JoaoFearExpression = "<<Feel Joao Neutral 0.8 None>>\n<<Feel Joao Fear 0.8 None>>\n";
+    readonly string JoaoSurpriseExpression = "<<Feel Joao Neutral 0.8 None>>\n<<Feel Joao Surprise 0.8 None>>\n";
+
 
     void Awake()
     {
+        // DELETE OR COMMENT WHEN DONE ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        DeleteMemory();
+
         //Check if instance already exists
         if (Instance == null)
         {
@@ -68,7 +83,7 @@ public class StorytellingManager : MonoBehaviour
         GoapFinished = false;
 
         Nodes = new List<KeyValuePair<int, StorytellingYarnfileNode>>();
-        UIManager = new StorytellingUIManager(YarnfileSelector, ToneSelector);
+        UIManager = new StorytellingUIManager(YarnfileSelector, ToneSelector, ProcessingFileText, PlayButton);
         
         // PLANNING PHASE //////////////////////
         //InitiateGoap();
@@ -94,7 +109,10 @@ public class StorytellingManager : MonoBehaviour
         {
             print("Dour");
         }
-        
+
+        // Update UI
+        UIManager.SetProcessingFileText(FileIsProcessingText, false);
+
         InitiateNarrativeGeneration();
     }
 
@@ -134,6 +152,11 @@ public class StorytellingManager : MonoBehaviour
         writer.Flush();
         writer.Close();
         print("Done");
+
+        WriteInMemory(solutionPath, narrative[0].Value.GetTitle());
+
+        // UI updated
+        UIManager.SetProcessingFileText(FileIsCompletedText, true);
     }
 
     void FixNarrativeConnections(ref List<KeyValuePair<int, StorytellingYarnfileNode>> narrative)
@@ -180,6 +203,11 @@ public class StorytellingManager : MonoBehaviour
                         if (NarrativeMoodVariationArray[i].Key < 0f)
                         {
                             newBody += MariaSadExpression;
+                        }
+
+                        if (NarrativeMoodVariationArray[i].Key == 0f)
+                        {
+                            newBody += JoaoNeutralExpression + MariaNeutralExpression;
                         }
                     }
                 }
@@ -791,5 +819,22 @@ public class StorytellingManager : MonoBehaviour
                 OmissionRecursiveGeneration(ref narrativesArray, nodes, index + 1, aux + 1);
             }
         }
+    }
+
+    // Memory storage functions
+
+    public void DeleteMemory()
+    {
+        PlayerPrefs.DeleteKey("YarnfilePath");
+        PlayerPrefs.DeleteKey("InitialNodeName");
+    }
+
+    public void WriteInMemory(string solutionPath, string initialNode)
+    {
+        PlayerPrefs.SetString("YarnfilePath", solutionPath);
+        PlayerPrefs.SetString("InitialNodeName", initialNode);
+
+        print(PlayerPrefs.GetString("YarnfilePath"));
+        print(PlayerPrefs.GetString("InitialNodeName"));
     }
 }
