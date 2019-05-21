@@ -36,7 +36,7 @@ public class StorytellingManager : MonoBehaviour
     public string OriginalPath = "C:/Users/Duarte Ferreira/Documents/_tese/EmotionalStoryteller/Assets/Storytelling/Resources/Yarnfiles/PlaceholderFile.yarn.txt";
     string HappySolutionPath = "Assets/Storytelling/Resources/Yarnfiles/RandomHappy.yarn.txt";
     string DourSolutionPath = "Assets/Storytelling/Resources/Yarnfiles/RandomDour.yarn.txt";
-    string SolutionPath = "/Storytelling/Resources/Yarnfiles/";
+    string SolutionPath = "StorytellingSolutions/";
     TextAsset YarnfileAsset;
     List<KeyValuePair<int, StorytellingYarnfileNode>> Nodes;
     public bool isHappyTone;
@@ -55,7 +55,7 @@ public class StorytellingManager : MonoBehaviour
     readonly string MariaHappyExpression = "<<Feel Maria Neutral 0.8 None>>\n<<Feel Maria Happiness 0.8 None>>\n";
     readonly string MariaSadExpression = "<<Feel Maria Neutral 0.8 None>>\n<<Feel Maria Sadness 0.8 None>>\n";
     readonly string JoaoNeutralExpression = "<<Feel Joao Neutral 0.8 None>>\n";
-    readonly string JoaoFearExpression = "<<Feel Joao Neutral 0.8 None>>\n<<Feel Joao Fear 0.8 None>>\n";
+    readonly string JoaoFearExpression = "<<Feel Joao Neutral 0.8 None>>\n<<Feel Joao Fear 0.6 None>>\n";
     readonly string JoaoSurpriseExpression = "<<Feel Joao Neutral 0.8 None>>\n<<Feel Joao Surprise 0.8 None>>\n";
 
 
@@ -84,14 +84,20 @@ public class StorytellingManager : MonoBehaviour
 
         Nodes = new List<KeyValuePair<int, StorytellingYarnfileNode>>();
         UIManager = new StorytellingUIManager(YarnfileSelector, ToneSelector, ProcessingFileText, PlayButton);
-        
+
+        if(PlayerPrefs.GetString("OriginalPath") != string.Empty)
+        {
+            UIManager.SetInputPath(PlayerPrefs.GetString("OriginalPath"));
+        }
+
+        if (!Directory.Exists("Assets/" + SolutionPath))
+        {            
+            Directory.CreateDirectory("Assets/" + SolutionPath);
+            print("Solutions folder created");
+        }
+
         // PLANNING PHASE //////////////////////
         //InitiateGoap();
-    }
-
-    void Update()
-    {
-        
     }
     
     public void InitiateStorytellingProcess(bool isHappy)
@@ -143,7 +149,7 @@ public class StorytellingManager : MonoBehaviour
 
         print(solutionPath);
 
-        StreamWriter writer = new StreamWriter("Assets" + solutionPath, false);
+        StreamWriter writer = new StreamWriter("Assets/" + solutionPath, false);
         
         foreach (KeyValuePair<int, StorytellingYarnfileNode> node in narrative)
         {
@@ -207,7 +213,11 @@ public class StorytellingManager : MonoBehaviour
 
                         if (NarrativeMoodVariationArray[i].Key == 0f)
                         {
-                            newBody += JoaoNeutralExpression + MariaNeutralExpression;
+                            newBody += MariaNeutralExpression;
+                        }
+                        if (NarrativeMoodVariationArray[i].Value == 0f)
+                        {
+                            newBody += JoaoNeutralExpression;
                         }
                     }
                 }
@@ -768,8 +778,7 @@ public class StorytellingManager : MonoBehaviour
 
         print(result);
         return result;
-    }
-    
+    }    
 
     List<KeyValuePair<int, StorytellingYarnfileNode>> BruteForceBestNarrativeOmissionOnly(bool isHappy)
     {
@@ -783,21 +792,17 @@ public class StorytellingManager : MonoBehaviour
         return GetBestNarrative(narratives, isHappyTone);
     }
 
-
-    // CORRIGIR
     void OmissionRecursiveGeneration(ref List<KeyValuePair<int, StorytellingYarnfileNode>>[] narrativesArray, 
         List<KeyValuePair<int, StorytellingYarnfileNode>> nodes, int index, int aux)
     {
         if(index == nodes.Count - 1)
         {
-            var x = narrativesArray[NarrativesIndex];
             if (!nodes[index].Value.GetIsEssential())
             {
                 NarrativesIndex++;
-            }
-            narrativesArray[NarrativesIndex] = new List<KeyValuePair<int, StorytellingYarnfileNode>>(narrativesArray[NarrativesIndex - 1]);
+                narrativesArray[NarrativesIndex] = new List<KeyValuePair<int, StorytellingYarnfileNode>>(narrativesArray[NarrativesIndex - 1]);
+            }            
             narrativesArray[NarrativesIndex].Add(nodes[index]);
-            x = narrativesArray[NarrativesIndex];
         }
         else if(index < nodes.Count - 1)
         {
@@ -821,19 +826,23 @@ public class StorytellingManager : MonoBehaviour
         }
     }
 
-    // Memory storage functions
-
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////// Memory Storage Functions /////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public void DeleteMemory()
     {
+        PlayerPrefs.DeleteKey("OriginalPath");
         PlayerPrefs.DeleteKey("YarnfilePath");
         PlayerPrefs.DeleteKey("InitialNodeName");
     }
 
     public void WriteInMemory(string solutionPath, string initialNode)
     {
-        PlayerPrefs.SetString("YarnfilePath", Application.dataPath + solutionPath);
+        PlayerPrefs.SetString("OriginalPath", OriginalPath);
+        PlayerPrefs.SetString("YarnfilePath", Application.dataPath + "/" + solutionPath);
         PlayerPrefs.SetString("InitialNodeName", initialNode);
 
+        print(PlayerPrefs.GetString("OriginalPath"));
         print(PlayerPrefs.GetString("YarnfilePath"));
         print(PlayerPrefs.GetString("InitialNodeName"));
     }

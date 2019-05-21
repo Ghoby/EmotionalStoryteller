@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Storytelling/Scenes/Storytelling.unity
+    guid: 510a233d929aecc47b39f757a7074e9d
+  - enabled: 1
     path: Assets/VT/Main/Scenes/Preview.unity
     guid: 849f7c10f567cd64fab9408fe8430d46
-  - enabled: 1
+  - enabled: 0
     path: Assets/VT/Main/Scenes/VT_Main.unity
     guid: 46bfd26c07ea7ed42bf405f7ed312f60
   - enabled: 0
@@ -17,3 +20,4 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Packages/AndroidCalendarPlugin/Scenes/Example.unity
     guid: cfa791fbe978b01479f115c14025acc4
+  m_configObjects: {}

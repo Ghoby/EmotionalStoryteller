@@ -31,7 +31,7 @@ public class StorytellingButtonManager : MonoBehaviour
         string title = string.IsNullOrEmpty(_title) ? "Select file" : _title;
         string directory = string.IsNullOrEmpty(DialogDirectory) ? string.Empty : DialogDirectory;
         string extensions = string.IsNullOrEmpty(DialogExtensions) ? string.Empty : DialogExtensions;
-        string[] files = StandaloneFileBrowser.OpenFilePanel(title, directory, extensions, false);
+        string[] files = StandaloneFileBrowser.OpenFilePanel(title, directory, "yarn.txt", false);
 
         if (files.Length > 0 && !string.IsNullOrEmpty(files[0]))
         {
