@@ -143,8 +143,8 @@ public class StorytellingManager : MonoBehaviour
 
     void CreateOutputYarnfile(List<KeyValuePair<int, StorytellingYarnfileNode>> narrative, string solutionPath)
     { 
-        //FixNarratorOrder(ref narrative, false);
-        FixNarratorOrder(ref narrative, true);
+        FixNarratorOrder(ref narrative, false);
+        //FixNarratorOrder(ref narrative, true);
         AddNarratorEmotionalExpressions(ref narrative);
         FixNarrativeConnections(ref narrative);        
 

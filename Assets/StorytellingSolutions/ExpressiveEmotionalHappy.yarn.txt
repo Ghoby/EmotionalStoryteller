@@ -7,25 +7,25 @@ position: 238,236
 <<Feel Maria Neutral 0.8 None>>
 <<Feel Maria Happiness 0.8 None>>
 <<OBJECTIVE:0.0; Calm:0.3>>
-Joao: The sky, completely stripped of clouds, flourished with glistening stars.
-Joao: Every conceiveable constellation was there for the eye to see.
-Joao: The S shape of the Old Drake;
-Joao: The broken arch of Glundun's Lyre;
-Joao: The confused, mishmash pattern of dots that made the Fire Bull;
-Joao: Kali watched them all from her little improvised camp,
-Joao: right beneath a clearing in the low treetops of Salazar's Woods.
+Maria: The sky, completely stripped of clouds, flourished with glistening stars.
+Maria: Every conceiveable constellation was there for the eye to see.
+Maria: The S shape of the Old Drake;
+Maria: The broken arch of Glundun's Lyre;
+Maria: The confused, mishmash pattern of dots that made the Fire Bull;
+Maria: Kali watched them all from her little improvised camp,
+Maria: right beneath a clearing in the low treetops of Salazar's Woods.
 <<Feel Joao Neutral 0.8 None>>
 <<Feel Maria Neutral 0.8 None>>
 <<Feel Maria Happiness 0.8 None>>
 <<OBJECTIVE:0.0; Calm:0.5>>
-Joao: She found herself happily grinning upwards,
-Joao: remembering her last days on the village, before coming here.
+Maria: She found herself happily grinning upwards,
+Maria: remembering her last days on the village, before coming here.
 <<Feel Joao Neutral 0.8 None>>
 <<Feel Maria Neutral 0.8 None>>
 <<Feel Maria Happiness 0.8 None>>
 <<OBJECTIVE:0.2; Calm:0.5>>
-Joao: Then, with a stronger arm than before,
-Joao: she proceded with the sharpening of the blade.
+Maria: Then, with a stronger arm than before,
+Maria: she proceded with the sharpening of the blade.
 
 [[>|CaveNoon.Part1]]
 [[Repeat|CampfireNight.Part1]]
@@ -40,12 +40,12 @@ position: 235,521
 <<Feel Maria Neutral 0.8 None>>
 <<Feel Maria Sadness 0.8 None>>
 <<OBJECTIVE:-0.4; Calm:-0.2>>
-Maria: The blood trail she was following led to an enormous cave.
-Maria: It's entrance, a wide-open mouth of dark gloom ripping out of the body of the hill's wall,
-Maria: broken and sharp stalactite and stalagmite fangs in wait of any entering prey. 
-Maria: Grabbing a broken oak branch from the surrounding treeline, she took a bundle of dead leaves,
-Maria: wrapped them around one of the branch's ends with some linen cloth soaked in old licor and,
-Maria: after unbuckling Sear, her blade, from its sheath, she waved it for a few seconds in the air
+Joao: The blood trail she was following led to an enormous cave.
+Joao: It's entrance, a wide-open mouth of dark gloom ripping out of the body of the hill's wall,
+Joao: broken and sharp stalactite and stalagmite fangs in wait of any entering prey. 
+Joao: Grabbing a broken oak branch from the surrounding treeline, she took a bundle of dead leaves,
+Joao: wrapped them around one of the branch's ends with some linen cloth soaked in old licor and,
+Joao: after unbuckling Sear, her blade, from its sheath, she waved it for a few seconds in the air
 <<Feel Joao Neutral 0.8 None>>
 <<Feel Joao Surprise 0.8 None>>
 <<Feel Maria Neutral 0.8 None>>
@@ -59,7 +59,7 @@ Maria: Sweat filled the inside of her trembling leather gloves.
 <<Feel Maria Neutral 0.8 None>>
 <<Feel Maria Sadness 0.8 None>>
 <<OBJECTIVE:0.0; Calm:-0.2>>
-Maria: Taking three deep breaths and a short prayer, she stepped into the darkness.
+Joao: Taking three deep breaths and a short prayer, she stepped into the darkness.
 
 [[>|CaveNoon.Part3]]
 [[Repeat|CaveNoon.Part1]]
@@ -75,10 +75,10 @@ Joao: so much so, that the light of her torch couldn't even reach it.
 <<Feel Maria Neutral 0.8 None>>
 <<Feel Maria Happiness 0.8 None>>
 <<OBJECTIVE:0.3; Calm:-0.4>>
-Joao: As her chest tightned, she drew Sear.
-Joao: Any sign of shifting movement, any slight noise at the edge of earing, 
-Joao: any wiff of decayed flesh, any pair of eyes glowing in the midst of the gloom,
-Joao: her senses and muscles were ready to receive and respond, accordingly.
+Maria: As her chest tightned, she drew Sear.
+Maria: Any sign of shifting movement, any slight noise at the edge of earing, 
+Maria: any wiff of decayed flesh, any pair of eyes glowing in the midst of the gloom,
+Maria: her senses and muscles were ready to receive and respond, accordingly.
 <<Feel Joao Neutral 0.8 None>>
 <<Feel Maria Neutral 0.8 None>>
 <<OBJECTIVE:0.3; Calm:-0.5>>
@@ -101,15 +101,15 @@ tags: 6 | isEssential:True
 colorID: 5
 position: 1031,512
 ---
-Maria: Kali couldn't say if this rush of attacks had lasted 2 minutes or 2 hours.
+Joao: Kali couldn't say if this rush of attacks had lasted 2 minutes or 2 hours.
 <<Feel Joao Neutral 0.8 None>>
 <<Feel Maria Neutral 0.8 None>>
 <<Feel Maria Sadness 0.8 None>>
 <<OBJECTIVE:0.0; Calm:-0.9>>
-Maria: When It stopped, Kali had the the entirety of her coat and trousers ripped and bloodied.
-Maria: Her left shoulder was dislocated, so she couldn't move the arm dangling underneath it.
-Maria: Sear was still in her right hand, though. The torch she held in her teeth.
-Maria: But she knew her body couldn't take much more of this.
+Joao: When It stopped, Kali had the the entirety of her coat and trousers ripped and bloodied.
+Joao: Her left shoulder was dislocated, so she couldn't move the arm dangling underneath it.
+Joao: Sear was still in her right hand, though. The torch she held in her teeth.
+Joao: But she knew her body couldn't take much more of this.
 <<Feel Joao Neutral 0.8 None>>
 <<Feel Joao Surprise 0.8 None>>
 <<Feel Maria Neutral 0.8 None>>
@@ -122,8 +122,8 @@ Maria: Responding in tandem, It also charged at her in a bestial, galloping moti
 <<Feel Joao Fear 0.6 None>>
 <<Feel Maria Neutral 0.8 None>>
 <<OBJECTIVE:0.0; Calm:0.0>>
-Maria: It was now or never.
-Maria: Do or die.
+Joao: It was now or never.
+Joao: Do or die.
 
 <<exit>>
 ===

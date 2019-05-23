@@ -26,15 +26,15 @@ tags: 2 | isEssential:True
 colorID: 5
 position: 235,521
 ---
-Maria: The blood trail she was following led to an enormous cave.
 <<OBJECTIVE:-0.4; Calm:-0.2>>
+Maria: The blood trail she was following led to an enormous cave.
 Maria: It's entrance, a wide-open mouth of dark gloom ripping out of the body of the hill's wall,
 Maria: broken and sharp stalactite and stalagmite fangs in wait of any entering prey. 
 Joao: Grabbing a broken oak branch from the surrounding treeline, she took a bundle of dead leaves,
 Joao: wrapped them around one of the branch's ends with some linen cloth soaked in old licor and,
 Joao: after unbuckling Sear, her blade, from its sheath, she waved it for a few seconds in the air
+<<OBJECTIVE:0.0; Calm:0.2>>
 Joao: and pressed the scalding blade on the wet cloth. It caught fire instantly.
-<<OBJECTIVE:0.0; Calm:0.0>>
 Maria: Now, the moment she feared, the moment she eagerly waited for, was at hand.
 Maria: Up-and-down shivers needled the skin of her back and neck.
 Maria: Sweat filled the inside of her trembling leather gloves.
