@@ -56,9 +56,15 @@ public class StorytellingManager : MonoBehaviour
     readonly string MariaHappyExpression = "<<Feel Maria Neutral 0.8 None>>\n<<Feel Maria Happiness 0.8 None>>\n";
     readonly string MariaSadExpression = "<<Feel Maria Neutral 0.8 None>>\n<<Feel Maria Sadness 0.8 None>>\n";
     readonly string JoaoNeutralExpression = "<<Feel Joao Neutral 0.8 None>>\n";
-    readonly string JoaoFearExpression = "<<Feel Joao Neutral 0.8 None>>\n<<Feel Joao Fear 0.6 None>>\n";
-    readonly string JoaoSurpriseExpression = "<<Feel Joao Neutral 0.8 None>>\n<<Feel Joao Surprise 0.8 None>>\n";
+    readonly string JoaoFearExpression = "<<Feel Joao Neutral 0.8 None>>\n<<Feel Joao Fear 0.3 None>>\n";
+    readonly string JoaoSurpriseExpression = "<<Feel Joao Neutral 0.8 None>>\n<<Feel Joao Surprise 0.5 None>>\n";
 
+    readonly int UntilNodPeriodMin = 2;
+    readonly int UntilNodPeriodMax = 7;
+    readonly int NodPeriod = 1;
+    readonly string Nod = "<<Nod ";
+    readonly string NodStart = " Start>>";
+    readonly string NodStop = " Stop>>";
 
     void Awake()
     {
@@ -143,8 +149,8 @@ public class StorytellingManager : MonoBehaviour
 
     void CreateOutputYarnfile(List<KeyValuePair<int, StorytellingYarnfileNode>> narrative, string solutionPath)
     { 
-        FixNarratorOrder(ref narrative, false);
-        //FixNarratorOrder(ref narrative, true);
+        //FixNarratorOrder(ref narrative, false);
+        FixNarratorOrder(ref narrative, true);
         AddNarratorEmotionalExpressions(ref narrative);
         FixNarrativeConnections(ref narrative);        
 
@@ -198,6 +204,7 @@ public class StorytellingManager : MonoBehaviour
 
             for (int j = 0; j < nodeLines.Length - 1; j++)
             {
+                // ADD FACIAL EXPRESSIONS AND BUBBLE COMMANDS
                 if (j >= 5)
                 {
                     if (nodeLines[j].Contains("<<OBJECTIVE"))
@@ -250,8 +257,12 @@ public class StorytellingManager : MonoBehaviour
     {
         string[] narratorNames = { "Maria", "Joao" };
         int nameIndex = UnityEngine.Random.Range(0, 2);
-        
-        foreach(var node in narrative)
+        int linesUntilNod = UnityEngine.Random.Range(UntilNodPeriodMin, UntilNodPeriodMax);
+        int linesUntilNodStop = NodPeriod;
+        bool nodNeedsClosing = false;
+        string currentNoddingNPC = "";
+
+        foreach (var node in narrative)
         {
             string currentName = narratorNames[nameIndex % 2] + ":";
             string[] nodeLines = node.Value.GetBody().Split('\n');
@@ -262,11 +273,27 @@ public class StorytellingManager : MonoBehaviour
             {
                 // First condition checks if the loop as passed the header section of the file
                 // Second condition checks if the line is in fact a interior tag
-                if(i >= 5 && !nodeLines[i].Contains("<<"))
+                if(i >= 5)
                 {
-                    nodeLines[i] = currentName + nodeLines[i].Split(new char[] { ':' }, 2)[1];
+                    if(!nodeLines[i].Contains("<<"))
+                    {
+                        nodeLines[i] = currentName + nodeLines[i].Split(new char[] { ':' }, 2)[1];
+                    }
+                    else
+                    {
+                        linesUntilNod++; // so this line doesn't count in the nodding pattern
+                    }
+
+                    AddNodAux(ref newBody, currentName, narratorNames, ref linesUntilNod, ref linesUntilNodStop, ref currentNoddingNPC, ref nodNeedsClosing);
+
                 }
                 newBody += nodeLines[i] + "\n";
+            }
+
+            if (nodNeedsClosing)
+            {
+                linesUntilNodStop = 0;
+                AddNodAux(ref newBody, currentName, narratorNames, ref linesUntilNod, ref linesUntilNodStop, ref currentNoddingNPC, ref nodNeedsClosing);
             }
 
             node.Value.SetBody(newBody);
@@ -280,6 +307,11 @@ public class StorytellingManager : MonoBehaviour
         string currentName = "";
         int effectIndex = 0;
 
+        int linesUntilNod = UnityEngine.Random.Range(UntilNodPeriodMin, UntilNodPeriodMax);
+        int linesUntilNodStop = NodPeriod;
+        bool nodNeedsClosing = false;
+        string currentNoddingNPC = "";
+
         for (int i = 0; i < narrative.Count; i++)
         {
             string[] nodeLines = narrative[i].Value.GetBody().Split('\n');
@@ -290,35 +322,85 @@ public class StorytellingManager : MonoBehaviour
                 if (NarrativeMoodVariationIntraNodesList[i].Key >= 0.1f)       { currentName = narratorNames[0] + ":"; }
                 else if (NarrativeMoodVariationIntraNodesList[i].Key <= -0.1f)  { currentName = narratorNames[1] + ":"; }
                 else                                               { currentName = narratorNames[UnityEngine.Random.Range(0, 2)] + ":"; }
-            }            
+            }
 
             for (int j = 0; j < nodeLines.Length - 1; j++)
             {
+                // CHANGE NARRATORS ACCORDING WITH CURRENT MOOD
                 if (j >= 5)
                 {
                     if (!nodeLines[j].Contains("<<"))
                     {
                         nodeLines[j] = currentName + nodeLines[j].Split(new char[] { ':' }, 2)[1];
                     }
-                    else if(nodeLines[j].Contains("<<OBJECTIVE"))
-                    {                        
-                        if (NarrativeMoodVariationIntraNodesList[effectIndex].Value >= 1.5f || 
+                    else
+                    {
+                        if (nodeLines[j].Contains("<<OBJECTIVE"))
+                        {
+                            if (NarrativeMoodVariationIntraNodesList[effectIndex].Value >= 1.5f ||
                             NarrativeMoodVariationIntraNodesList[effectIndex].Key >= 0.1f)
-                        {
-                            currentName = narratorNames[0] + ":";
-                        }
-                        else if (NarrativeMoodVariationIntraNodesList[effectIndex].Value <= -1.5f || 
-                                 NarrativeMoodVariationIntraNodesList[effectIndex].Key <= 0.1f)
-                        {
-                            currentName = narratorNames[1] + ":";
-                        }
+                            {
+                                currentName = narratorNames[0] + ":";
+                            }
+                            else if (NarrativeMoodVariationIntraNodesList[effectIndex].Value <= -1.5f ||
+                                     NarrativeMoodVariationIntraNodesList[effectIndex].Key <= 0.1f)
+                            {
+                                currentName = narratorNames[1] + ":";
+                            }
+                        }                        
                         effectIndex++;
-                    }                   
+                        linesUntilNod++; // so this line doesn't count in the nodding pattern
+                    }
+
+                    AddNodAux(ref newBody, currentName, narratorNames, ref linesUntilNod, ref linesUntilNodStop, ref currentNoddingNPC, ref nodNeedsClosing);          
                 }
+
                 newBody += nodeLines[j] + "\n";
             }
+
+            if(nodNeedsClosing)
+            {
+                linesUntilNodStop = 0;
+                AddNodAux(ref newBody, currentName, narratorNames, ref linesUntilNod, ref linesUntilNodStop, ref currentNoddingNPC, ref nodNeedsClosing);
+            }
+
             narrative[i].Value.SetBody(newBody);
         }        
+    }
+
+    void AddNodAux(ref string newBody, string currentName, string[] narratorNames, ref int linesUntilNod, ref int linesUntilNodStop, ref string currentNoddingNPC, ref bool nodNeedsClosing)
+    {
+        if (linesUntilNodStop == 0)
+        {
+            newBody += Nod + currentNoddingNPC + NodStop + "\n";
+
+            linesUntilNod = UnityEngine.Random.Range(UntilNodPeriodMin, UntilNodPeriodMax);
+            linesUntilNodStop = NodPeriod;
+            nodNeedsClosing = false;
+        }
+        else if (linesUntilNod <= 0)
+        {
+            if (linesUntilNod == 0 && !nodNeedsClosing)
+            {
+                if (currentName == narratorNames[0] + ":")
+                {
+                    newBody += Nod + narratorNames[1] + NodStart + "\n";
+                    currentNoddingNPC = narratorNames[1];
+                }
+                else
+                {
+                    newBody += Nod + narratorNames[0] + NodStart + "\n";
+                    currentNoddingNPC = narratorNames[0];
+                }
+                nodNeedsClosing = true;
+            }
+            if(linesUntilNod < 0)
+            {
+                linesUntilNodStop--;
+            }            
+        }
+
+        linesUntilNod--;
     }
 
 
