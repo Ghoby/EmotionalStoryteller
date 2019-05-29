@@ -53,8 +53,8 @@ public class StorytellingManager : MonoBehaviour
     List<KeyValuePair<float, float>> NarrativeMoodVariationIntraNodesList;
 
     readonly string MariaNeutralExpression = "<<Feel Maria Neutral 0.8 None>>\n";    
-    readonly string MariaHappyExpression = "<<Feel Maria Neutral 0.8 None>>\n<<Feel Maria Happiness 0.8 None>>\n";
-    readonly string MariaSadExpression = "<<Feel Maria Neutral 0.8 None>>\n<<Feel Maria Sadness 0.8 None>>\n";
+    readonly string MariaHappyExpression = "<<Feel Maria Neutral 0.8 None>>\n<<Feel Maria Happiness 0.6 None>>\n";
+    readonly string MariaSadExpression = "<<Feel Maria Neutral 0.8 None>>\n<<Feel Maria Sadness 0.5 None>>\n";
     readonly string JoaoNeutralExpression = "<<Feel Joao Neutral 0.8 None>>\n";
     readonly string JoaoFearExpression = "<<Feel Joao Neutral 0.8 None>>\n<<Feel Joao Fear 0.3 None>>\n";
     readonly string JoaoSurpriseExpression = "<<Feel Joao Neutral 0.8 None>>\n<<Feel Joao Surprise 0.5 None>>\n";
@@ -149,8 +149,8 @@ public class StorytellingManager : MonoBehaviour
 
     void CreateOutputYarnfile(List<KeyValuePair<int, StorytellingYarnfileNode>> narrative, string solutionPath)
     { 
-        //FixNarratorOrder(ref narrative, false);
-        FixNarratorOrder(ref narrative, true);
+        FixNarratorOrder(ref narrative, false);
+        //FixNarratorOrder(ref narrative, true);
         AddNarratorEmotionalExpressions(ref narrative);
         FixNarrativeConnections(ref narrative);        
 
