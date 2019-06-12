@@ -18,38 +18,63 @@ Maria: remembering her last days on the village, before coming here.
 Maria: Then, with a stronger arm than before,
 Maria: she proceded with the sharpening of the blade.
 
-[[>|CaveNoon.Part1]]
+[[>|CampfireNight.Part2]]
 [[Repeat|CampfireNight.Part1]]
 ===
+title: CampfireNight.Part2
+tags: 2 | isEssential:False
+colorID: 1
+position: 503,237
+---
+Joao: This would be her first solitary venture into the wilds.
+Joao: Ganji, her master, insisted that she should do this by herself.
+<<OBJECTIVE:0.0; Calm:0.7>>
+Maria: "You're much too experienced to have this bag of old meat protecting you,"
+Maria: was the last thing he said to her before she departed,
+Maria: and before that he gifted her with his sword Sear,
+Maria: named for the simmering heat its blade generated when swung or thrusted.
+<<OBJECTIVE:0.1; Calm:0.7>>
+Joao: And tomorrow, Kali would hopefully put it to good use.
+Joao: She had been following Its trail for more than a day now.
+Joao: Sooner or later, it would end.
+Maria: When she was done with the blade, she carefully placed it in its sheath,
+Maria: and layed on her makeshift matress of leaves and moss, using her pack as a pillow.
+Maria: "Tomorrow..." she remembered saying to herself as she fell asleep,
+<<OBJECTIVE:0.1; Calm:0.8>>
+Maria: "tomorrow, you're dead."
+
+[[>|CaveNoon.Part1]]
+[[Repeat|CampfireNight.Part2]]
+===
 title: CaveNoon.Part1
-tags: 2 | isEssential:True
+tags: 3 | isEssential:False
 colorID: 5
 position: 235,521
 ---
-<<OBJECTIVE:-0.4; Calm:-0.2>>
+<<OBJECTIVE:-0.6; Calm:-0.6>>
 Maria: The blood trail she was following led to an enormous cave.
 Maria: It's entrance, a wide-open mouth of dark gloom ripping out of the body of the hill's wall,
 Maria: broken and sharp stalactite and stalagmite fangs in wait of any entering prey. 
 Joao: Grabbing a broken oak branch from the surrounding treeline, she took a bundle of dead leaves,
 Joao: wrapped them around one of the branch's ends with some linen cloth soaked in old licor and,
 Joao: after unbuckling Sear, her blade, from its sheath, she waved it for a few seconds in the air
-<<OBJECTIVE:0.0; Calm:0.2>>
+<<OBJECTIVE:0.0; Calm:0.0>>
 Joao: and pressed the scalding blade on the wet cloth. It caught fire instantly.
 Maria: Now, the moment she feared, the moment she eagerly waited for, was at hand.
 Maria: Up-and-down shivers needled the skin of her back and neck.
 Maria: Sweat filled the inside of her trembling leather gloves.
-<<OBJECTIVE:0.0; Calm:-0.2>>
+<<OBJECTIVE:-0.2; Calm:-0.3>>
 Maria: Taking three deep breaths and a short prayer, she stepped into the darkness.
 
 [[>|CaveNoon.Part2]]
 [[Repeat|CaveNoon.Part1]]
 ===
 title: CaveNoon.Part2
-tags: 3 | isEssential:False
+tags: 4 | isEssential:True
 colorID: 5
 position: 485,514
 ---
-Maria: The torch's light was enough for her to get her imediate bearings,
+Maria: The torch's light was enough for her to get her imediate bearings inside the cave,
 Maria: but it also blinded Kali's eyes to the void outside the ring of light, 
 Maria: which, at times, seemed almost alive with thought and tentacle motion.
 <<OBJECTIVE:0.1; Calm:-0.6>>
@@ -70,7 +95,7 @@ Maria: She walked on, blood trail still underneath her heels.
 [[Repeat|CaveNoon.Part2]]
 ===
 title: CaveNoon.Part3
-tags: 4 | isEssential:True
+tags: 5 | isEssential:True
 colorID: 5
 position: 758,513
 ---
@@ -95,7 +120,7 @@ Joao: She wasn't surprised.
 [[Repeat|CaveNoon.Part3]]
 ===
 title: CaveNoon.Part4
-tags: 5 | isEssential:False
+tags: 6| isEssential:False
 colorID: 5
 position: 1031,512
 ---
@@ -120,7 +145,7 @@ Joao: And it was if the Thing felt revitelized, coming at her with greater and g
 [[Repeat|CaveNoon.Part4]]
 ===
 title: CaveNoon.Part5
-tags: 6 | isEssential:True
+tags: 7 | isEssential:True
 colorID: 5
 position: 1031,512
 ---

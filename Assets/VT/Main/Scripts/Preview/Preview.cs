@@ -43,12 +43,24 @@ public class Preview : MonoBehaviour
         Playing = false;
 
         // Non-storytelling /////////////////////////////////////////////////////////////////////////////////////
-        //FileSelectInput();
+        Play(false);
 
         // storytelling /////////////////////////////////////////////////////////////////////////////////////////
-        InitTutors(PlayerPrefs.GetString("YarnfilePath"), PlayerPrefs.GetString("InitialNodeName"));
-        BuildUp = true;
-        StartTime = Time.time;
+        //Play(true);
+    }
+
+    void Play(bool isStorytelling)
+    {
+        if(isStorytelling)
+        {
+            InitTutors(PlayerPrefs.GetString("YarnfilePath"), PlayerPrefs.GetString("InitialNodeName"));
+            BuildUp = true;
+            StartTime = Time.time;
+        }
+        else
+        {
+            FileSelectInput();
+        }
     }
 
     IEnumerator Wait(int time)

@@ -58,6 +58,7 @@ public class StorytellingManager : MonoBehaviour
     readonly string JoaoNeutralExpression = "<<Feel Joao Neutral 0.8 None>>\n";
     readonly string JoaoFearExpression = "<<Feel Joao Neutral 0.8 None>>\n<<Feel Joao Fear 0.3 None>>\n";
     readonly string JoaoSurpriseExpression = "<<Feel Joao Neutral 0.8 None>>\n<<Feel Joao Surprise 0.5 None>>\n";
+    readonly string SadnessFadeFix = "<<wait 1>>\n<<OverrideTextEffects Sadness 1 showEffects None linearCurve hideEffects None linearCurve>>\n<<wait 1>>\n";
 
     readonly int UntilNodPeriodMin = 2;
     readonly int UntilNodPeriodMax = 7;
@@ -149,8 +150,8 @@ public class StorytellingManager : MonoBehaviour
 
     void CreateOutputYarnfile(List<KeyValuePair<int, StorytellingYarnfileNode>> narrative, string solutionPath)
     { 
-        FixNarratorOrder(ref narrative, false);
-        //FixNarratorOrder(ref narrative, true);
+        //FixNarratorOrder(ref narrative, false);
+        FixNarratorOrder(ref narrative, true);
         AddNarratorEmotionalExpressions(ref narrative);
         FixNarrativeConnections(ref narrative);        
 
@@ -194,6 +195,10 @@ public class StorytellingManager : MonoBehaviour
     void AddNarratorEmotionalExpressions(ref List<KeyValuePair<int, StorytellingYarnfileNode>> narrative)
     {
         int effectIndex = 0;
+        string[] statusArrayMaria = { "Happy", "Sad", "Neutral" };
+        string[] statusArrayJoao = { "Surprise", "Fear", "Neutral" };
+        string currentStatusMaria = "";
+        string currentStatusJoao = "";
 
         for (int i = 0, n = 0; i < narrative.Count; i++)
         {
@@ -207,32 +212,44 @@ public class StorytellingManager : MonoBehaviour
                 // ADD FACIAL EXPRESSIONS AND BUBBLE COMMANDS
                 if (j >= 5)
                 {
+                    if(i == 0 && j == 5)
+                    {
+                        newBody += SadnessFadeFix;
+                    }
                     if (nodeLines[j].Contains("<<OBJECTIVE"))
                     {
-                        if (NarrativeMoodVariationIntraNodesList[effectIndex].Value >= 1.5f)
+                        if (NarrativeMoodVariationIntraNodesList[effectIndex].Value >= 1.5f && currentStatusJoao != "Surprise")
                         {
                             newBody += JoaoSurpriseExpression;
+                            currentStatusJoao = statusArrayJoao[0];
                         }
-                        else if (NarrativeMoodVariationIntraNodesList[effectIndex].Value <= -1.5f)
+                        else if (NarrativeMoodVariationIntraNodesList[effectIndex].Value <= -1.5f && currentStatusJoao != "Fear")
                         {
                             newBody += JoaoFearExpression;
+                            currentStatusJoao = statusArrayJoao[1];
                         }
-                        else
+                        else if (NarrativeMoodVariationIntraNodesList[effectIndex].Value > -1.5f && 
+                            NarrativeMoodVariationIntraNodesList[effectIndex].Value < 1.5f && currentStatusJoao != "Neutral")
                         {
                             newBody += JoaoNeutralExpression;
+                            currentStatusJoao = statusArrayJoao[2];
                         }
 
-                        if (NarrativeMoodVariationIntraNodesList[effectIndex].Key >= 0.1f)
+                        if (NarrativeMoodVariationIntraNodesList[effectIndex].Key >= 0.1f && currentStatusMaria != "Happy")
                         {
                             newBody += MariaHappyExpression;
+                            currentStatusMaria = statusArrayMaria[0];
                         }                       
-                        else if (NarrativeMoodVariationIntraNodesList[effectIndex].Key <= -0.1f)
+                        else if (NarrativeMoodVariationIntraNodesList[effectIndex].Key <= -0.1f && currentStatusMaria != "Sad")
                         {
                             newBody += MariaSadExpression;
+                            currentStatusMaria = statusArrayMaria[1];
                         }
-                        else
+                        else if (NarrativeMoodVariationIntraNodesList[effectIndex].Key > -0.1f && 
+                            NarrativeMoodVariationIntraNodesList[effectIndex].Key < 0.1f && currentStatusMaria != "Neutral")
                         {
                             newBody += MariaNeutralExpression;
+                            currentStatusMaria = statusArrayMaria[2];
                         }
                         effectIndex++;
                     }

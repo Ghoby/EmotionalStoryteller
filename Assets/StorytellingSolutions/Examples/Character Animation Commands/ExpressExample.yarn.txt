@@ -1,0 +1,27 @@
+﻿title: Start.ExpressExample
+tags: 
+colorID: 1
+position: 541,259
+---
+Maria: Expressing Happiness with a strength of 0.8
+<<Express Maria Happiness 0.8>>
+Maria: BOOOOOOOOOOOOOOOOOOOOOM
+Joao: Expressing Anger with a strength of 0.5
+<<Express Joao Anger 0.5>>
+Joao: FUUUUUUUUUUUUUUUUUUUUUUUUUUUCK
+
+[[>|Start.ExpressExample2]]
+[[Repeat|Start.ExpressExample]]
+===
+title: Start.ExpressExample2
+tags: 
+colorID: 1
+position: 541,259
+---
+Maria: Expressing Happiness with a strength of 0.8
+<<Express Maria Anger 0.8>>
+Maria: BOOOOOOOOOOOOOOOOOOOOOM
+Joao: Expressing Fear with a strength of 0.5
+<<Express Joao Fear 0.5>>
+Joao: FUUUUUUUUUUUUUUUUUUUUUUUUUUUCK
+===
