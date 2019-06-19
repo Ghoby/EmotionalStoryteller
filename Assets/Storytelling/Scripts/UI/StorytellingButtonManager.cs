@@ -13,6 +13,9 @@ public class StorytellingButtonManager : MonoBehaviour
     public string DialogDirectory { get; set; }
     public string DialogExtensions { get; set; }
 
+    bool isHappy;
+    bool isEmotional;
+
 
     void SetName(string submitedName)
     {
@@ -53,13 +56,24 @@ public class StorytellingButtonManager : MonoBehaviour
 
     public void Next2Button()
     {
-        Toggle activeToggle = StorytellingManager.Instance.UIManager.GetActiveToggle();
-        bool isHappy = (activeToggle.gameObject.name == "HappyButton");
+        Toggle activeToggle = StorytellingManager.Instance.UIManager.GetMoodActiveToggle();
+        isHappy = (activeToggle.gameObject.name == "HappyButton");
 
         StorytellingManager.Instance.UIManager.SetYarnfileSelector(false);
         StorytellingManager.Instance.UIManager.SetToneSelector(false);
+        StorytellingManager.Instance.UIManager.SetNarratorSelector(true);
+    }
 
-        StorytellingManager.Instance.InitiateStorytellingProcess(isHappy);
+    public void Next3Button()
+    {
+        Toggle activeToggle = StorytellingManager.Instance.UIManager.GetNarratorActiveToggle();
+        isEmotional = (activeToggle.gameObject.name == "EmotionalButton");
+
+        StorytellingManager.Instance.UIManager.SetYarnfileSelector(false);
+        StorytellingManager.Instance.UIManager.SetToneSelector(false);
+        StorytellingManager.Instance.UIManager.SetNarratorSelector(false);
+
+        StorytellingManager.Instance.InitiateStorytellingProcess(isHappy, isEmotional);
     }
 
     public void PlayButton()

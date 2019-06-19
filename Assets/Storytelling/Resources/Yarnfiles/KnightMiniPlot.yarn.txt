@@ -5,7 +5,7 @@ position: 238,236
 ---
 <<OBJECTIVE:0.0; Calm:0.3>>
 Joao: The sky, completely stripped of clouds, flourished with glistening stars.
-Joao: Every conceiveable constellation was there for the eye to see.
+Joao: Every conceivable constellation was there for the eye to see.
 Joao: The S shape of the Old Drake;
 Joao: The broken arch of Glundun's Lyre;
 Joao: The confused, mishmash pattern of dots that made the Fire Bull;
@@ -13,10 +13,10 @@ Maria: Kali watched them all from her little improvised camp,
 Maria: right beneath a clearing in the low treetops of Salazar's Woods.
 <<OBJECTIVE:0.0; Calm:0.5>>
 Maria: She found herself happily grinning upwards,
-Maria: remembering her last days on the village, before coming here.
+Maria: remembering the final days she spent in her village before coming here.
 <<OBJECTIVE:0.2; Calm:0.5>>
 Maria: Then, with a stronger arm than before,
-Maria: she proceded with the sharpening of the blade.
+Maria: she proceeded with the sharpening of the blade.
 
 [[>|CampfireNight.Part2]]
 [[Repeat|CampfireNight.Part1]]
@@ -31,14 +31,14 @@ Joao: Ganji, her master, insisted that she should do this by herself.
 <<OBJECTIVE:0.0; Calm:0.7>>
 Maria: "You're much too experienced to have this bag of old meat protecting you,"
 Maria: was the last thing he said to her before she departed,
-Maria: and before that he gifted her with his sword Sear,
+Maria: and then he gifted her with his sword Sear,
 Maria: named for the simmering heat its blade generated when swung or thrusted.
 <<OBJECTIVE:0.1; Calm:0.7>>
-Joao: And tomorrow, Kali would hopefully put it to good use.
+Joao: Tomorrow, Kali would hopefully put it to good use.
 Joao: She had been following Its trail for more than a day now.
 Joao: Sooner or later, it would end.
 Maria: When she was done with the blade, she carefully placed it in its sheath,
-Maria: and layed on her makeshift matress of leaves and moss, using her pack as a pillow.
+Maria: and layed on her makeshift mattress of leaves and moss, using her pack as a pillow.
 Maria: "Tomorrow..." she remembered saying to herself as she fell asleep,
 <<OBJECTIVE:0.1; Calm:0.8>>
 Maria: "tomorrow, you're dead."
@@ -58,8 +58,9 @@ Maria: broken and sharp stalactite and stalagmite fangs in wait of any entering 
 Joao: Grabbing a broken oak branch from the surrounding treeline, she took a bundle of dead leaves,
 Joao: wrapped them around one of the branch's ends with some linen cloth soaked in old licor and,
 Joao: after unbuckling Sear, her blade, from its sheath, she waved it for a few seconds in the air
+Joao: and pressed the scalding blade on the wet cloth. 
 <<OBJECTIVE:0.0; Calm:0.0>>
-Joao: and pressed the scalding blade on the wet cloth. It caught fire instantly.
+Joao: It caught fire instantly.
 Maria: Now, the moment she feared, the moment she eagerly waited for, was at hand.
 Maria: Up-and-down shivers needled the skin of her back and neck.
 Maria: Sweat filled the inside of her trembling leather gloves.
@@ -74,21 +75,21 @@ tags: 4 | isEssential:True
 colorID: 5
 position: 485,514
 ---
-Maria: The torch's light was enough for her to get her imediate bearings inside the cave,
+Maria: The torch's light was enough for her to get her immediate bearings inside the cave,
 Maria: but it also blinded Kali's eyes to the void outside the ring of light, 
-Maria: which, at times, seemed almost alive with thought and tentacle motion.
+Maria: which, at times, seemed almost alive with shifting thought and tentacle motion.
 <<OBJECTIVE:0.1; Calm:-0.6>>
 Joao: Some years before, with Genji still carefully watching over her,
 Joao: they hunted a highly vicious nightcrawler that hid himself in a cave not unlike this one.
-Joao: They knew what it was capable of, having seen some of the gore it left on its bloody wake.
-Joao: But they caught it. And they killed it. The dark couldn't protect him from Sear.
+Joao: They knew what it was capable of, having seen some of the gore it left in its wake.
+Joao: But they caught and killed it. The dark couldn't protect him from Sear.
 Joao: In the village, they were received with tremendous celebration and rejoice.
 Joao: They even brought out some of the leftover fireworks from New Year's Celebration,
 Joao: and fired them up into the stars. 
 Joao: That was one of the happiest nights of Kali's life.
 <<OBJECTIVE:0.1; Calm:-0.1>>
-Maria: Kali smilled at the thought,
-Maria: and the looming darkness felt like it had lost some of its initial weight.
+Maria: Kali smiled at the thought,
+Maria: and the looming darkness felt like it had lost some of its initial weight on her.
 Maria: She walked on, blood trail still underneath her heels.
 
 [[>|CaveNoon.Part3]]
@@ -102,14 +103,14 @@ position: 758,513
 Maria: She came to a point where the cave became slightly wider, and the ceiling much taller, 
 Maria: so much so, that the light of her torch couldn't even reach it.
 <<OBJECTIVE:0.3; Calm:-0.4>>
-Joao: As her chest tightned, she drew Sear.
+Joao: As her chest tightened, she drew Sear.
 Joao: Any sign of shifting movement, any slight noise at the edge of earing, 
-Joao: any wiff of decayed flesh, any pair of eyes glowing in the midst of the gloom,
-Joao: her senses and muscles were ready to receive and respond, accordingly.
+Joao: any whiff of decayed flesh, any pair of eyes glowing in the midst of the gloom,
+Joao: her senses and muscles were ready to respond accordingly.
 <<OBJECTIVE:0.3; Calm:-0.5>>
 Maria: The trail ended abruptly.
 Maria: As if in one moment the blood was steadily falling to the ground,
-Maria: and in another it had suddenly stopped.
+Maria: and in another it had suddenly been cut off.
 <<OBJECTIVE:0.3; Calm:-0.7>>
 Maria: A deep, guttural snarl, almost mocking in tone, came from behind her.
 Maria: And when she turned around, she saw Its two slitted yellow eyes,
@@ -131,15 +132,15 @@ Joao: and, with Its huge, bloated left arm, pounded her to the ground.
 Joao: Kali, all air suddenly rushing out of her chest, felt like she was hit by a battering ram.
 Maria: As she regained her breath, she couldn't help but smell It. 
 <<OBJECTIVE:-0.3; Calm:-0.7>>
-Maria: A nausious reek, a mix of rotten flesh, bile and sulfur.
+Maria: A nauseous reek, a mix of rotten flesh, bile and sulfur.
 Maria: Sear still in hand, she picked up the dropped torch, its light weaker than before.
-Maria: But it was enough for Kali to catch a glimpse of Its crimson filled, hairy snout, 
+Maria: But that was enough for Kali to catch a glimpse of Its crimson filled, hairy snout, 
 Maria: rows of brownish, sharp teeth adorning a hungry, devilish grin.
-<<OBJECTIVE:-0.4; Calm:-0.8>>
+<<OBJECTIVE:-0.5; Calm:-1.0>>
 Joao: It jumped on her, swinging its arms and legs - dagger like claws in each - left and right, 
 Joao: with Kali managing to dodge most of the incoming charge, but each time her blood was shed,
 Joao: the horror, the fear inside her mind, spread further through her limbs.
-Joao: And it was if the Thing felt revitelized, coming at her with greater and greater ferocity.
+Joao: And it was if the Thing felt revitalized, coming at her with ever increasing ferocity.
 
 [[>|CaveNoon.Part5]]
 [[Repeat|CaveNoon.Part4]]
@@ -157,11 +158,11 @@ Maria: Sear was still in her right hand, though. The torch she held in her teeth
 Maria: But she knew her body couldn't take much more of this.
 <<OBJECTIVE:0.5; Calm:0.0>>
 Joao: "Last chance," she thought to herself.
-Joao: And with all of her strength and will pulling for her body, she charged at It.
+Joao: And with all of her remaining strength and will pulling for her body, she charged at It.
 Joao: Responding in tandem, It also charged at her in a bestial, galloping motion.
 <<OBJECTIVE:0.0; Calm:0.0>>
 Joao: It was now or never.
-Joao: Do or die.
+Joao: "Do or die".
 
 <<exit>>
 ===

@@ -6,19 +6,26 @@ public class StorytellingUIManager : MonoBehaviour
 {
     Image YarnfileSelectorObject;
     Image ToneSelectorObject;
+    Image NarratorSelectorObject;
     Text ProcessingFileObject;
     Button PlayButton;
-    ToggleGroup Group;
-    
-    public StorytellingUIManager(Image YarnfileSelector, Image ToneSelector, Text ProcessingFileText, Button Play)
+    ToggleGroup MoodGroup;
+    ToggleGroup NarratorGroup;
+
+    public StorytellingUIManager(Image YarnfileSelector, Image ToneSelector, Image NarratorSelector, Text ProcessingFileText, Button Play)
     {
         YarnfileSelectorObject = YarnfileSelector;
         ToneSelectorObject = ToneSelector;
+        NarratorSelectorObject = NarratorSelector;
         ProcessingFileObject = ProcessingFileText;
         PlayButton = Play;
 
-        Group = ToneSelectorObject.gameObject.GetComponentInChildren<ToggleGroup>();
+        MoodGroup = ToneSelectorObject.gameObject.GetComponentInChildren<ToggleGroup>();
+        NarratorGroup = NarratorSelectorObject.gameObject.GetComponentInChildren<ToggleGroup>();
+
         ToneSelectorObject.gameObject.GetComponentInChildren<Toggle>().isOn = true;
+        NarratorSelectorObject.gameObject.GetComponentInChildren<Toggle>().isOn = true;
+
         YarnfileSelectorObject.gameObject.GetComponentInChildren<InputField>().text = "";
 
         SetYarnfileSelector(true);
@@ -44,6 +51,16 @@ public class StorytellingUIManager : MonoBehaviour
     public bool CheckIfToneSelectorIsActive()
     {
         return ToneSelectorObject.gameObject.activeSelf;
+    }
+
+    public void SetNarratorSelector(bool isActive)
+    {
+        NarratorSelectorObject.gameObject.SetActive(isActive);
+    }
+
+    public bool CheckIfNarratorSelectorIsActive()
+    {
+        return NarratorSelectorObject.gameObject.activeSelf;
     }
 
     public void SetProcessingFile(bool isActive)
@@ -73,9 +90,15 @@ public class StorytellingUIManager : MonoBehaviour
         SetPlayButton(activatePlayButton);
     }
 
-    public Toggle GetActiveToggle()
+    public Toggle GetMoodActiveToggle()
     {
-        List<Toggle> toggles = new List<Toggle>(Group.ActiveToggles());
+        List<Toggle> toggles = new List<Toggle>(MoodGroup.ActiveToggles());
+        return toggles[0];
+    }
+
+    public Toggle GetNarratorActiveToggle()
+    {
+        List<Toggle> toggles = new List<Toggle>(NarratorGroup.ActiveToggles());
         return toggles[0];
     }
 

@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using ReGoap.Unity.FSM;
-using ReGoap.Utilities;
 
 // Using the state machine interface
 public class StorytellingYarnfileNode : MonoBehaviour

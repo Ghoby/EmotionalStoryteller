@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using ReGoap.Core;
 using System.IO;
 using Yarn;
 using UnityEngine.UI;
@@ -25,6 +24,8 @@ public class StorytellingManager : MonoBehaviour
     [SerializeField]
     private Image ToneSelector; // set in editor
     [SerializeField]
+    private Image NarratorSelector;
+    [SerializeField]
     private Text ProcessingFileText; // set in editor
     [SerializeField]
     private Button PlayButton; // set in editor
@@ -40,6 +41,7 @@ public class StorytellingManager : MonoBehaviour
     TextAsset YarnfileAsset;
     List<KeyValuePair<int, StorytellingYarnfileNode>> Nodes;
     public bool isHappyTone;
+    public bool isEmotionalNarration;
     
     bool GoapInitiated;
     bool GoapFinished;
@@ -59,6 +61,7 @@ public class StorytellingManager : MonoBehaviour
     readonly string JoaoFearExpression = "<<Feel Joao Neutral 0.8 None>>\n<<Feel Joao Fear 0.3 None>>\n";
     readonly string JoaoSurpriseExpression = "<<Feel Joao Neutral 0.8 None>>\n<<Feel Joao Surprise 0.5 None>>\n";
     readonly string SadnessFadeFix = "<<wait 1>>\n<<OverrideTextEffects Sadness 1 showEffects None linearCurve hideEffects None linearCurve>>\n<<wait 1>>\n";
+    readonly int NormalLineCharLimit = 70;
 
     readonly int UntilNodPeriodMin = 2;
     readonly int UntilNodPeriodMax = 7;
@@ -91,7 +94,7 @@ public class StorytellingManager : MonoBehaviour
         GoapFinished = false;
 
         Nodes = new List<KeyValuePair<int, StorytellingYarnfileNode>>();
-        UIManager = new StorytellingUIManager(YarnfileSelector, ToneSelector, ProcessingFileText, PlayButton);
+        UIManager = new StorytellingUIManager(YarnfileSelector, ToneSelector, NarratorSelector, ProcessingFileText, PlayButton);
 
         if(PlayerPrefs.GetString("OriginalPath") != string.Empty)
         {
@@ -108,9 +111,10 @@ public class StorytellingManager : MonoBehaviour
         //InitiateGoap();
     }
     
-    public void InitiateStorytellingProcess(bool isHappy)
+    public void InitiateStorytellingProcess(bool isHappy, bool isEmotional)
     {
         isHappyTone = isHappy;
+        isEmotionalNarration = isEmotional;
         
         List<string> lines = new List<string>(ReadYarnfile().Split('\n'));
         CreateNodesFromYarnfile(lines);
@@ -149,10 +153,11 @@ public class StorytellingManager : MonoBehaviour
     }
 
     void CreateOutputYarnfile(List<KeyValuePair<int, StorytellingYarnfileNode>> narrative, string solutionPath)
-    { 
+    {
         //FixNarratorOrder(ref narrative, false);
-        FixNarratorOrder(ref narrative, true);
-        AddNarratorEmotionalExpressions(ref narrative);
+        //FixNarratorOrder(ref narrative, true);
+        FixNarratorOrder(ref narrative, isEmotionalNarration);
+        AddNarratorEmotionalExpressionsAndLineTimes(ref narrative);
         FixNarrativeConnections(ref narrative);        
 
         print(solutionPath);
@@ -192,13 +197,14 @@ public class StorytellingManager : MonoBehaviour
         }
     }
 
-    void AddNarratorEmotionalExpressions(ref List<KeyValuePair<int, StorytellingYarnfileNode>> narrative)
+    void AddNarratorEmotionalExpressionsAndLineTimes(ref List<KeyValuePair<int, StorytellingYarnfileNode>> narrative)
     {
         int effectIndex = 0;
         string[] statusArrayMaria = { "Happy", "Sad", "Neutral" };
         string[] statusArrayJoao = { "Surprise", "Fear", "Neutral" };
         string currentStatusMaria = "";
         string currentStatusJoao = "";
+        //string currentLineTime = NormalLineTime;
 
         for (int i = 0, n = 0; i < narrative.Count; i++)
         {
@@ -212,24 +218,28 @@ public class StorytellingManager : MonoBehaviour
                 // ADD FACIAL EXPRESSIONS AND BUBBLE COMMANDS
                 if (j >= 5)
                 {
+                    // Adds fix to the sadness text fade on the first line of the first node
                     if(i == 0 && j == 5)
                     {
                         newBody += SadnessFadeFix;
                     }
+                    // Checks if there's a need to add an emotional expression to an NPC
                     if (nodeLines[j].Contains("<<OBJECTIVE"))
                     {
-                        if (NarrativeMoodVariationIntraNodesList[effectIndex].Value >= 1.5f && currentStatusJoao != "Surprise")
+                        if ((NarrativeMoodVariationIntraNodesList[effectIndex].Value >= 1.0f || NarrativeMoodVariationIntraNodesList[effectIndex].Key >= 0.7f) 
+                            && currentStatusJoao != "Surprise")
                         {
                             newBody += JoaoSurpriseExpression;
                             currentStatusJoao = statusArrayJoao[0];
                         }
-                        else if (NarrativeMoodVariationIntraNodesList[effectIndex].Value <= -1.5f && currentStatusJoao != "Fear")
+                        else if ((NarrativeMoodVariationIntraNodesList[effectIndex].Value <= -1.0f || NarrativeMoodVariationIntraNodesList[effectIndex].Key <= -0.7f) 
+                            && currentStatusJoao != "Fear")
                         {
                             newBody += JoaoFearExpression;
                             currentStatusJoao = statusArrayJoao[1];
                         }
-                        else if (NarrativeMoodVariationIntraNodesList[effectIndex].Value > -1.5f && 
-                            NarrativeMoodVariationIntraNodesList[effectIndex].Value < 1.5f && currentStatusJoao != "Neutral")
+                        else if (NarrativeMoodVariationIntraNodesList[effectIndex].Value > -1.0f && 
+                            NarrativeMoodVariationIntraNodesList[effectIndex].Value < 1.0f && currentStatusJoao != "Neutral")
                         {
                             newBody += JoaoNeutralExpression;
                             currentStatusJoao = statusArrayJoao[2];
@@ -253,6 +263,17 @@ public class StorytellingManager : MonoBehaviour
                         }
                         effectIndex++;
                     }
+                    //// rechecks the time the line of dialogue is visible
+                    //if(currentLineTime == NormalLineTime && nodeLines[j].Length >= NormalLineCharLimit)
+                    //{
+                    //    newBody += LongLineTime;
+                    //    currentLineTime = LongLineTime;
+                    //}
+                    //else if(currentLineTime == LongLineTime && nodeLines[j].Length < NormalLineCharLimit)
+                    //{
+                    //    newBody += NormalLineTime;
+                    //    currentLineTime = NormalLineTime;
+                    //}
                 }
                 newBody += nodeLines[j] + "\n";
             }
@@ -568,6 +589,11 @@ public class StorytellingManager : MonoBehaviour
         return result;
     }
 
+    // USED FOR CHOOSING THE BEST NARRATIVE OF ALL
+    //
+    // Evaluation done between nodes. Meaning, each node has a mood value derived from a calculation of the mood variations inside it, 
+    // which is then is used, along with the mood values from the two previous nodes, to simulate the overall mood of the current section
+    // of the narrative being evaluated.
     float EvaluateNarrativeInterNodes(List<KeyValuePair<int, StorytellingYarnfileNode>> narrative, bool registerVariation)
     {
         float objectiveValue = 0f;
@@ -606,6 +632,7 @@ public class StorytellingManager : MonoBehaviour
         return objectiveValue;
     }
 
+    // USED TO CHOOSE THE BEST EMOTIONAL EXPRESSIONS FOR THE BEST CHOOSEN NARRATIVE
     void EvaluateNarrativeIntraNodes(List<KeyValuePair<int, StorytellingYarnfileNode>> narrative)
     {
         NarrativeMoodVariationIntraNodesList = new List<KeyValuePair<float, float>>();
@@ -645,13 +672,6 @@ public class StorytellingManager : MonoBehaviour
         int bestIndex = 0;
         for (int i = 0; i < narratives.Length; i++)
         {
-            //currentObjectiveValue = EvaluateNarrativeInterNodesSimple(narratives[i]);
-
-            if (i == 7349)
-            {
-                print("x");
-            }
-
             currentObjectiveValue = EvaluateNarrativeInterNodes(narratives[i], false);
             if ((isHappy && currentObjectiveValue >= bestObjectiveValue) || (!isHappy && currentObjectiveValue <= bestObjectiveValue))
             {
@@ -663,7 +683,6 @@ public class StorytellingManager : MonoBehaviour
 
         if (bestNarrative != null)
         {
-            EvaluateNarrativeInterNodes(bestNarrative, true);
             EvaluateNarrativeIntraNodes(bestNarrative);
 
             if (isHappy)

@@ -43,10 +43,10 @@ public class Preview : MonoBehaviour
         Playing = false;
 
         // Non-storytelling /////////////////////////////////////////////////////////////////////////////////////
-        Play(false);
+        //Play(false);
 
         // storytelling /////////////////////////////////////////////////////////////////////////////////////////
-        //Play(true);
+        Play(true);
     }
 
     void Play(bool isStorytelling)

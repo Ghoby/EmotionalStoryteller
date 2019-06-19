@@ -11,7 +11,7 @@ position: 238,236
 <<Feel Maria Happiness 0.6 None>>
 <<OBJECTIVE:0.0; Calm:0.3>>
 Maria: The sky, completely stripped of clouds, flourished with glistening stars.
-Maria: Every conceiveable constellation was there for the eye to see.
+Maria: Every conceivable constellation was there for the eye to see.
 Maria: The S shape of the Old Drake;
 Maria: The broken arch of Glundun's Lyre;
 Maria: The confused, mishmash pattern of dots that made the Fire Bull;
@@ -21,50 +21,52 @@ Maria: right beneath a clearing in the low treetops of Salazar's Woods.
 <<Nod Joao Stop>>
 <<OBJECTIVE:0.0; Calm:0.5>>
 Maria: She found herself happily grinning upwards,
-Maria: remembering her last days on the village, before coming here.
+Maria: remembering the final days she spent in her village before coming here.
 <<OBJECTIVE:0.2; Calm:0.5>>
-<<Nod Joao Start>>
 Maria: Then, with a stronger arm than before,
-Maria: she proceded with the sharpening of the blade.
-<<Nod Joao Stop>>
+Maria: she proceeded with the sharpening of the blade.
 
-<<wait 3>>
+<<wait 5>>
 
 Maria: This would be her first solitary venture into the wilds.
+<<Nod Joao Start>>
 Maria: Ganji, her master, insisted that she should do this by herself.
 <<OBJECTIVE:0.0; Calm:0.7>>
 Maria: "You're much too experienced to have this bag of old meat protecting you,"
-Maria: was the last thing he said to her before she departed,
-<<Nod Joao Start>>
-Maria: and before that he gifted her with his sword Sear,
-Maria: named for the simmering heat its blade generated when swung or thrusted.
 <<Nod Joao Stop>>
+Maria: was the last thing he said to her before she departed,
+Maria: and then he gifted her with his sword Sear,
+<<Nod Joao Start>>
+Maria: named for the simmering heat its blade generated when swung or thrusted.
 <<OBJECTIVE:0.1; Calm:0.7>>
-Maria: And tomorrow, Kali would hopefully put it to good use.
+Maria: Tomorrow, Kali would hopefully put it to good use.
+<<Nod Joao Stop>>
 Maria: She had been following Its trail for more than a day now.
 Maria: Sooner or later, it would end.
 Maria: When she was done with the blade, she carefully placed it in its sheath,
-<<Nod Joao Start>>
-Maria: and layed on her makeshift matress of leaves and moss, using her pack as a pillow.
+Maria: and layed on her makeshift mattress of leaves and moss, using her pack as a pillow.
 Maria: "Tomorrow..." she remembered saying to herself as she fell asleep,
-<<Nod Joao Stop>>
 <<OBJECTIVE:0.1; Calm:0.8>>
-Maria: "tomorrow, you're dead."
-
-<<wait 3>>
-
-Maria: The torch's light was enough for her to get her imediate bearings inside the cave,
-Maria: but it also blinded Kali's eyes to the void outside the ring of light, 
 <<Nod Joao Start>>
-Maria: which, at times, seemed almost alive with thought and tentacle motion.
+Maria: "tomorrow, you're dead."
+<<Nod Joao Stop>>
+
+<<wait 5>>
+
+Maria: The torch's light was enough for her to get her immediate bearings inside the cave,
+Maria: but it also blinded Kali's eyes to the void outside the ring of light, 
+Maria: which, at times, seemed almost alive with shifting thought and tentacle motion.
+<<Feel Joao Neutral 0.8 None>>
+<<Feel Joao Fear 0.3 None>>
 <<Feel Maria Neutral 0.8 None>>
 <<Feel Maria Sadness 0.5 None>>
 <<OBJECTIVE:0.1; Calm:-0.6>>
 Joao: Some years before, with Genji still carefully watching over her,
-<<Nod Joao Stop>>
+<<Nod Maria Start>>
 Joao: they hunted a highly vicious nightcrawler that hid himself in a cave not unlike this one.
-Joao: They knew what it was capable of, having seen some of the gore it left on its bloody wake.
-Joao: But they caught it. And they killed it. The dark couldn't protect him from Sear.
+Joao: They knew what it was capable of, having seen some of the gore it left in its wake.
+<<Nod Maria Stop>>
+Joao: But they caught and killed it. The dark couldn't protect him from Sear.
 Joao: In the village, they were received with tremendous celebration and rejoice.
 Joao: They even brought out some of the leftover fireworks from New Year's Celebration,
 <<Nod Maria Start>>
@@ -75,67 +77,67 @@ Joao: That was one of the happiest nights of Kali's life.
 <<Feel Joao Surprise 0.5 None>>
 <<Feel Maria Neutral 0.8 None>>
 <<OBJECTIVE:0.1; Calm:-0.1>>
-Maria: Kali smilled at the thought,
-<<Nod Joao Start>>
-Maria: and the looming darkness felt like it had lost some of its initial weight.
+Maria: Kali smiled at the thought,
+Maria: and the looming darkness felt like it had lost some of its initial weight on her.
 Maria: She walked on, blood trail still underneath her heels.
-<<Nod Joao Stop>>
 
-<<wait 3>>
+<<wait 5>>
 
 Maria: She came to a point where the cave became slightly wider, and the ceiling much taller, 
 Maria: so much so, that the light of her torch couldn't even reach it.
-<<Feel Joao Neutral 0.8 None>>
 <<Feel Maria Neutral 0.8 None>>
 <<Feel Maria Happiness 0.6 None>>
 <<OBJECTIVE:0.3; Calm:-0.4>>
-Maria: As her chest tightned, she drew Sear.
 <<Nod Joao Start>>
+Maria: As her chest tightened, she drew Sear.
 Maria: Any sign of shifting movement, any slight noise at the edge of earing, 
-Maria: any wiff of decayed flesh, any pair of eyes glowing in the midst of the gloom,
 <<Nod Joao Stop>>
-Maria: her senses and muscles were ready to receive and respond, accordingly.
+Maria: any whiff of decayed flesh, any pair of eyes glowing in the midst of the gloom,
+Maria: her senses and muscles were ready to respond accordingly.
+<<Feel Joao Neutral 0.8 None>>
 <<Feel Maria Neutral 0.8 None>>
 <<OBJECTIVE:0.3; Calm:-0.5>>
 Joao: The trail ended abruptly.
-<<Nod Maria Start>>
 Joao: As if in one moment the blood was steadily falling to the ground,
-Joao: and in another it had suddenly stopped.
-<<Nod Maria Stop>>
+<<Nod Maria Start>>
+Joao: and in another it had suddenly been cut off.
 <<OBJECTIVE:0.3; Calm:-0.7>>
 Joao: A deep, guttural snarl, almost mocking in tone, came from behind her.
+<<Nod Maria Stop>>
 Joao: And when she turned around, she saw Its two slitted yellow eyes,
 Joao: both screaming silently for her blood and flesh.
 Joao: She wasn't surprised.
 
-<<wait 3>>
+<<wait 5>>
 
-<<Nod Maria Start>>
 Joao: Kali couldn't say if this rush of attacks had lasted 2 minutes or 2 hours.
+<<Feel Joao Neutral 0.8 None>>
+<<Feel Joao Fear 0.3 None>>
 <<Feel Maria Neutral 0.8 None>>
 <<Feel Maria Sadness 0.5 None>>
 <<OBJECTIVE:0.0; Calm:-0.9>>
 Joao: When It stopped, Kali had the the entirety of her coat and trousers ripped and bloodied.
-<<Nod Maria Stop>>
+<<Nod Maria Start>>
 Joao: Her left shoulder was dislocated, so she couldn't move the arm dangling underneath it.
 Joao: Sear was still in her right hand, though. The torch she held in her teeth.
+<<Nod Maria Stop>>
 Joao: But she knew her body couldn't take much more of this.
 <<Feel Joao Neutral 0.8 None>>
 <<Feel Joao Surprise 0.5 None>>
 <<Feel Maria Neutral 0.8 None>>
 <<Feel Maria Happiness 0.6 None>>
 <<OBJECTIVE:0.5; Calm:0.0>>
-<<Nod Joao Start>>
 Maria: "Last chance," she thought to herself.
-Maria: And with all of her strength and will pulling for her body, she charged at It.
-<<Nod Joao Stop>>
+Maria: And with all of her remaining strength and will pulling for her body, she charged at It.
+<<Nod Joao Start>>
 Maria: Responding in tandem, It also charged at her in a bestial, galloping motion.
 <<Feel Joao Neutral 0.8 None>>
 <<Feel Joao Fear 0.3 None>>
 <<Feel Maria Neutral 0.8 None>>
 <<OBJECTIVE:0.0; Calm:0.0>>
 Joao: It was now or never.
-Joao: Do or die.
+<<Nod Joao Stop>>
+Joao: "Do or die".
 
 <<exit>>
 ===
