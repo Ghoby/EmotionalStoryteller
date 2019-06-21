@@ -50,7 +50,10 @@ public class StorytellingManager : MonoBehaviour
 
     int NarrativesIndex;
 
-    readonly float EqualVariationLimit = 0.2f;
+    readonly float EqualVariationLimit = 0.1f;
+    readonly float SpecialVariationLimitExpression = 1f;
+    readonly float SpecialVariationLimitNarration = 0.5f;
+    
     KeyValuePair<float, float>[] NarrativeMoodVariationArray; // array that will be used in the emotional variation of narrators
     List<KeyValuePair<float, float>> NarrativeMoodVariationIntraNodesList;
 
@@ -154,8 +157,6 @@ public class StorytellingManager : MonoBehaviour
 
     void CreateOutputYarnfile(List<KeyValuePair<int, StorytellingYarnfileNode>> narrative, string solutionPath)
     {
-        //FixNarratorOrder(ref narrative, false);
-        //FixNarratorOrder(ref narrative, true);
         FixNarratorOrder(ref narrative, isEmotionalNarration);
         AddNarratorEmotionalExpressionsAndLineTimes(ref narrative);
         FixNarrativeConnections(ref narrative);        
@@ -226,54 +227,59 @@ public class StorytellingManager : MonoBehaviour
                     // Checks if there's a need to add an emotional expression to an NPC
                     if (nodeLines[j].Contains("<<OBJECTIVE"))
                     {
-                        if ((NarrativeMoodVariationIntraNodesList[effectIndex].Value >= 1.0f || NarrativeMoodVariationIntraNodesList[effectIndex].Key >= 0.7f) 
-                            && currentStatusJoao != "Surprise")
+                        float auxVar;
+                        if (effectIndex > 0)
+                        {
+                            auxVar = NarrativeMoodVariationIntraNodesList[effectIndex].Value - NarrativeMoodVariationIntraNodesList[effectIndex - 1].Value;
+                        }
+                        else
+                        {
+                            auxVar = NarrativeMoodVariationIntraNodesList[effectIndex].Value;
+                        }                        
+
+                        if ((auxVar >= SpecialVariationLimitExpression || 
+                            NarrativeMoodVariationIntraNodesList[effectIndex].Key >= 0.7f) &&
+                            currentStatusJoao != "Surprise")
                         {
                             newBody += JoaoSurpriseExpression;
                             currentStatusJoao = statusArrayJoao[0];
                         }
-                        else if ((NarrativeMoodVariationIntraNodesList[effectIndex].Value <= -1.0f || NarrativeMoodVariationIntraNodesList[effectIndex].Key <= -0.7f) 
-                            && currentStatusJoao != "Fear")
+                        else if ((auxVar <= -SpecialVariationLimitExpression || 
+                            NarrativeMoodVariationIntraNodesList[effectIndex].Key <= -0.7f) &&
+                            currentStatusJoao != "Fear")
                         {
                             newBody += JoaoFearExpression;
                             currentStatusJoao = statusArrayJoao[1];
                         }
-                        else if (NarrativeMoodVariationIntraNodesList[effectIndex].Value > -1.0f && 
-                            NarrativeMoodVariationIntraNodesList[effectIndex].Value < 1.0f && currentStatusJoao != "Neutral")
+                        else if (auxVar < SpecialVariationLimitExpression &&
+                            auxVar > -SpecialVariationLimitExpression && 
+                            currentStatusJoao != "Neutral")
                         {
                             newBody += JoaoNeutralExpression;
                             currentStatusJoao = statusArrayJoao[2];
                         }
 
-                        if (NarrativeMoodVariationIntraNodesList[effectIndex].Key >= 0.1f && currentStatusMaria != "Happy")
+                        if (NarrativeMoodVariationIntraNodesList[effectIndex].Key >= EqualVariationLimit && 
+                            currentStatusMaria != "Happy")
                         {
                             newBody += MariaHappyExpression;
                             currentStatusMaria = statusArrayMaria[0];
                         }                       
-                        else if (NarrativeMoodVariationIntraNodesList[effectIndex].Key <= -0.1f && currentStatusMaria != "Sad")
+                        else if (NarrativeMoodVariationIntraNodesList[effectIndex].Key <= -EqualVariationLimit && 
+                            currentStatusMaria != "Sad")
                         {
                             newBody += MariaSadExpression;
                             currentStatusMaria = statusArrayMaria[1];
                         }
-                        else if (NarrativeMoodVariationIntraNodesList[effectIndex].Key > -0.1f && 
-                            NarrativeMoodVariationIntraNodesList[effectIndex].Key < 0.1f && currentStatusMaria != "Neutral")
+                        else if (NarrativeMoodVariationIntraNodesList[effectIndex].Key > -EqualVariationLimit && 
+                            NarrativeMoodVariationIntraNodesList[effectIndex].Key < EqualVariationLimit && 
+                            currentStatusMaria != "Neutral")
                         {
                             newBody += MariaNeutralExpression;
                             currentStatusMaria = statusArrayMaria[2];
                         }
                         effectIndex++;
                     }
-                    //// rechecks the time the line of dialogue is visible
-                    //if(currentLineTime == NormalLineTime && nodeLines[j].Length >= NormalLineCharLimit)
-                    //{
-                    //    newBody += LongLineTime;
-                    //    currentLineTime = LongLineTime;
-                    //}
-                    //else if(currentLineTime == LongLineTime && nodeLines[j].Length < NormalLineCharLimit)
-                    //{
-                    //    newBody += NormalLineTime;
-                    //    currentLineTime = NormalLineTime;
-                    //}
                 }
                 newBody += nodeLines[j] + "\n";
             }
@@ -375,13 +381,21 @@ public class StorytellingManager : MonoBehaviour
                     {
                         if (nodeLines[j].Contains("<<OBJECTIVE"))
                         {
-                            if (NarrativeMoodVariationIntraNodesList[effectIndex].Value >= 1.5f ||
-                            NarrativeMoodVariationIntraNodesList[effectIndex].Key >= 0.1f)
+                            float auxVar;
+                            if (effectIndex > 0)
+                            {
+                                auxVar = NarrativeMoodVariationIntraNodesList[effectIndex].Value - NarrativeMoodVariationIntraNodesList[effectIndex - 1].Value;
+                            }
+                            else
+                            {
+                                auxVar = NarrativeMoodVariationIntraNodesList[effectIndex].Value;
+                            }
+
+                            if (auxVar >= SpecialVariationLimitNarration)
                             {
                                 currentName = narratorNames[0] + ":";
                             }
-                            else if (NarrativeMoodVariationIntraNodesList[effectIndex].Value <= -1.5f ||
-                                     NarrativeMoodVariationIntraNodesList[effectIndex].Key <= 0.1f)
+                            else if (auxVar <= -SpecialVariationLimitNarration)
                             {
                                 currentName = narratorNames[1] + ":";
                             }
@@ -629,13 +643,19 @@ public class StorytellingManager : MonoBehaviour
                 NarrativeMoodVariationArray[i] = new KeyValuePair<float, float>(obj3, obj3 + varVal);
             }
         }
+
         return objectiveValue;
     }
 
     // USED TO CHOOSE THE BEST EMOTIONAL EXPRESSIONS FOR THE BEST CHOOSEN NARRATIVE
-    void EvaluateNarrativeIntraNodes(List<KeyValuePair<int, StorytellingYarnfileNode>> narrative)
+    float EvaluateNarrativeIntraNodes(List<KeyValuePair<int, StorytellingYarnfileNode>> narrative, bool registerVariation)
     {
-        NarrativeMoodVariationIntraNodesList = new List<KeyValuePair<float, float>>();
+        float objectiveValue = 0f;
+
+        if (registerVariation)
+        {
+            NarrativeMoodVariationIntraNodesList = new List<KeyValuePair<float, float>>();
+        }
         var auxList = new List<KeyValuePair<int, float>>();
 
         for (int i = 0; i < narrative.Count; i++)
@@ -660,8 +680,15 @@ public class StorytellingManager : MonoBehaviour
             obj3 = auxList[i].Value;
 
             float varVal = GetMoodVariationValue(obj1, obj2, obj3);
-            NarrativeMoodVariationIntraNodesList.Add(new KeyValuePair<float, float>(obj3, obj3 + varVal));
+            float currentMoodVar = Mathf.Abs(obj3 - obj1) * varVal;
+            objectiveValue += currentMoodVar;
+
+            if (registerVariation)
+            {
+                NarrativeMoodVariationIntraNodesList.Add(new KeyValuePair<float, float>(obj3, currentMoodVar));
+            }            
         }
+        return objectiveValue;
     }
 
     List<KeyValuePair<int, StorytellingYarnfileNode>> GetBestNarrative(List<KeyValuePair<int, StorytellingYarnfileNode>>[] narratives, bool isHappy)
@@ -672,8 +699,8 @@ public class StorytellingManager : MonoBehaviour
         int bestIndex = 0;
         for (int i = 0; i < narratives.Length; i++)
         {
-            currentObjectiveValue = EvaluateNarrativeInterNodes(narratives[i], false);
-            if ((isHappy && currentObjectiveValue >= bestObjectiveValue) || (!isHappy && currentObjectiveValue <= bestObjectiveValue))
+            currentObjectiveValue = EvaluateNarrativeIntraNodes(narratives[i], false);
+            if ((isHappy && currentObjectiveValue > bestObjectiveValue) || (!isHappy && currentObjectiveValue < bestObjectiveValue))
             {
                 bestNarrative = narratives[i];
                 bestObjectiveValue = currentObjectiveValue;
@@ -683,7 +710,7 @@ public class StorytellingManager : MonoBehaviour
 
         if (bestNarrative != null)
         {
-            EvaluateNarrativeIntraNodes(bestNarrative);
+            EvaluateNarrativeIntraNodes(bestNarrative, true);
 
             if (isHappy)
                 print("best objective value happy: " + bestObjectiveValue);

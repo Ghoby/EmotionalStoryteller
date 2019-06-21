@@ -11,6 +11,7 @@ public class StorytellingYarnfileNode : MonoBehaviour
     string Title;
     public List<KeyValuePair<int, float>> Effects;
 
+    //deprecated 
     float GlobalEffect;
 
     public StorytellingYarnfileNode(int index, string body)
@@ -21,6 +22,8 @@ public class StorytellingYarnfileNode : MonoBehaviour
 
         IsEssential = CheckIfEssential();
         Effects = FetchEffects();
+
+        //deprecated 
         GlobalEffect = GenerateGlobalEffectValue();
     }
 
@@ -109,6 +112,7 @@ public class StorytellingYarnfileNode : MonoBehaviour
         return Effects;
     }
 
+    //deprecated 
     float GenerateGlobalEffectValue()
     {
         float result = 0f;
@@ -134,6 +138,7 @@ public class StorytellingYarnfileNode : MonoBehaviour
         return result;
     }
 
+    //deprecated 
     public float GetGlobalEffect()
     {
         return GlobalEffect;

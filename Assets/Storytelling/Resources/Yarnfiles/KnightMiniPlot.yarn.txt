@@ -3,7 +3,7 @@ tags: 1 | isEssential:False
 colorID: 1
 position: 238,236
 ---
-<<OBJECTIVE:0.0; Calm:0.3>>
+<<OBJECTIVE:0.0; Calm:0.0>>
 Joao: The sky, completely stripped of clouds, flourished with glistening stars.
 Joao: Every conceivable constellation was there for the eye to see.
 Joao: The S shape of the Old Drake;
@@ -11,10 +11,10 @@ Joao: The broken arch of Glundun's Lyre;
 Joao: The confused, mishmash pattern of dots that made the Fire Bull;
 Maria: Kali watched them all from her little improvised camp,
 Maria: right beneath a clearing in the low treetops of Salazar's Woods.
-<<OBJECTIVE:0.0; Calm:0.5>>
+<<OBJECTIVE:0.0; Calm:0.1>>
 Maria: She found herself happily grinning upwards,
 Maria: remembering the final days she spent in her village before coming here.
-<<OBJECTIVE:0.2; Calm:0.5>>
+<<OBJECTIVE:0.0; Calm:0.1>>
 Maria: Then, with a stronger arm than before,
 Maria: she proceeded with the sharpening of the blade.
 
@@ -28,19 +28,19 @@ position: 503,237
 ---
 Joao: This would be her first solitary venture into the wilds.
 Joao: Ganji, her master, insisted that she should do this by herself.
-<<OBJECTIVE:0.0; Calm:0.7>>
+<<OBJECTIVE:0.2; Calm:0.5>>
 Maria: "You're much too experienced to have this bag of old meat protecting you,"
 Maria: was the last thing he said to her before she departed,
 Maria: and then he gifted her with his sword Sear,
 Maria: named for the simmering heat its blade generated when swung or thrusted.
-<<OBJECTIVE:0.1; Calm:0.7>>
+<<OBJECTIVE:0.2; Calm:0.7>>
 Joao: Tomorrow, Kali would hopefully put it to good use.
 Joao: She had been following Its trail for more than a day now.
 Joao: Sooner or later, it would end.
 Maria: When she was done with the blade, she carefully placed it in its sheath,
 Maria: and layed on her makeshift mattress of leaves and moss, using her pack as a pillow.
 Maria: "Tomorrow..." she remembered saying to herself as she fell asleep,
-<<OBJECTIVE:0.1; Calm:0.8>>
+<<OBJECTIVE:0.2; Calm:0.8>>
 Maria: "tomorrow, you're dead."
 
 [[>|CaveNoon.Part1]]
@@ -51,7 +51,7 @@ tags: 3 | isEssential:False
 colorID: 5
 position: 235,521
 ---
-<<OBJECTIVE:-0.6; Calm:-0.6>>
+<<OBJECTIVE:-0.5; Calm:-0.6>>
 Maria: The blood trail she was following led to an enormous cave.
 Maria: It's entrance, a wide-open mouth of dark gloom ripping out of the body of the hill's wall,
 Maria: broken and sharp stalactite and stalagmite fangs in wait of any entering prey. 
@@ -75,10 +75,10 @@ tags: 4 | isEssential:True
 colorID: 5
 position: 485,514
 ---
+<<OBJECTIVE:0.1; Calm:-0.6>>
 Maria: The torch's light was enough for her to get her immediate bearings inside the cave,
 Maria: but it also blinded Kali's eyes to the void outside the ring of light, 
 Maria: which, at times, seemed almost alive with shifting thought and tentacle motion.
-<<OBJECTIVE:0.1; Calm:-0.6>>
 Joao: Some years before, with Genji still carefully watching over her,
 Joao: they hunted a highly vicious nightcrawler that hid himself in a cave not unlike this one.
 Joao: They knew what it was capable of, having seen some of the gore it left in its wake.
@@ -102,12 +102,12 @@ position: 758,513
 ---
 Maria: She came to a point where the cave became slightly wider, and the ceiling much taller, 
 Maria: so much so, that the light of her torch couldn't even reach it.
-<<OBJECTIVE:0.3; Calm:-0.4>>
+<<OBJECTIVE:0.3; Calm:-0.1>>
 Joao: As her chest tightened, she drew Sear.
 Joao: Any sign of shifting movement, any slight noise at the edge of earing, 
 Joao: any whiff of decayed flesh, any pair of eyes glowing in the midst of the gloom,
 Joao: her senses and muscles were ready to respond accordingly.
-<<OBJECTIVE:0.3; Calm:-0.5>>
+<<OBJECTIVE:0.3; Calm:-0.3>>
 Maria: The trail ended abruptly.
 Maria: As if in one moment the blood was steadily falling to the ground,
 Maria: and in another it had suddenly been cut off.
